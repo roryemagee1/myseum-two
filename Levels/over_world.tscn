@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgkwqmdqdafxc"]
+[gd_scene load_steps=6 format=3 uid="uid://bgkwqmdqdafxc"]
 
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_pn5lm"]
 
@@ -15,6 +15,9 @@ sky = SubResource("Sky_pybji")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
+
 [node name="OverWorld" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -26,6 +29,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 1, 32)
 
