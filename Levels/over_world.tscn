@@ -1,28 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgkwqmdqdafxc"]
+[gd_scene load_steps=4 format=3 uid="uid://bgkwqmdqdafxc"]
 
-[ext_resource type="Texture2D" uid="uid://cg8pj811illj3" path="res://Skybox/skybox_panorama_modded.jpg" id="1_omth7"]
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox1.tscn" id="1_ayc31"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_pn5lm"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_80u0x"]
-panorama = ExtResource("1_omth7")
-filter = false
-
-[sub_resource type="Sky" id="Sky_2dxkv"]
-sky_material = SubResource("PanoramaSkyMaterial_80u0x")
-
-[sub_resource type="Environment" id="Environment_mnhm8"]
-background_mode = 2
-sky = SubResource("Sky_2dxkv")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="OverWorld" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mnhm8")
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_ayc31")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

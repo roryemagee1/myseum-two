@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcwy663fwa8gj"]
+
+[ext_resource type="Texture2D" uid="uid://cg8pj811illj3" path="res://Skybox/skybox_panorama_modded.jpg" id="1_v8rty"]
+[ext_resource type="Script" path="res://Skybox/skybox1.gd" id="2_8s2hl"]
+[ext_resource type="Texture2D" uid="uid://bol00im17tbc5" path="res://Skybox/cold_sunset_ equirect.png" id="3_ypmlc"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_80u0x"]
+panorama = ExtResource("1_v8rty")
+filter = false
+
+[sub_resource type="Sky" id="Sky_2dxkv"]
+sky_material = SubResource("PanoramaSkyMaterial_80u0x")
+
+[sub_resource type="Environment" id="Environment_mnhm8"]
+background_mode = 2
+sky = SubResource("Sky_2dxkv")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_mnhm8")
+script = ExtResource("2_8s2hl")
+space = ExtResource("1_v8rty")
+sky = ExtResource("3_ypmlc")
