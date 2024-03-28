@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgkwqmdqdafxc"]
+[gd_scene load_steps=11 format=3 uid="uid://n5psimi3jbb5"]
 
-[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_ayc31"]
-[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_pn5lm"]
-[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_mwu6n"]
-[ext_resource type="Script" path="res://Levels/SceneShiftArea.gd" id="4_innc3"]
-[ext_resource type="Script" path="res://Levels/TestArea3D2.gd" id="5_eesd2"]
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_h1nue"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_8lcu8"]
+[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_w2eor"]
+[ext_resource type="Script" path="res://Levels/TestArea3D2.gd" id="4_du64k"]
+[ext_resource type="Script" path="res://Levels/SceneShiftArea.gd" id="5_stx8t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
@@ -34,7 +34,7 @@ size = Vector3(3, 3, 3)
 
 [node name="OverWorld" type="Node3D"]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_ayc31")]
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_h1nue")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -46,10 +46,10 @@ material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 1, 32)
 
-[node name="Player" parent="." instance=ExtResource("1_pn5lm")]
+[node name="Player" parent="." instance=ExtResource("2_8lcu8")]
 
 [node name="TestArea3D" type="Area3D" parent="."]
-script = ExtResource("3_mwu6n")
+script = ExtResource("3_w2eor")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
@@ -63,7 +63,7 @@ skeleton = NodePath("../..")
 
 [node name="TestArea3D2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19278, 0, 0)
-script = ExtResource("5_eesd2")
+script = ExtResource("4_du64k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
@@ -78,7 +78,7 @@ skeleton = NodePath("../..")
 [node name="SceneShiftArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 5)
 top_level = true
-script = ExtResource("4_innc3")
+script = ExtResource("5_stx8t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SceneShiftArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)

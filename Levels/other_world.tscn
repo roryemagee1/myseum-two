@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://crf53r3ic2rk5"]
+
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_ybxsl"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_wsdgq"]
+[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_mxnc4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q3qc"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmaui"]
+transparency = 4
+no_depth_test = true
+albedo_color = Color(1, 1, 1, 0.498039)
+metallic = 1.0
+metallic_specular = 1.0
+emission_energy_multiplier = 16.0
+ao_light_affect = 1.0
+heightmap_scale = 16.0
+subsurf_scatter_strength = 1.0
+backlight = Color(1, 0, 0, 1)
+refraction_scale = 1.0
+proximity_fade_distance = 10.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_glewr"]
+size = Vector3(4, 4, 4)
+
+[node name="OverWorld" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_ybxsl")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 1, 32)
+
+[node name="Player" parent="." instance=ExtResource("2_wsdgq")]
+
+[node name="TestArea3D" type="Area3D" parent="."]
+script = ExtResource("3_mxnc4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+shape = SubResource("BoxShape3D_3q3qc")
+
+[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+material_override = SubResource("StandardMaterial3D_gmaui")
+mesh = SubResource("BoxMesh_glewr")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="TestArea3D" to="Player" method="_on_test_area_3d_body_entered"]
+[connection signal="body_exited" from="TestArea3D" to="Player" method="_on_test_area_3d_body_exited"]

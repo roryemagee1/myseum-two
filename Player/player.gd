@@ -11,6 +11,10 @@ var mouse_motion := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CameraPivot
 
+#Temp?
+@onready var world_environment: WorldEnvironment = $"../WorldEnvironment"
+#Temp?
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
