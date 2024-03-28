@@ -55,6 +55,8 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event.is_action_pressed("one"):
+		return_to_origin()
 	
 		
 func handle_camera_rotation() -> void:
@@ -66,3 +68,6 @@ func handle_camera_rotation() -> void:
 		90.0
 	)
 	mouse_motion = Vector2.ZERO
+
+func return_to_origin() -> void:
+	position = Vector3(0.0, 1.0, 0.0)
