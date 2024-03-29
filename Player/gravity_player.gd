@@ -18,11 +18,12 @@ var mouse_motion := Vector2.ZERO
 @onready var aim_cast: RayCast3D = $CameraPivot/SmoothCamera/AimCast
 
 var last_aim: Vector3 = Vector3(0.0, 0.0, 0.0)
-var stored_rotation: Array[float] = [0.0, 0.0, 0.0]
+var last_position: Vector3 = Vector3(0.0, 0.0, 0.0)
+var last_rotation := [Vector3(0.0, 0.0, 0.0), 0.0]
+var current_direction: String = "y"
 #Temp
 
 var player_lock: bool = false
-#var last_coords: Vector3
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -34,9 +35,10 @@ func _physics_process(delta: float) -> void:
 	#print("player:", rotation, position)
 	#print("level:", level_rotator.rotation, level_rotator.position)
 	#print("environment:", environment.rotation, environment.position)
-
+	
 #func _process(delta: float) -> void:
-	#print(aim_cast.get_collision_point())
+	#if !player_lock:
+		#last_position = position
 
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -89,55 +91,28 @@ func _input(event: InputEvent) -> void:
 		#lock_to_level_rotator()
 
 func lock_to_level_rotator() -> void:
+	#last_position = position
 	if !player_lock:
-		last_aim = aim_cast.get_collision_point()
-		#print("pivot rotation", camera_pivot.rotation)
-		#print("environment", environment.rotation)
-		#print("position", position)
-		print("last_aim", last_aim)
-		print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
+		#last_aim = aim_cast.get_collision_point()
+		#print("last_aim", last_aim)
 		player_lock = true
-		var base_node = environment.get_parent()
-		base_node.remove_child(self)
-		print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-		level_rotator.add_child(self)
-		print("last_aim", last_aim)
-		print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-		
-		#print("position", position)
-		#print("pivot rotation", camera_pivot.rotation)
-		#print("environment", environment.rotation)
+		#var base_node = environment.get_parent()
+		#base_node.remove_child(self)
+		#level_rotator.add_child(self)
+		#global_position = last_position
 
 func unlock_to_gravity_box() -> void:
-	#print("pivot rotation", camera_pivot.rotation)
-	#print("environment", environment.rotation)
-	#print("position", position)
-	print("last_aim", last_aim)
-	print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-	#var glob_pos = camera_pivot.global_position
-	#var glob_rot = camera_pivot.global_rotation
-	var base_node = environment.get_parent()
-	level_rotator.remove_child(self)
-	print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-	base_node.add_child(self)
+	#camera_pivot.rotate_object_local(last_rotation[0], -last_rotation[1])
+	#print("last_aim", last_aim)
+	#print("current_aim", aim_cast.get_collision_point())
+	#var base_node = environment.get_parent()
+	#level_rotator.remove_child(self)
+	#base_node.add_child(self)
+	#self.position = last_position
+	#global_position = last_position
+	#look_at(last_aim, Vector3.UP)
+	#print("final_aim", aim_cast.get_collision_point())
+	#rotate(last_rotation[0], -last_rotation[1])
 	player_lock = false
-	
-	#rotate_y(stored_rotation[1])
-	camera_pivot.rotate_x(-stored_rotation[0])
-	stored_rotation = [0.0, 0.0, 0.0]
-	
-	print("last_aim", last_aim)
-	print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-	#position = glob_pos
-	#rotation = glob_rot
-	#print("pivot", camera_pivot.position, camera_pivot.rotation, camera_pivot.global_position, camera_pivot.global_rotation)
-	#print(camera_pivot.rotation_degrees)
-	#camera_pivot.rotation_degrees = Vector3(camera_pivot.rotation_degrees.x - stored_rotation[0], camera_pivot.rotation_degrees.y - stored_rotation[1], camera_pivot.rotation_degrees.z - stored_rotation[2])
-	#camera_pivot.rotation_degrees = Vector3(camera_pivot.rotation_degrees.x - 90, camera_pivot.rotation_degrees.y, camera_pivot.rotation_degrees.z)
-	#look_at(global_position - last_aim + Vector3(0, 90, 0), Vector3.UP, true)
-	#print("position", position)
-	#print("pivot rotation", camera_pivot.rotation)
-	#print("environment", environment.rotation)
-	#stored_rotation = [0.0, 0.0, 0.0]
 	
 	

@@ -1,13 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5gg77uquru44"]
+[gd_scene load_steps=13 format=3 uid="uid://b5gg77uquru44"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_c6dcn"]
 [ext_resource type="Script" path="res://Levels/Environment.gd" id="2_k6g2r"]
 [ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_g4g3q"]
 [ext_resource type="Script" path="res://Levels/LevelRotator.gd" id="3_l2dwi"]
 [ext_resource type="PackedScene" uid="uid://3fttmba4mudi" path="res://Player/gravity_player.tscn" id="3_x0014"]
+[ext_resource type="Script" path="res://Levels/PlayerLock.gd" id="4_urfcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytakk"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.498039)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqfqo"]
 albedo_color = Color(1, 1, 0, 1)
@@ -43,6 +48,11 @@ transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97573e-16, -1, -4.37114e-08, 2.08165e-12, 4, 2.08165e-12)
 shadow_enabled = true
+
+[node name="GravityPlayer" parent="." instance=ExtResource("3_x0014")]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+up_direction = Vector3(2.40375e-12, 1, 2.40375e-12)
 
 [node name="Environment" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -121,6 +131,10 @@ material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(8, 32, 1)
 
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Environment/LevelRotator"]
+material_override = SubResource("StandardMaterial3D_ytakk")
+script = ExtResource("4_urfcc")
+
 [node name="Landmark" type="Node3D" parent="."]
 transform = Transform3D(1, -4.86609e-31, 0, -4.86609e-31, 1, 0, 0, 0, 1, 0, 0, 0)
 top_level = true
@@ -155,10 +169,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
 material_override = SubResource("StandardMaterial3D_gmaui")
 mesh = SubResource("BoxMesh_glewr")
 skeleton = NodePath("../..")
-
-[node name="GravityPlayer" parent="." instance=ExtResource("3_x0014")]
-unique_name_in_owner = true
-transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 
 [connection signal="body_entered" from="TestArea3D" to="TestArea3D" method="_on_body_entered"]
 [connection signal="body_exited" from="TestArea3D" to="TestArea3D" method="_on_body_exited"]
