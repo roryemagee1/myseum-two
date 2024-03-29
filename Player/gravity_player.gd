@@ -5,82 +5,56 @@ const SPEED = 5.0
 @export var jump_height: float = 2.0
 @export var fall_multiplier: float = 2.0
 
-#Temp?
-@export var gravity_direction: String = "y"
-#Temp?
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_motion := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CameraPivot
+@onready var level_rotator: Node3D = %LevelRotator
+@onready var environment: Node3D = %Environment
+
+#Temp?
+@onready var smooth_camera: Camera3D = $CameraPivot/SmoothCamera
+var stored_rotation: Array[float] = [0.0, 0.0, 0.0]
+#Temp
+
+var player_lock: bool = false
+var last_coords: Vector3
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
 	handle_camera_rotation()
-	handle_gravity(delta, gravity_direction)
+	if !player_lock:
+		handle_gravity(delta)
+	#print("player:", rotation, position)
+	#print("level:", level_rotator.rotation, level_rotator.position)
+	#print("environment:", environment.rotation, environment.position)
 
-func handle_gravity(delta: float, gravity_direction: String) -> void:
-	# Add the gravity.
-	var vector := ["x", "y", "z", 1]
-	if gravity_direction == "-y":
-		vector = ["x", "y", "z", -1]
-	if gravity_direction == "x":
-		vector = ["z", "x", "y", 1]
-	if gravity_direction == "-x":
-		vector = ["z", "x", "y", -1]
-	if gravity_direction == "z":
-		vector = ["y", "z", "x", 1]
-	if gravity_direction == "-z":
-		vector = ["y", "z", "x", -1]
-	
+func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
-		if velocity[vector[1]] >= 0:
-			velocity[vector[1]] -= gravity * vector[3] * delta
+		if velocity.y >= 0:
+			velocity.y -= gravity * delta
 		else:
-			velocity[vector[1]] -= gravity * vector[3] * delta * fall_multiplier
+			velocity.y -= gravity * delta * fall_multiplier
 
-	# Handle jump.
+	 #Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity[vector[1]] = sqrt(jump_height * 2.0 * gravity * vector[3])
+		velocity.y = sqrt(jump_height * 2.0 * gravity)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	 #Get the input direction and handle the movement/deceleration.
+	 #As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir[vector[0]], 0, input_dir[vector[1]])).normalized()
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity[vector[0]] = direction[vector[0]] * SPEED
-		velocity[vector[2]] = direction[vector[2]] * SPEED
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 	else:
-		velocity[vector[0]] = move_toward(velocity[vector[0]], 0, SPEED)
-		velocity[vector[2]] = move_toward(velocity[vector[2]], 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			mouse_motion = -event.relative * 0.001
-	if event.is_action_pressed("ui_cancel"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if event.is_action_pressed("one"):
-		gravity_direction = "y"
-	if event.is_action_pressed("two"):
-		gravity_direction = "-y"
-	if event.is_action_pressed("three"):
-		gravity_direction = "x"
-	if event.is_action_pressed("four"):
-		gravity_direction = "-x"
-	if event.is_action_pressed("five"):
-		gravity_direction = "z"
-	if event.is_action_pressed("six"):
-		gravity_direction = "-z"
-	
 		
 func handle_camera_rotation() -> void:
 	rotate_y(mouse_motion.x)
@@ -92,30 +66,49 @@ func handle_camera_rotation() -> void:
 	)
 	mouse_motion = Vector2.ZERO
 
-func return_to_origin() -> void:
-	position = Vector3(0.0, 1.0, 0.0)
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			mouse_motion = -event.relative * 0.001
+	if event.is_action_pressed("ui_cancel"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event.is_action_pressed("jump") && player_lock:
+		unlock_to_gravity_box()
+	#if event.is_action_pressed("one"):
+		#unlock_to_gravity_box()
+	#if event.is_action_pressed("two"):
+		#lock_to_level_rotator()
+
+func lock_to_level_rotator() -> void:
+	if !player_lock:
+		#print("pivot rotation", camera_pivot.rotation)
+		#print("environment", environment.rotation)
+		#print("position", position)
+		player_lock = true
+		var base_node = environment.get_parent()
+		base_node.remove_child(self)
+		level_rotator.add_child(self)
+		#print("position", position)
+		#print("pivot rotation", camera_pivot.rotation)
+		#print("environment", environment.rotation)
+
+func unlock_to_gravity_box() -> void:
+	#print("pivot rotation", camera_pivot.rotation)
+	#print("environment", environment.rotation)
+	#print("position", position)
+	var base_node = environment.get_parent()
+	level_rotator.remove_child(self)
+	base_node.add_child(self)
+	print(camera_pivot.rotation_degrees)
+	#camera_pivot.rotation_degrees = Vector3(camera_pivot.rotation_degrees.x - stored_rotation[0], camera_pivot.rotation_degrees.y - stored_rotation[1], camera_pivot.rotation_degrees.z - stored_rotation[2])
+	#camera_pivot.rotation_degrees = Vector3(camera_pivot.rotation_degrees.x - 90, camera_pivot.rotation_degrees.y, camera_pivot.rotation_degrees.z)
+	player_lock = false
+	#print("position", position)
+	#print("pivot rotation", camera_pivot.rotation)
+	#print("environment", environment.rotation)
+	#stored_rotation = [0.0, 0.0, 0.0]
 	
-#Save
-#func handle_gravity() -> void:
-	#if not is_on_floor():
-		#if velocity.y >= 0:
-			#velocity.y -= gravity * delta
-		#else:
-			#velocity.y -= gravity * delta * fall_multiplier
-#
-	# Handle jump.
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = sqrt(jump_height * 2.0 * gravity)
-#
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	#if direction:
-		#velocity.x = direction.x * SPEED
-		#velocity.z = direction.z * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#velocity.z = move_toward(velocity.z, 0, SPEED)
-#
-	#move_and_slide()
+	

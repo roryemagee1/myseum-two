@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5gg77uquru44"]
+[gd_scene load_steps=11 format=3 uid="uid://b5gg77uquru44"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_c6dcn"]
 [ext_resource type="Script" path="res://Levels/Environment.gd" id="2_k6g2r"]
 [ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_g4g3q"]
 [ext_resource type="Script" path="res://Levels/LevelRotator.gd" id="3_l2dwi"]
 [ext_resource type="PackedScene" uid="uid://3fttmba4mudi" path="res://Player/gravity_player.tscn" id="3_x0014"]
-[ext_resource type="Script" path="res://Levels/Landmark.gd" id="4_wh84t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
@@ -45,97 +44,92 @@ transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-
 transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97573e-16, -1, -4.37114e-08, 2.08165e-12, 4, 2.08165e-12)
 shadow_enabled = true
 
-[node name="LevelRotator" type="Node3D" parent="."]
+[node name="GravityPlayer" parent="." instance=ExtResource("3_x0014")]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+
+[node name="Environment" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("2_k6g2r")
+
+[node name="LevelRotator" type="Node3D" parent="Environment"]
+unique_name_in_owner = true
 transform = Transform3D(1, -6.97574e-16, 6.97574e-16, 6.97574e-16, 1, -6.97574e-16, -6.97574e-16, 6.97574e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 top_level = true
 script = ExtResource("3_l2dwi")
 
-[node name="Floor" type="CSGBox3D" parent="LevelRotator"]
+[node name="Floor" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -5.29396e-23, -3.48787e-16, -5.29396e-23, 1, 3.48787e-16, 3.48787e-16, -3.48787e-16, 1, 2.08165e-12, -16.5, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 1, 32)
 
-[node name="Wall" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -16.5, 2.08165e-12, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(1, 32, 32)
 
-[node name="Wall2" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall2" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16.5, 2.08165e-12, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(1, 32, 32)
 
-[node name="Wall3" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall3" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.00316429, 1.90735e-06, -16.4611)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 32, 1)
 
-[node name="Wall4" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall4" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 16.5)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 32, 1)
 
-[node name="Wall5" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall5" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 32, 16.5)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(8, 32, 1)
 
-[node name="Wall6" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall6" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 48.5, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(8, 1, 32)
 
-[node name="Wall7" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall7" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -4.49776, 44, -0.0238857)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(1, 8, 32)
 
-[node name="Wall8" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall8" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 11.9781, 39.5, 0.00450706)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 1, 8)
 
-[node name="Wall9" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall9" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 32.0348, 39.5, 0.00891304)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(8, 1, 32)
 
-[node name="Wall10" type="CSGBox3D" parent="LevelRotator"]
+[node name="Wall10" type="CSGBox3D" parent="Environment/LevelRotator"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 32, 23, -15.5)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(8, 32, 1)
 
-[node name="Environment" type="Node3D" parent="."]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-script = ExtResource("2_k6g2r")
-
-[node name="GravityPlayer" parent="Environment" instance=ExtResource("3_x0014")]
-unique_name_in_owner = true
-transform = Transform3D(1, 3.48787e-16, -3.48787e-16, -3.48787e-16, 1, 3.48787e-16, 3.48787e-16, -3.48787e-16, 1, 3.48896e-16, 1, -3.48896e-16)
-
-[node name="CameraPivot" parent="Environment/GravityPlayer" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.979358, 0.202138, 0, -0.202138, 0.979357, 2.08165e-12, 0.654181, 2.34419)
-
-[node name="SmoothCamera" parent="Environment/GravityPlayer/CameraPivot" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
-
-[node name="Landmark" type="Node3D" parent="Environment"]
+[node name="Landmark" type="Node3D" parent="."]
 transform = Transform3D(1, -4.86609e-31, 0, -4.86609e-31, 1, 0, 0, 0, 1, 0, 0, 0)
 top_level = true
-script = ExtResource("4_wh84t")
 
-[node name="Sun" type="CSGSphere3D" parent="Environment/Landmark"]
+[node name="Sun" type="CSGSphere3D" parent="Landmark"]
 transform = Transform3D(1, -4.86609e-31, 0, -4.86609e-31, 1, 0, 0, 0, 1, 2.08165e-12, 128, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_iqfqo")
 radius = 24.0
@@ -168,5 +162,3 @@ skeleton = NodePath("../..")
 
 [connection signal="body_entered" from="TestArea3D" to="TestArea3D" method="_on_body_entered"]
 [connection signal="body_exited" from="TestArea3D" to="TestArea3D" method="_on_body_exited"]
-
-[editable path="Environment/GravityPlayer"]

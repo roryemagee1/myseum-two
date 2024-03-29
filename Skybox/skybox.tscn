@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgtux7kmlkkcx" path="res://Skybox/Cubebox.png" id="4_p56g8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_80u0x"]
-panorama = ExtResource("1_v8rty")
+panorama = ExtResource("3_ypmlc")
 filter = false
 
 [sub_resource type="Sky" id="Sky_2dxkv"]
