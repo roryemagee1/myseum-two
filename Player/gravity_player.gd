@@ -83,13 +83,31 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if event.is_action_pressed("jump") && player_lock:
-		unlock_to_gravity_box()
-	#if event.is_action_pressed("one"):
+	#if event.is_action_pressed("jump") && player_lock:
 		#unlock_to_gravity_box()
-	#if event.is_action_pressed("two"):
-		#lock_to_level_rotator()
+	if event.is_action_pressed("one"):
+		set_new_origin()
+	if event.is_action_pressed("rot_x_plus"):
+		environment.rot_x_plus()
+	if event.is_action_pressed("rot_x_minus"):
+		environment.rot_x_minus()
+	if event.is_action_pressed("rot_y_plus"):
+		environment.rot_y_plus()
+	if event.is_action_pressed("rot_y_minus"):
+		environment.rot_y_minus()
+	if event.is_action_pressed("rot_z_plus"):
+		environment.rot_z_plus()
+	if event.is_action_pressed("rot_z_minus"):
+		environment.rot_z_minus()
 
+func set_new_origin() -> void:
+	print(environment.position)
+	print("player", position)
+	environment.adjust_origin(position)
+	position = Vector3(0.0, 1.0, 0.0)
+	print(environment.position)
+	print("player", position)
+	
 func lock_to_level_rotator() -> void:
 	#last_position = position
 	if !player_lock:
