@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://bheus50p1i1md"]
+
+[ext_resource type="Texture2D" uid="uid://elqsavl78364" path="res://Assets/AudasiteJustBackground.png" id="1_uvybt"]
+[ext_resource type="Texture2D" uid="uid://bwqlp5ytjt5r4" path="res://Assets/AudasiteJustWriting.png" id="2_pe57e"]
+[ext_resource type="Texture2D" uid="uid://s6nd7jlwtiyp" path="res://Assets/AudasiteJustCompany.png" id="3_t4yob"]
+[ext_resource type="Texture2D" uid="uid://bptime2ygjuee" path="res://Assets/AudasiteJustMacron.png" id="4_3bo5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4mq7"]
+albedo_texture = ExtResource("1_uvybt")
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ysin"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfua0"]
+albedo_texture = ExtResource("2_pe57e")
+uv1_scale = Vector3(3, 2, 2)
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhkcx"]
+size = Vector3(8, 1.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ite2m"]
+albedo_texture = ExtResource("3_t4yob")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fuqe2"]
+size = Vector3(4, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj6kj"]
+albedo_texture = ExtResource("4_3bo5x")
+uv1_scale = Vector3(3, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jopvu"]
+size = Vector3(1, 0.5, 1)
+
+[node name="AudasiteSphere" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_w4mq7")
+mesh = SubResource("SphereMesh_8ysin")
+
+[node name="Audasite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -4)
+material_override = SubResource("StandardMaterial3D_lfua0")
+mesh = SubResource("BoxMesh_bhkcx")
+skeleton = NodePath("../..")
+
+[node name="Company" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -1, -4.5)
+material_override = SubResource("StandardMaterial3D_ite2m")
+mesh = SubResource("BoxMesh_fuqe2")
+skeleton = NodePath("../..")
+
+[node name="Macron" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, -4.5)
+material_override = SubResource("StandardMaterial3D_nj6kj")
+mesh = SubResource("BoxMesh_jopvu")
+skeleton = NodePath("../..")

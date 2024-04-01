@@ -1,36 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgkwqmdqdafxc"]
+[gd_scene load_steps=5 format=3 uid="uid://bgkwqmdqdafxc"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_ayc31"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_pn5lm"]
-[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_mwu6n"]
-[ext_resource type="Script" path="res://Levels/SceneShiftArea.gd" id="4_innc3"]
-[ext_resource type="Script" path="res://Levels/TestArea3D2.gd" id="5_eesd2"]
+[ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_kgiva"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
-albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3q3qc"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmaui"]
-transparency = 4
-no_depth_test = true
-albedo_color = Color(1, 1, 1, 0.498039)
-metallic = 1.0
-metallic_specular = 1.0
-emission_energy_multiplier = 16.0
-ao_light_affect = 1.0
-heightmap_scale = 16.0
-subsurf_scatter_strength = 1.0
-backlight = Color(1, 0, 0, 1)
-refraction_scale = 1.0
-proximity_fade_distance = 10.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_glewr"]
-size = Vector3(4, 4, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3ourv"]
-size = Vector3(3, 3, 3)
+albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
 
 [node name="OverWorld" type="Node3D"]
 
@@ -40,59 +15,114 @@ size = Vector3(3, 3, 3)
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+[node name="Player" parent="." instance=ExtResource("1_pn5lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.5, 48)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="RotationRoomInside" type="CSGCombiner3D" parent="Level"]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Level/RotationRoomInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585365, -0.0279102, 0.00689697)
+flip_faces = true
+radius = 16.0
+radial_segments = 64
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
+use_collision = true
+size = Vector3(24, 1, 24)
+
+[node name="LevelCombiner" type="CSGCombiner3D" parent="Level"]
+use_collision = true
+
+[node name="RotationRoom2" type="CSGCombiner3D" parent="Level/LevelCombiner"]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Level/LevelCombiner/RotationRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585365, -0.0279102, 0.00689697)
+radius = 16.0
+radial_segments = 64
+
+[node name="BasicStructure" type="CSGCombiner3D" parent="Level/LevelCombiner"]
+
+[node name="Floor" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(32, 1, 32)
+size = Vector3(64, 1, 64)
 
-[node name="Player" parent="." instance=ExtResource("1_pn5lm")]
+[node name="Floor2" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
 
-[node name="TestArea3D" type="Area3D" parent="."]
-script = ExtResource("3_mwu6n")
+[node name="Floor3" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
-shape = SubResource("BoxShape3D_3q3qc")
+[node name="Floor4" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
 
-[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
-material_override = SubResource("StandardMaterial3D_gmaui")
-mesh = SubResource("BoxMesh_glewr")
-skeleton = NodePath("../..")
+[node name="Wall1" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
 
-[node name="TestArea3D2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19278, 0, 0)
-script = ExtResource("5_eesd2")
+[node name="Wall2" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
-shape = SubResource("BoxShape3D_3q3qc")
+[node name="Wall3" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
 
-[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
-material_override = SubResource("StandardMaterial3D_gmaui")
-mesh = SubResource("BoxMesh_glewr")
-skeleton = NodePath("../..")
+[node name="Wall4" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
 
-[node name="SceneShiftArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 5)
-top_level = true
-script = ExtResource("4_innc3")
+[node name="Wall5" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, 32.0237)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SceneShiftArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
-shape = SubResource("BoxShape3D_3ourv")
+[node name="Wall6" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, -31.9763)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
 
-[node name="TriggerBox" type="MeshInstance3D" parent="SceneShiftArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8)
-material_override = SubResource("StandardMaterial3D_gmaui")
-mesh = SubResource("BoxMesh_glewr")
-skeleton = NodePath("../..")
+[node name="Wall7" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9064, -31.8218, 0.0236969)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
 
-[connection signal="body_entered" from="TestArea3D" to="TestArea3D" method="_on_body_entered"]
-[connection signal="body_exited" from="TestArea3D" to="TestArea3D" method="_on_body_exited"]
-[connection signal="body_entered" from="TestArea3D2" to="TestArea3D2" method="_on_body_entered"]
-[connection signal="body_entered" from="SceneShiftArea" to="SceneShiftArea" method="_on_body_entered"]
+[node name="Wall8" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0936, -31.8218, 0.0236969)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/LevelCombiner"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 12, 4.16007, 12)
+operation = 2
+flip_faces = true
+size = Vector3(6, 6, 8)
+
+[node name="AudasiteSphere" parent="." instance=ExtResource("3_kgiva")]
+transform = Transform3D(-0.707107, -1.60554e-24, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, -4.93259e-16, -0.707107, 32, 10, 32)
 
 [editable path="Player"]
