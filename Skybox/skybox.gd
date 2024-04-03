@@ -10,6 +10,8 @@ func _process(delta: float) -> void:
 		environment.sky.sky_material.panorama = sky
 	if Input.is_action_just_pressed("right_bracket"):
 		environment.sky.sky_material.panorama = space
+	if Input.is_action_just_pressed("cube"):
+		environment.sky.sky_material.panorama = cube
 
 func switch_skybox(skybox: String) -> void:
 	if skybox == "sky":

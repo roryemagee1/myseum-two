@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://b5gg77uquru44"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_c6dcn"]
-[ext_resource type="Script" path="res://Levels/Environment.gd" id="2_k6g2r"]
-[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_g4g3q"]
-[ext_resource type="Script" path="res://Levels/LevelRotator.gd" id="3_l2dwi"]
+[ext_resource type="Script" path="res://Levels/Other/Environment.gd" id="2_k6g2r"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D.gd" id="3_g4g3q"]
+[ext_resource type="Script" path="res://Levels/Other/LevelRotator.gd" id="3_l2dwi"]
 [ext_resource type="PackedScene" uid="uid://3fttmba4mudi" path="res://Player/gravity_player.tscn" id="3_x0014"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]

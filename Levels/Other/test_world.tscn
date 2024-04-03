@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_h1nue"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_8lcu8"]
-[ext_resource type="Script" path="res://Levels/TestArea3D.gd" id="3_w2eor"]
-[ext_resource type="Script" path="res://Levels/TestArea3D2.gd" id="4_du64k"]
-[ext_resource type="Script" path="res://Levels/SceneShiftArea.gd" id="5_stx8t"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D.gd" id="3_w2eor"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D2.gd" id="4_du64k"]
+[ext_resource type="Script" path="res://Levels/Other/SceneShiftArea.gd" id="5_stx8t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
@@ -32,7 +32,7 @@ size = Vector3(4, 4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ourv"]
 size = Vector3(3, 3, 3)
 
-[node name="OverWorld" type="Node3D"]
+[node name="TestWorld" type="Node3D"]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("1_h1nue")]
 

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://db6l6nmjs2n1s"]
+
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/Cubit.gd" id="1_8b4xk"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/Cube.gd" id="2_ikv7t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtcta"]
+size = Vector3(4, 4, 4)
+
+[node name="Cubit" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("1_8b4xk")
+
+[node name="Cube" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+top_level = true
+script = ExtResource("2_ikv7t")
+
+[node name="CubeBox" type="CSGBox3D" parent="Cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4)
+size = Vector3(4, 4, 4)
+
+[node name="CubeArea" type="Area3D" parent="Cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4)
+
+[node name="CubeCollider" type="CollisionShape3D" parent="Cube/CubeArea"]
+shape = SubResource("BoxShape3D_gtcta")

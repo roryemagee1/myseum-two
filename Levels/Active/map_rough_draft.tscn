@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbb2t763oq1uc"]
 
-[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_71p87"]
-[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_102r5"]
-[ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_uacee"]
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_g8n24"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_d3ckj"]
+[ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_tdioc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
@@ -13,13 +13,13 @@ albedo_color = Color(1, 1, 1, 0)
 
 [node name="Museum" type="Node3D"]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_71p87")]
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_g8n24")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("2_102r5")]
+[node name="Player" parent="." instance=ExtResource("2_d3ckj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 1.5, 56)
 
 [node name="Level" type="Node3D" parent="."]
@@ -89,14 +89,14 @@ material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
-[node name="Floor10" type="CSGBox3D" parent="Level/Floors/Top"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -96)
+[node name="Floor11" type="CSGBox3D" parent="Level/Floors/Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
-[node name="Floor11" type="CSGBox3D" parent="Level/Floors/Top"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
+[node name="Floor10" type="CSGBox3D" parent="Level/Floors/Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
@@ -136,24 +136,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 64, 2.08165e-12)
 
 [node name="Floor" type="CSGBox3D" parent="Level/Floors/Roof"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor2" type="CSGBox3D" parent="Level/Floors/Roof"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor3" type="CSGBox3D" parent="Level/Floors/Roof"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor4" type="CSGBox3D" parent="Level/Floors/Roof"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
@@ -190,12 +194,6 @@ size = Vector3(64, 1, 64)
 
 [node name="Floor10" type="CSGBox3D" parent="Level/Floors/Roof"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -96)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Floor11" type="CSGBox3D" parent="Level/Floors/Roof"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
@@ -250,7 +248,7 @@ mode = 1
 spin_degrees = 360.0
 spin_sides = 8
 
-[node name="AudasiteSphere" parent="Level/Floors/Middle/External/Courtyard" instance=ExtResource("3_uacee")]
+[node name="AudasiteSphere" parent="Level/Floors/Middle/External/Courtyard" instance=ExtResource("3_tdioc")]
 transform = Transform3D(-0.707107, -1.60554e-24, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, -4.93259e-16, -0.707107, 2.08165e-12, 16, 2.08165e-12)
 
 [node name="Porch" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
@@ -278,34 +276,28 @@ use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor9" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -96)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0116, 0.0694294, -109.21)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(64, 1, 37.44)
 
 [node name="Floor10" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -96)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -109.28)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Floor11" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(64, 1, 37.44)
 
 [node name="Floor12" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.28, 2.08165e-12, -32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(37.44, 1, 64)
 
 [node name="Floor13" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, 32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.28, 2.08165e-12, 32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(37.44, 1, 64)
 
 [node name="Floor14" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, 96)
@@ -314,16 +306,16 @@ use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor15" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 96)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 109.28)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(64, 1, 37.44)
 
 [node name="Floor16" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9669, -8, 96.029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -8, 114.72)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(64, 1, 64)
+size = Vector3(64, 1, 26.56)
 
 [node name="Wall1" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
@@ -338,8 +330,6 @@ visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(1, 64, 64)
-
-[node name="Ramps" type="CSGCombiner3D" parent="Level/Floors/Middle"]
 
 [node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/Middle"]
 operation = 2
@@ -604,10 +594,10 @@ use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Porch" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 2.08165e-12, 64)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 2.08165e-12, 56)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
-size = Vector3(32, 1, 32)
+size = Vector3(16, 1, 16)
 
 [node name="BuildingFaceOutcropping" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
 transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 55.6602, 23.0146, 55.6395)
@@ -816,29 +806,83 @@ polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e
 operation = 2
 size = Vector3(16, 1, 16)
 
+[node name="Tower" type="CSGCombiner3D" parent="Level/Floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
+
+[node name="TopTower" type="CSGCombiner3D" parent="Level/Floors/Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 64, 2.08165e-12)
+
+[node name="Floor11T" type="CSGBox3D" parent="Level/Floors/Tower/TopTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="TowerBodyT" type="CSGPolygon3D" parent="Level/Floors/Tower/TopTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0304413, 0.470222, 0.00982666)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 1, 11, 1, 11, 63, 12, 63, 20, 32, 20, 1, 20, 2.08165e-12)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 4
+
+[node name="MiddleTower" type="CSGCombiner3D" parent="Level/Floors/Tower"]
+
+[node name="Floor11M" type="CSGBox3D" parent="Level/Floors/Tower/MiddleTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08165e-12, 0)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="TowerBodyM" type="CSGPolygon3D" parent="Level/Floors/Tower/MiddleTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 1, 20, 1, 20, 63, 21, 63, 22, 32, 31, 1, 31, 2.08165e-12)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 4
+
+[node name="BottomTower" type="CSGCombiner3D" parent="Level/Floors/Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -64, 2.08165e-12)
+
+[node name="Floor11B" type="CSGBox3D" parent="Level/Floors/Tower/BottomTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="TowerBodyB" type="CSGPolygon3D" parent="Level/Floors/Tower/BottomTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 1, 30, 1, 30, 62, 31, 63, 31, 32, 31, 1, 32, 2.08165e-12)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 4
+
 [node name="Basement" type="CSGCombiner3D" parent="Level/Floors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -64, 2.08165e-12)
 
 [node name="Floor" type="CSGBox3D" parent="Level/Floors/Basement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor2" type="CSGBox3D" parent="Level/Floors/Basement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor3" type="CSGBox3D" parent="Level/Floors/Basement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
 
 [node name="Floor4" type="CSGBox3D" parent="Level/Floors/Basement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+visible = false
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
@@ -974,12 +1018,6 @@ size = Vector3(64, 1, 64)
 
 [node name="Floor10" type="CSGBox3D" parent="Level/Floors/Bottom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -96)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Floor11" type="CSGBox3D" parent="Level/Floors/Bottom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
