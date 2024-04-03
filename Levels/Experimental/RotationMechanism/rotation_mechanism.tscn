@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dk5i3fgonip2d"]
+[gd_scene load_steps=34 format=3 uid="uid://dk5i3fgonip2d"]
 
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_21h1n"]
 [ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/RotationEnvironment.gd" id="2_qspqd"]
@@ -79,6 +79,12 @@ size = Vector3(16, -8, 16)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rv43t"]
 size = Vector3(16, 8, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtt0x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2hqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3y1ds"]
 
 [node name="RotationMechanism" type="Node3D"]
 
@@ -186,6 +192,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -4)
 script = ExtResource("10_pfb43")
 
+[node name="Cubit2" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit2/Cube" index="1"]
+script = ExtResource("10_pfb43")
+front_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit2/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_dtt0x")
+
+[node name="Cubit3" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit3/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, -4)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit3/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, -4)
+script = ExtResource("10_pfb43")
+top_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit3/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_u2hqo")
+
+[node name="Cubit4" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit4/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, 4)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit4/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, 4)
+script = ExtResource("10_pfb43")
+front_zone = false
+top_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit4/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_3y1ds")
+
 [connection signal="area_entered" from="RotationEnvironment/Cubit/Cube/CubeArea" to="RotationEnvironment/Cubit/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit2/Cube/CubeArea" to="RotationEnvironment/Cubit2/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit3/Cube/CubeArea" to="RotationEnvironment/Cubit3/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit4/Cube/CubeArea" to="RotationEnvironment/Cubit4/Cube/CubeArea" method="_on_area_entered"]
 
 [editable path="RotationEnvironment/Cubit"]
+[editable path="RotationEnvironment/Cubit2"]
+[editable path="RotationEnvironment/Cubit3"]
+[editable path="RotationEnvironment/Cubit4"]

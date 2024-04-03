@@ -2,9 +2,9 @@ extends Area3D
 
 @onready var cubit: Node3D = $RotationEnvironment/Cubit
 
-var front_zone: bool = true
-var top_zone: bool = true
-var right_zone: bool = true
+@export var front_zone: bool = true
+@export var top_zone: bool = true
+@export var right_zone: bool = true
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.zone_name == "front_zone":
