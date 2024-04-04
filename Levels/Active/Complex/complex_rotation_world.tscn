@@ -1,8 +1,52 @@
-[gd_scene load_steps=25 format=3 uid="uid://c28h07d18l60y"]
+[gd_scene load_steps=40 format=3 uid="uid://c28h07d18l60y"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_0swti"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_xrp3r"]
+[ext_resource type="Script" path="res://Levels/Active/Complex/RoomCube.gd" id="3_7hs10"]
+[ext_resource type="Script" path="res://Levels/Active/Complex/Room.gd" id="3_20av2"]
 [ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_efqqj"]
+[ext_resource type="Script" path="res://Levels/Active/Complex/Zone.gd" id="3_nyqxx"]
+[ext_resource type="Script" path="res://Levels/Active/Complex/Rooms.gd" id="3_r8jso"]
+[ext_resource type="Script" path="res://Levels/Active/Complex/RoomArea.gd" id="5_kkhek"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dmjs"]
+size = Vector3(64, 128, 128)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv73v"]
+transparency = 1
+albedo_color = Color(0.498039, 0.498039, 0.498039, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gm3ar"]
+size = Vector3(63.5, 128, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lvwd"]
+size = Vector3(64, 128, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6pu47"]
+size = Vector3(128, 64, 128)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnrff"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ls4e4"]
+size = Vector3(128, 63.5, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjga7"]
+size = Vector3(128, 64, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1wvl"]
+size = Vector3(128, 128, 64)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63qfa"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5dxtd"]
+size = Vector3(128, 128, 63.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4k0f0"]
+size = Vector3(128, 128, 64)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ko13"]
 transparency = 1
@@ -13,65 +57,56 @@ transparency = 1
 albedo_color = Color(0, 1, 1, 0.498039)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r566w"]
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey6jh"]
 transparency = 1
 albedo_color = Color(1, 1, 0, 0.498039)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwtok"]
+size = Vector3(63.5, 63.5, 63.5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vone8"]
 transparency = 1
 albedo_color = Color(1, 0, 1, 0.498039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nx70"]
+size = Vector3(63.5, 63.5, 63.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhlaj"]
 transparency = 1
 albedo_color = Color(0, 1, 0, 0.498039)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bckx"]
+size = Vector3(63.5, 63.5, 63.5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guo8v"]
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.498039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1vhv"]
+size = Vector3(63.5, 63.5, 63.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybm5f"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.498039)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gh8xf"]
+size = Vector3(63.5, 63.5, 63.5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbyp0"]
 transparency = 1
 albedo_color = Color(0, 0, 1, 0.498039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cia3r"]
+size = Vector3(63.5, 63.5, 63.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cq38"]
 transparency = 1
 albedo_color = Color(0, 0, 0, 0.498039)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5lvwd"]
-size = Vector3(64, 128, 128)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv73v"]
-transparency = 1
-albedo_color = Color(0.498039, 0.498039, 0.498039, 0.498039)
-
-[sub_resource type="BoxMesh" id="BoxMesh_gm3ar"]
-size = Vector3(64, 128, 128)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t1wvl"]
-size = Vector3(128, 128, 64)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63qfa"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.498039)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5dxtd"]
-size = Vector3(128, 128, 64)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6pu47"]
-size = Vector3(128, 64, 128)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnrff"]
-transparency = 1
-albedo_color = Color(0, 0, 0, 0.498039)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ls4e4"]
-size = Vector3(128, 64, 128)
+[sub_resource type="BoxShape3D" id="BoxShape3D_df2yk"]
+size = Vector3(63.5, 63.5, 63.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
@@ -89,14 +124,104 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_xrp3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 1.5, 56)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12)
 
 [node name="Level" type="Node3D" parent="."]
 
 [node name="Museum" type="Node3D" parent="Level"]
 
+[node name="Zones" type="Node3D" parent="Level/Museum"]
+
+[node name="ZoneXPlus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 2.08165e-12)
+
+[node name="ZoneXPlusArea" type="Area3D" parent="Level/Museum/Zones/ZoneXPlus"]
+script = ExtResource("3_nyqxx")
+zone_name = "x_plus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneXPlus/ZoneXPlusArea"]
+shape = SubResource("BoxShape3D_7dmjs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneXPlus/ZoneXPlusArea"]
+material_override = SubResource("StandardMaterial3D_bv73v")
+mesh = SubResource("BoxMesh_gm3ar")
+
+[node name="ZoneXMinus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 2.08165e-12)
+
+[node name="ZoneXMinusArea" type="Area3D" parent="Level/Museum/Zones/ZoneXMinus"]
+script = ExtResource("3_nyqxx")
+zone_name = "x_minus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneXMinus/ZoneXMinusArea"]
+shape = SubResource("BoxShape3D_5lvwd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneXMinus/ZoneXMinusArea"]
+material_override = SubResource("StandardMaterial3D_bv73v")
+mesh = SubResource("BoxMesh_gm3ar")
+
+[node name="ZoneYPlus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 2.08165e-12)
+
+[node name="ZoneYPlusArea" type="Area3D" parent="Level/Museum/Zones/ZoneYPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("3_nyqxx")
+zone_name = "y_plus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneYPlus/ZoneYPlusArea"]
+shape = SubResource("BoxShape3D_6pu47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneYPlus/ZoneYPlusArea"]
+material_override = SubResource("StandardMaterial3D_qnrff")
+mesh = SubResource("BoxMesh_ls4e4")
+
+[node name="ZoneYMinus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -32, 2.08165e-12)
+
+[node name="ZoneYMinusArea" type="Area3D" parent="Level/Museum/Zones/ZoneYMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("3_nyqxx")
+zone_name = "y_minus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneYMinus/ZoneYMinusArea"]
+shape = SubResource("BoxShape3D_kjga7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneYMinus/ZoneYMinusArea"]
+material_override = SubResource("StandardMaterial3D_qnrff")
+mesh = SubResource("BoxMesh_ls4e4")
+
+[node name="ZoneZPlus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 32)
+
+[node name="ZoneZPlusArea" type="Area3D" parent="Level/Museum/Zones/ZoneZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("3_nyqxx")
+zone_name = "z_plus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneZPlus/ZoneZPlusArea"]
+shape = SubResource("BoxShape3D_t1wvl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneZPlus/ZoneZPlusArea"]
+material_override = SubResource("StandardMaterial3D_63qfa")
+mesh = SubResource("BoxMesh_5dxtd")
+
+[node name="ZoneZMinus" type="Node3D" parent="Level/Museum/Zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -32)
+
+[node name="ZoneZMinusArea" type="Area3D" parent="Level/Museum/Zones/ZoneZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("3_nyqxx")
+zone_name = "z_minus"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneZMinus/ZoneZMinusArea"]
+shape = SubResource("BoxShape3D_4k0f0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneZMinus/ZoneZMinusArea"]
+material_override = SubResource("StandardMaterial3D_63qfa")
+mesh = SubResource("BoxMesh_5dxtd")
+
 [node name="Rooms" type="Node3D" parent="Level/Museum"]
-visible = false
+script = ExtResource("3_r8jso")
 
 [node name="RotationRoom" type="Node3D" parent="Level/Museum/Rooms"]
 
@@ -109,229 +234,196 @@ material_override = SubResource("StandardMaterial3D_6ko13")
 operation = 2
 size = Vector3(16, 16, 16)
 
-[node name="UpperRoom" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/UpperRoom"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/UpperRoom/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/UpperRoom/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_nsxc2")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/UpperRoom/Room/Scene"]
+[node name="RoomArea" type="Area3D" parent="Level/Museum/Rooms/RoomCube/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/UpperRoom/Room/Scene/Area3D"]
+[node name="RoomCollider" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube/Room/Scene/RoomArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
 shape = SubResource("BoxShape3D_r566w")
 
-[node name="UpperRoom2" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube2" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/UpperRoom2"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube2"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/UpperRoom2/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube2/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, -32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/UpperRoom2/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube2/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_ey6jh")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/UpperRoom2/Room/Scene"]
+[node name="RoomArea2" type="Area3D" parent="Level/Museum/Rooms/RoomCube2/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+z_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/UpperRoom2/Room/Scene/Area3D"]
+[node name="RoomCollider2" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube2/Room/Scene/RoomArea2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_rwtok")
 
-[node name="UpperRoom3" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube3" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/UpperRoom3"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube3"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/UpperRoom3/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube3/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, -32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/UpperRoom3/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube3/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_vone8")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/UpperRoom3/Room/Scene"]
+[node name="RoomArea3" type="Area3D" parent="Level/Museum/Rooms/RoomCube3/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+x_plus = false
+z_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/UpperRoom3/Room/Scene/Area3D"]
+[node name="RoomCollider3" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube3/Room/Scene/RoomArea3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_1nx70")
 
-[node name="UpperRoom4" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube4" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/UpperRoom4"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube4"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/UpperRoom4/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube4/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, 32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/UpperRoom4/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube4/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_bhlaj")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/UpperRoom4/Room/Scene"]
+[node name="RoomArea4" type="Area3D" parent="Level/Museum/Rooms/RoomCube4/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+x_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/UpperRoom4/Room/Scene/Area3D"]
+[node name="RoomCollider4" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube4/Room/Scene/RoomArea4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_6bckx")
 
-[node name="LowerRoom" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube5" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/LowerRoom"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube5"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/LowerRoom/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube5/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -32, 32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/LowerRoom/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube5/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_guo8v")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/LowerRoom/Room/Scene"]
+[node name="RoomArea5" type="Area3D" parent="Level/Museum/Rooms/RoomCube5/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+y_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/LowerRoom/Room/Scene/Area3D"]
+[node name="RoomCollider5" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube5/Room/Scene/RoomArea5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_v1vhv")
 
-[node name="LowerRoom2" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube6" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/LowerRoom2"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube6"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/LowerRoom2/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube6/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -32, -32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/LowerRoom2/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube6/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_ybm5f")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/LowerRoom2/Room/Scene"]
+[node name="RoomArea6" type="Area3D" parent="Level/Museum/Rooms/RoomCube6/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+y_plus = false
+z_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/LowerRoom2/Room/Scene/Area3D"]
+[node name="RoomCollider6" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube6/Room/Scene/RoomArea6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_gh8xf")
 
-[node name="LowerRoom3" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube7" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/LowerRoom3"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube7"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/LowerRoom3/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube7/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -32, -32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/LowerRoom3/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube7/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_vbyp0")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/LowerRoom3/Room/Scene"]
+[node name="RoomArea7" type="Area3D" parent="Level/Museum/Rooms/RoomCube7/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+x_plus = false
+y_plus = false
+z_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/LowerRoom3/Room/Scene/Area3D"]
+[node name="RoomCollider7" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube7/Room/Scene/RoomArea7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
+shape = SubResource("BoxShape3D_cia3r")
 
-[node name="LowerRoom4" type="Node3D" parent="Level/Museum/Rooms"]
+[node name="RoomCube8" type="Node3D" parent="Level/Museum/Rooms"]
+script = ExtResource("3_7hs10")
 
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/LowerRoom4"]
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube8"]
+top_level = true
+script = ExtResource("3_20av2")
 
-[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/LowerRoom4/Room"]
+[node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube8/Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -32, 32)
 
-[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/LowerRoom4/Room/Scene"]
+[node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube8/Room/Scene"]
 material_override = SubResource("StandardMaterial3D_0cq38")
-size = Vector3(64, 64, 64)
+size = Vector3(63.5, 63.5, 63.5)
 
-[node name="Area3D" type="Area3D" parent="Level/Museum/Rooms/LowerRoom4/Room/Scene"]
+[node name="RoomArea8" type="Area3D" parent="Level/Museum/Rooms/RoomCube8/Room/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("5_kkhek")
+x_plus = false
+y_plus = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Rooms/LowerRoom4/Room/Scene/Area3D"]
+[node name="RoomCollider8" type="CollisionShape3D" parent="Level/Museum/Rooms/RoomCube8/Room/Scene/RoomArea8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-shape = SubResource("BoxShape3D_r566w")
-
-[node name="Zones" type="Node3D" parent="Level/Museum"]
-
-[node name="ZoneXPlus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 2.08165e-12)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneXPlus"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneXPlus/Area3D"]
-shape = SubResource("BoxShape3D_5lvwd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneXPlus/Area3D"]
-material_override = SubResource("StandardMaterial3D_bv73v")
-mesh = SubResource("BoxMesh_gm3ar")
-
-[node name="ZoneXMinus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 2.08165e-12)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneXMinus"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneXMinus/Area3D"]
-shape = SubResource("BoxShape3D_5lvwd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneXMinus/Area3D"]
-material_override = SubResource("StandardMaterial3D_bv73v")
-mesh = SubResource("BoxMesh_gm3ar")
-
-[node name="ZoneZPlus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 32)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneZPlus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneZPlus/Area3D"]
-shape = SubResource("BoxShape3D_t1wvl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneZPlus/Area3D"]
-material_override = SubResource("StandardMaterial3D_63qfa")
-mesh = SubResource("BoxMesh_5dxtd")
-
-[node name="ZoneZMinus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -32)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneZMinus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneZMinus/Area3D"]
-shape = SubResource("BoxShape3D_t1wvl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneZMinus/Area3D"]
-material_override = SubResource("StandardMaterial3D_63qfa")
-mesh = SubResource("BoxMesh_5dxtd")
-
-[node name="ZoneYPlus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 2.08165e-12)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneYPlus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneYPlus/Area3D"]
-shape = SubResource("BoxShape3D_6pu47")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneYPlus/Area3D"]
-material_override = SubResource("StandardMaterial3D_qnrff")
-mesh = SubResource("BoxMesh_ls4e4")
-
-[node name="ZoneYMinus" type="Node3D" parent="Level/Museum/Zones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -32, 2.08165e-12)
-
-[node name="Area3D" type="Area3D" parent="Level/Museum/Zones/ZoneYMinus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Museum/Zones/ZoneYMinus/Area3D"]
-shape = SubResource("BoxShape3D_6pu47")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Museum/Zones/ZoneYMinus/Area3D"]
-material_override = SubResource("StandardMaterial3D_qnrff")
-mesh = SubResource("BoxMesh_ls4e4")
+shape = SubResource("BoxShape3D_df2yk")
 
 [node name="Floors" type="CSGCombiner3D" parent="Level"]
+visible = false
 use_collision = true
 
 [node name="Rotator" type="CSGCombiner3D" parent="Level/Floors"]
@@ -1460,5 +1552,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0582657, 0, -0.029232)
 material_override = SubResource("StandardMaterial3D_gd6yk")
 use_collision = true
 size = Vector3(256, 256, 256)
+
+[connection signal="area_entered" from="Level/Museum/Rooms/RoomCube/Room/Scene/RoomArea" to="Level/Museum/Rooms/RoomCube/Room/Scene/RoomArea" method="_on_area_entered"]
 
 [editable path="Player"]

@@ -228,12 +228,27 @@ top_zone = false
 [node name="CubeCollider" parent="RotationEnvironment/Cubit4/Cube/CubeArea" index="0"]
 shape = SubResource("BoxShape3D_3y1ds")
 
+[node name="Cubit5" parent="RotationEnvironment/Cubit4" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit4/Cubit5/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01019, 4, -4.00069)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit4/Cubit5/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -4)
+script = ExtResource("10_pfb43")
+right_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_3y1ds")
+
 [connection signal="area_entered" from="RotationEnvironment/Cubit/Cube/CubeArea" to="RotationEnvironment/Cubit/Cube/CubeArea" method="_on_area_entered"]
 [connection signal="area_entered" from="RotationEnvironment/Cubit2/Cube/CubeArea" to="RotationEnvironment/Cubit2/Cube/CubeArea" method="_on_area_entered"]
 [connection signal="area_entered" from="RotationEnvironment/Cubit3/Cube/CubeArea" to="RotationEnvironment/Cubit3/Cube/CubeArea" method="_on_area_entered"]
 [connection signal="area_entered" from="RotationEnvironment/Cubit4/Cube/CubeArea" to="RotationEnvironment/Cubit4/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" to="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" method="_on_area_entered"]
 
 [editable path="RotationEnvironment/Cubit"]
 [editable path="RotationEnvironment/Cubit2"]
 [editable path="RotationEnvironment/Cubit3"]
 [editable path="RotationEnvironment/Cubit4"]
+[editable path="RotationEnvironment/Cubit4/Cubit5"]

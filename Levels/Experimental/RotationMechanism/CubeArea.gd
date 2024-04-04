@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var cubit: Node3D = $RotationEnvironment/Cubit
+#@onready var cubit: Node3D = $RotationEnvironment/Cubit
 
 @export var front_zone: bool = true
 @export var top_zone: bool = true
