@@ -43,12 +43,12 @@ albedo_color = Color(0, 0, 1, 0.498039)
 transparency = 1
 albedo_color = Color(0, 0, 0, 0.498039)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd6yk"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
-albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
 
 [node name="Museum" type="Node3D"]
 
@@ -78,18 +78,20 @@ size = Vector3(16, 16, 16)
 script = ExtResource("3_qmxit")
 
 [node name="Rooms" type="Node3D" parent="Level/Museum"]
+top_level = true
 script = ExtResource("4_vwy6e")
 
 [node name="RoomCube" type="Node3D" parent="Level/Museum/Rooms"]
-
-[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube"]
 top_level = true
 
+[node name="Room" type="Node3D" parent="Level/Museum/Rooms/RoomCube"]
+
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube/Room/Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 32)
+visible = false
 material_override = SubResource("StandardMaterial3D_nsxc2")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -99,10 +101,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube2/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, -32)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube2/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_ey6jh")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -112,10 +114,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube3/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, -32)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube3/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_vone8")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -125,10 +127,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube4/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, 32)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube4/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_bhlaj")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -138,10 +140,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube5/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -32, 32)
-visible = false
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube5/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_guo8v")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -151,10 +153,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube6/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -32, -32)
-visible = false
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube6/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_ybm5f")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -164,10 +166,10 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube7/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -32, -32)
-visible = false
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube7/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_vbyp0")
 size = Vector3(63.5, 63.5, 63.5)
 
@@ -177,12 +179,504 @@ size = Vector3(63.5, 63.5, 63.5)
 top_level = true
 
 [node name="Scene" type="Node3D" parent="Level/Museum/Rooms/RoomCube8/Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -32, 32)
-visible = false
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="ScenePlaceholder" type="CSGBox3D" parent="Level/Museum/Rooms/RoomCube8/Room/Scene"]
+visible = false
 material_override = SubResource("StandardMaterial3D_0cq38")
 size = Vector3(63.5, 63.5, 63.5)
+
+[node name="BuildingCubit" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+
+[node name="Entrance" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit"]
+
+[node name="BuildingFace" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit/Entrance"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.65, 23, 47.65)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(45, 45, 1)
+
+[node name="EntranceCutout" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit/Entrance"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.5974, 8.11076, 47.7153)
+material_override = SubResource("StandardMaterial3D_yppem")
+operation = 2
+use_collision = true
+size = Vector3(30, 15, 2)
+
+[node name="Floor" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="BuildingFaceOutcropping" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 55.6602, 23.0146, 55.6395)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(22.2, 8, 1)
+
+[node name="BuildingSide" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 45, 1)
+
+[node name="BuildingSideOutcrop" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 24, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(48, 16, 1)
+
+[node name="BuildingSide2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.4869, 23.0158, 16.0131)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 32)
+
+[node name="BuildingSide2Outcrop2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.5, 23, 24)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 16, 48)
+
+[node name="Ornament" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 56.1016, 16, 55.6108)
+polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
+depth = 12.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 56.0485, 16, 43.594)
+polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
+depth = 12.0
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 44.267, 47, 51.911)
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament/CSGCombiner3D2"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0, 0, -8)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
+depth = 8.0
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament/CSGCombiner3D2"]
+transform = Transform3D(1, -3.85686e-22, 3.91366e-22, 3.91366e-22, 1, -3.91366e-22, -3.85686e-22, 3.85686e-22, 1, 0, 0, 0)
+operation = 1
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
+depth = 8.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ornament/CSGCombiner3D2"]
+transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, -3.48787e-16, -3.09086e-08, 0.707107, 0.707107, 4.56001, 0, -2.75869)
+polygon = PackedVector2Array(0, 0, 16, 16, 6, 2.08165e-12, 16, 6, 32, 2.08165e-12)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit"]
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit"]
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit2" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+
+[node name="Floor2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.5, 23, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 23, -63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit2"]
+transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit2/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit2/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit2/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit2/Ceiling"]
+transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, -5.45451e-23, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit2"]
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+
+[node name="Floor3" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, -63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Wall2s" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit3"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit3/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit3/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit3/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit3/Ceiling"]
+transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.71114e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 31.5, 44.5, 64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut3" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit3"]
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit4" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+
+[node name="Floor4" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit4"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit4/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit4/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit4/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit4/Ceiling"]
+transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 4.93259e-16, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut4" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit4"]
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit5" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 0, 0, 0)
+
+[node name="Entrance" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+
+[node name="BuildingFace" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5/Entrance"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.65, 23, 47.65)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(45, 45, 1)
+
+[node name="EntranceCutout" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5/Entrance"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.5974, 8.11076, 47.7153)
+material_override = SubResource("StandardMaterial3D_yppem")
+operation = 2
+use_collision = true
+size = Vector3(30, 15, 2)
+
+[node name="Floor" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="BuildingFaceOutcropping" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 55.6602, 23.0146, 55.6395)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(22.2, 8, 1)
+
+[node name="BuildingSide" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 45, 1)
+
+[node name="BuildingSideOutcrop" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 24, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(48, 16, 1)
+
+[node name="BuildingSide2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.4869, 23.0158, 16.0131)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 32)
+
+[node name="BuildingSide2Outcrop2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.5, 23, 24)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 16, 48)
+
+[node name="Ornament" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 56.1016, 16, 55.6108)
+polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
+depth = 12.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 56.0485, 16, 43.594)
+polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
+depth = 12.0
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 44.267, 47, 51.911)
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament/CSGCombiner3D2"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0, 0, -8)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
+depth = 8.0
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament/CSGCombiner3D2"]
+transform = Transform3D(1, -3.85686e-22, 3.91366e-22, 3.91366e-22, 1, -3.91366e-22, -3.85686e-22, 3.85686e-22, 1, 0, 0, 0)
+operation = 1
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
+depth = 8.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ornament/CSGCombiner3D2"]
+transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, -3.48787e-16, -3.09086e-08, 0.707107, 0.707107, 4.56001, 0, -2.75869)
+polygon = PackedVector2Array(0, 0, 16, 16, 6, 2.08165e-12, 16, 6, 32, 2.08165e-12)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit5/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit5"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit6" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 0, 0, 0)
+
+[node name="Floor2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.5, 23, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 23, -63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit6"]
+transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit6/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit6/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit6/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit6/Ceiling"]
+transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, -5.45451e-23, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit7" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 0, 0, 0)
+
+[node name="Floor3" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, -63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Wall2s" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit7"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit7/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit7/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit7/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit7/Ceiling"]
+transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.71114e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 31.5, 44.5, 64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut3" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit7"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
+operation = 2
+size = Vector3(16, 1, 16)
+
+[node name="BuildingCubit8" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 0, 0, 0)
+
+[node name="Floor4" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, 63.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 45, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 45, 64)
+
+[node name="Ceiling" type="CSGCombiner3D" parent="Level/Museum/Rooms/BuildingCubit8"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0, 0)
+
+[node name="Roof" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit8/Ceiling"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof2" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit8/Ceiling"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
+depth = 32.0
+
+[node name="Roof3" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit8/Ceiling"]
+transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
+polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
+depth = 45.0
+
+[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Museum/Rooms/BuildingCubit8/Ceiling"]
+transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 4.93259e-16, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
+polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
+
+[node name="ControllerBoxCutOut4" type="CSGBox3D" parent="Level/Museum/Rooms/BuildingCubit8"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
+operation = 2
+size = Vector3(16, 1, 16)
 
 [node name="Outside" type="Node3D" parent="Level"]
 script = ExtResource("5_d3i2t")
@@ -476,7 +970,7 @@ spin_sides = 8
 transform = Transform3D(-0.707107, -1.60554e-24, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, -4.93259e-16, -0.707107, 2.08165e-12, 16, 2.08165e-12)
 
 [node name="Porch" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 16, -16)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(32, 1, 32)
@@ -541,20 +1035,6 @@ material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 26.56)
 
-[node name="Wall1" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
-visible = false
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 64, 64)
-
-[node name="Wall5" type="CSGBox3D" parent="Level/Floors/Middle/External"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, 32.0237)
-visible = false
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 64, 64)
-
 [node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/Middle"]
 operation = 2
 size = Vector3(16, 1, 16)
@@ -565,504 +1045,8 @@ size = Vector3(16, 16, 16)
 
 [node name="OverBuilding" type="CSGCombiner3D" parent="Level/Floors"]
 
-[node name="BuildingCubit" type="CSGCombiner3D" parent="Level/Floors/OverBuilding"]
-
-[node name="Entrance" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-
-[node name="BuildingFace" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit/Entrance"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.65, 23, 47.65)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(45, 45, 1)
-
-[node name="EntranceCutout" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit/Entrance"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.5974, 8.11076, 47.7153)
-material_override = SubResource("StandardMaterial3D_yppem")
-operation = 2
-use_collision = true
-size = Vector3(30, 15, 2)
-
-[node name="Floor" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="BuildingFaceOutcropping" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 55.6602, 23.0146, 55.6395)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(22.2, 8, 1)
-
-[node name="BuildingSide" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(32, 45, 1)
-
-[node name="BuildingSideOutcrop" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 24, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(48, 16, 1)
-
-[node name="BuildingSide2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.4869, 23.0158, 16.0131)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 32)
-
-[node name="BuildingSide2Outcrop2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.5, 23, 24)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 16, 48)
-
-[node name="Ornament" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 56.1016, 16, 55.6108)
-polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
-depth = 12.0
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 56.0485, 16, 43.594)
-polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
-depth = 12.0
-
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 44.267, 47, 51.911)
-
-[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0, 0, -8)
-polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
-depth = 8.0
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(1, -3.85686e-22, 3.91366e-22, 3.91366e-22, 1, -3.91366e-22, -3.85686e-22, 3.85686e-22, 1, 0, 0, 0)
-operation = 1
-polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
-depth = 8.0
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, -3.48787e-16, -3.09086e-08, 0.707107, 0.707107, 4.56001, 0, -2.75869)
-polygon = PackedVector2Array(0, 0, 16, 16, 6, 2.08165e-12, 16, 6, 32, 2.08165e-12)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit"]
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit2" type="CSGCombiner3D" parent="Level/Floors/OverBuilding"]
-
-[node name="Floor2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.5, 23, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Wall2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 23, -63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit2"]
-transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, -5.45451e-23, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit2"]
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Floors/OverBuilding"]
-visible = false
-
-[node name="Floor3" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, -63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Wall2s" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit3"]
-transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.71114e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 31.5, 44.5, 64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut3" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit3"]
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit4" type="CSGCombiner3D" parent="Level/Floors/OverBuilding"]
-
-[node name="Floor4" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Wall2" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/OverBuilding/BuildingCubit4"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/OverBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 4.93259e-16, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut4" type="CSGBox3D" parent="Level/Floors/OverBuilding/BuildingCubit4"]
-operation = 2
-size = Vector3(16, 1, 16)
-
 [node name="UnderBuilding" type="CSGCombiner3D" parent="Level/Floors"]
 transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -1, 4.17016e-15, 4.37114e-08, 0, 0, 0)
-
-[node name="BuildingCubit" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding"]
-
-[node name="Entrance" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-
-[node name="BuildingFace" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Entrance"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.65, 23, 47.65)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(45, 45, 1)
-
-[node name="EntranceCutout" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Entrance"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 47.5974, 8.11076, 47.7153)
-material_override = SubResource("StandardMaterial3D_yppem")
-operation = 2
-use_collision = true
-size = Vector3(30, 15, 2)
-
-[node name="Floor" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Porch" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 2.08165e-12, 56)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(16, 1, 16)
-
-[node name="BuildingFaceOutcropping" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 55.6602, 23.0146, 55.6395)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(22.2, 8, 1)
-
-[node name="BuildingSide" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(32, 45, 1)
-
-[node name="BuildingSideOutcrop" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 24, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(48, 16, 1)
-
-[node name="BuildingSide2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.4869, 23.0158, 16.0131)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 32)
-
-[node name="BuildingSide2Outcrop2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 63.5, 23, 24)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 16, 48)
-
-[node name="Ornament" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 56.1016, 16, 55.6108)
-polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
-depth = 12.0
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 56.0485, 16, 43.594)
-polygon = PackedVector2Array(0, 0, 12, 42, 12, 2.08165e-12)
-depth = 12.0
-
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 44.267, 47, 51.911)
-
-[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0, 0, -8)
-polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
-depth = 8.0
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(1, -3.85686e-22, 3.91366e-22, 3.91366e-22, 1, -3.91366e-22, -3.85686e-22, 3.85686e-22, 1, 0, 0, 0)
-operation = 1
-polygon = PackedVector2Array(0, 0, 2.08165e-12, 16, 8, 2.08165e-12)
-depth = 8.0
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ornament/CSGCombiner3D2"]
-transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, -3.48787e-16, -3.09086e-08, 0.707107, 0.707107, 4.56001, 0, -2.75869)
-polygon = PackedVector2Array(0, 0, 16, 16, 6, 2.08165e-12, 16, 6, 32, 2.08165e-12)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit2" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding"]
-
-[node name="Floor2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.5, 23, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Wall2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 23, -63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit2"]
-transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit2/Ceiling"]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, -5.45451e-23, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding"]
-visible = false
-
-[node name="Floor3" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, -63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Wall2s" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, -32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit3"]
-transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit3/Ceiling"]
-transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.71114e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 31.5, 44.5, 64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut3" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
-operation = 2
-size = Vector3(16, 1, 16)
-
-[node name="BuildingCubit4" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding"]
-
-[node name="Floor4" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 1, 64)
-
-[node name="Wall" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 23, 63.5)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(64, 45, 1)
-
-[node name="Wall2" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 23, 32)
-material_override = SubResource("StandardMaterial3D_yppem")
-use_collision = true
-size = Vector3(1, 45, 64)
-
-[node name="Ceiling" type="CSGCombiner3D" parent="Level/Floors/UnderBuilding/BuildingCubit4"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 0, 0, 0)
-
-[node name="Roof" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.08165e-12, 45.5, 2.08165e-12)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof2" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 64, 2.08165e-12, 64, 2.08165e-12, 2.08165e-12, 15)
-depth = 32.0
-
-[node name="Roof3" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(0.707107, -4.93259e-16, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, 1.60554e-24, 0.707107, 2.08165e-12, 45.5, 32)
-polygon = PackedVector2Array(2.08165e-12, 16, 45.2, 2.08165e-12, 45.2, 2.08165e-12, 2.08165e-12, 15)
-depth = 45.0
-
-[node name="CornerPiece" type="CSGPolygon3D" parent="Level/Floors/UnderBuilding/BuildingCubit4/Ceiling"]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 4.93259e-16, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -31.5, 44.5, -64)
-polygon = PackedVector2Array(0, 0, 23, 23, 23, 2.08165e-12, 23, 23, 46, 2.08165e-12)
-
-[node name="ControllerBoxCutOut4" type="CSGBox3D" parent="Level/Floors/UnderBuilding/BuildingCubit4"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
-operation = 2
-size = Vector3(16, 1, 16)
 
 [node name="Tower" type="CSGCombiner3D" parent="Level/Floors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, -96)
