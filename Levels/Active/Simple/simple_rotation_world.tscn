@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=19 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Levels/Active/Simple/Outside.gd" id="5_d3i2t"]
 [ext_resource type="Material" uid="uid://dtyrky5i0f2oj" path="res://Materials/Shaders/CelShader/obsidian.tres" id="5_mrkfa"]
 [ext_resource type="Material" uid="uid://dfmk7nfgok0fb" path="res://Materials/Shaders/CelShader/see_through_glass.tres" id="5_uusyq"]
+[ext_resource type="Material" uid="uid://kvihpn6pjqbt" path="res://Materials/Shaders/invisible_wall.tres" id="6_h1c7g"]
 [ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="6_k54p3"]
 [ext_resource type="Material" uid="uid://b0pl8yh43bqwi" path="res://Materials/Shaders/CelShader/cel_shade_with_outline.tres" id="11_3q7fd"]
 
@@ -81,6 +82,50 @@ script = ExtResource("3_qmxit")
 top_level = true
 script = ExtResource("4_vwy6e")
 
+[node name="VideoRoom" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
+use_collision = true
+
+[node name="ViewPlatform" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -13, 2.08165e-12)
+use_collision = true
+size = Vector3(16, 9, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="ViewPlatform2" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -13, 7.5)
+use_collision = true
+size = Vector3(16, 9, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="ViewPlatform3" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -13, -7.5)
+use_collision = true
+size = Vector3(16, 9, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="Wall" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -13, 2.08165e-12)
+use_collision = true
+size = Vector3(1, 9, 16)
+material = ExtResource("3_5pt7p")
+
+[node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -13, 2.08165e-12)
+use_collision = true
+size = Vector3(1, 9, 16)
+material = ExtResource("3_5pt7p")
+
+[node name="Wall3" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -18, 2.08165e-12)
+use_collision = true
+size = Vector3(16, 1, 16)
+material = ExtResource("6_h1c7g")
+
+[node name="Screen" type="CSGBox3D" parent="Level/Museum/Rooms/VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -42, 2.08165e-12)
+size = Vector3(64, 1, 64)
+material = ExtResource("3_5pt7p")
+
 [node name="Pillar" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
 use_collision = true
 
@@ -91,11 +136,6 @@ mode = 1
 spin_degrees = 360.0
 spin_sides = 16
 material = ExtResource("5_uusyq")
-
-[node name="ViewPlatform" type="CSGBox3D" parent="Level/Museum/Rooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -13, 2.08165e-12)
-use_collision = true
-size = Vector3(9, 9, 1)
 
 [node name="Box" type="CSGCombiner3D" parent="Level/Museum/Rooms"]
 material_override = ExtResource("3_5pt7p")
