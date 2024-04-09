@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://bprjdsdrt2esp"]
+
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_iaf6m"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_6tgw4"]
+[ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_hsx4w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd6yk"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24k6o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajjqy"]
+
+[node name="Museum" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_iaf6m")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_6tgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 1.5, 56)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="LevelCombiner" type="CSGCombiner3D" parent="Level"]
+use_collision = true
+
+[node name="BasicStructure" type="CSGCombiner3D" parent="Level/LevelCombiner"]
+
+[node name="Floor" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(128, 1, 128)
+
+[node name="Wall1" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="Wall5" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, 32.0237)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="OuterBoundary" type="CSGBox3D" parent="Level"]
+material_override = SubResource("StandardMaterial3D_gd6yk")
+use_collision = true
+flip_faces = true
+size = Vector3(128, 128, 128)
+
+[node name="Wall2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.5, 2.08165e-12)
+use_collision = true
+size = Vector3(96, 4, 96)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 48, 0.5, 56)
+use_collision = true
+polygon = PackedVector2Array(2.08165e-12, 2.08165e-12, 8, 2.08165e-12, 8, 4)
+depth = 48.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 56, 0.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_24k6o")
+use_collision = true
+polygon = PackedVector2Array(2.08165e-12, 2.08165e-12, 8, 2.08165e-12, 8, 4)
+depth = 48.0
+
+[node name="RampCombiner" type="CSGCombiner3D" parent="Level"]
+use_collision = true
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level/RampCombiner"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 48, 0.5, 48)
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 4, 8, 2.08165e-12, 4, 2.08165e-12)
+depth = 8.0
+material = SubResource("StandardMaterial3D_ajjqy")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Level/RampCombiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0.5, 56)
+operation = 1
+polygon = PackedVector2Array(0, 0, 2.08165e-12, 4, 8, 2.08165e-12, 4, 2.08165e-12)
+depth = 8.0
+material = SubResource("StandardMaterial3D_ajjqy")
+
+[node name="AudasiteSphere" parent="." instance=ExtResource("3_hsx4w")]
+transform = Transform3D(-0.707107, -1.60554e-24, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, -4.93259e-16, -0.707107, 58.0638, 25.2794, -13.3507)
+
+[editable path="Player"]

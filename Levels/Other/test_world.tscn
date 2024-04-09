@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://n5psimi3jbb5"]
+
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_h1nue"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_8lcu8"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D.gd" id="3_w2eor"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D2.gd" id="4_du64k"]
+[ext_resource type="Script" path="res://Levels/Other/SceneShiftArea.gd" id="5_stx8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q3qc"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmaui"]
+transparency = 4
+no_depth_test = true
+albedo_color = Color(1, 1, 1, 0.498039)
+metallic = 1.0
+metallic_specular = 1.0
+emission_energy_multiplier = 16.0
+ao_light_affect = 1.0
+heightmap_scale = 16.0
+subsurf_scatter_strength = 1.0
+backlight = Color(1, 0, 0, 1)
+refraction_scale = 1.0
+proximity_fade_distance = 10.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_glewr"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ourv"]
+size = Vector3(3, 3, 3)
+
+[node name="TestWorld" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_h1nue")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 1, 32)
+
+[node name="Player" parent="." instance=ExtResource("2_8lcu8")]
+
+[node name="TestArea3D" type="Area3D" parent="."]
+script = ExtResource("3_w2eor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+shape = SubResource("BoxShape3D_3q3qc")
+
+[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+material_override = SubResource("StandardMaterial3D_gmaui")
+mesh = SubResource("BoxMesh_glewr")
+skeleton = NodePath("../..")
+
+[node name="TestArea3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19278, 0, 0)
+script = ExtResource("4_du64k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+shape = SubResource("BoxShape3D_3q3qc")
+
+[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+material_override = SubResource("StandardMaterial3D_gmaui")
+mesh = SubResource("BoxMesh_glewr")
+skeleton = NodePath("../..")
+
+[node name="SceneShiftArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.08165e-12, 5)
+top_level = true
+script = ExtResource("5_stx8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SceneShiftArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+shape = SubResource("BoxShape3D_3ourv")
+
+[node name="TriggerBox" type="MeshInstance3D" parent="SceneShiftArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8)
+material_override = SubResource("StandardMaterial3D_gmaui")
+mesh = SubResource("BoxMesh_glewr")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="TestArea3D" to="TestArea3D" method="_on_body_entered"]
+[connection signal="body_exited" from="TestArea3D" to="TestArea3D" method="_on_body_exited"]
+[connection signal="body_entered" from="TestArea3D2" to="TestArea3D2" method="_on_body_entered"]
+[connection signal="body_entered" from="SceneShiftArea" to="SceneShiftArea" method="_on_body_entered"]
+
+[editable path="Player"]

@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5gg77uquru44"]
+
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_c6dcn"]
+[ext_resource type="Script" path="res://Levels/Other/Environment.gd" id="2_k6g2r"]
+[ext_resource type="Script" path="res://Levels/Other/TestArea3D.gd" id="3_g4g3q"]
+[ext_resource type="Script" path="res://Levels/Other/LevelRotator.gd" id="3_l2dwi"]
+[ext_resource type="PackedScene" uid="uid://3fttmba4mudi" path="res://Player/gravity_player.tscn" id="3_x0014"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqfqo"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q3qc"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmaui"]
+transparency = 4
+no_depth_test = true
+albedo_color = Color(1, 1, 1, 0.498039)
+metallic = 1.0
+metallic_specular = 1.0
+emission_energy_multiplier = 16.0
+ao_light_affect = 1.0
+heightmap_scale = 16.0
+subsurf_scatter_strength = 1.0
+backlight = Color(1, 0, 0, 1)
+refraction_scale = 1.0
+proximity_fade_distance = 10.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_glewr"]
+size = Vector3(4, 4, 4)
+
+[node name="GravityBox" type="Node3D"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_c6dcn")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97573e-16, -1, -4.37114e-08, 2.08165e-12, 4, 2.08165e-12)
+shadow_enabled = true
+
+[node name="GravityPlayer" parent="." instance=ExtResource("3_x0014")]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+up_direction = Vector3(2.40375e-12, 1, 2.40375e-12)
+
+[node name="Environment" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("2_k6g2r")
+
+[node name="LevelRotator" type="Node3D" parent="Environment"]
+unique_name_in_owner = true
+transform = Transform3D(1, -6.97574e-16, 6.97574e-16, 6.97574e-16, 1, -6.97574e-16, -6.97574e-16, 6.97574e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+top_level = true
+script = ExtResource("3_l2dwi")
+
+[node name="Floor" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -5.29396e-23, -3.48787e-16, -5.29396e-23, 1, 3.48787e-16, 3.48787e-16, -3.48787e-16, 1, 2.08165e-12, -16.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 1, 32)
+
+[node name="Wall" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -16.5, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 32, 32)
+
+[node name="Wall2" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16.5, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 32, 32)
+
+[node name="Wall3" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.00316429, 1.90735e-06, -16.4611)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 32, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 16.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 32, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 32, 16.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(8, 32, 1)
+
+[node name="Wall6" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 48.5, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(8, 1, 32)
+
+[node name="Wall7" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -4.49776, 44, -0.0238857)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 8, 32)
+
+[node name="Wall8" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 11.9781, 39.5, 0.00450706)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(32, 1, 8)
+
+[node name="Wall9" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 32.0348, 39.5, 0.00891304)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(8, 1, 32)
+
+[node name="Wall10" type="CSGBox3D" parent="Environment/LevelRotator"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 32, 23, -15.5)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(8, 32, 1)
+
+[node name="Landmark" type="Node3D" parent="."]
+transform = Transform3D(1, -4.86609e-31, 0, -4.86609e-31, 1, 0, 0, 0, 1, 0, 0, 0)
+top_level = true
+
+[node name="Sun" type="CSGSphere3D" parent="Landmark"]
+transform = Transform3D(1, -4.86609e-31, 0, -4.86609e-31, 1, 0, 0, 0, 1, 2.08165e-12, 128, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_iqfqo")
+radius = 24.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+use_collision = true
+size = Vector3(8, 1, 8)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 1.93476e-15, 5.54711, -1.93476e-15)
+light_energy = 4.0
+light_size = 8.0
+omni_range = 256.0
+
+[node name="TestArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+script = ExtResource("3_g4g3q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+shape = SubResource("BoxShape3D_3q3qc")
+
+[node name="TriggerBox" type="MeshInstance3D" parent="TestArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, -8)
+material_override = SubResource("StandardMaterial3D_gmaui")
+mesh = SubResource("BoxMesh_glewr")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="TestArea3D" to="TestArea3D" method="_on_body_entered"]
+[connection signal="body_exited" from="TestArea3D" to="TestArea3D" method="_on_body_exited"]
+
+[editable path="GravityPlayer"]

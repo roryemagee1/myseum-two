@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc0wkfy68tweu"]
+
+[sub_resource type="Shader" id="Shader_useow"]
+code = "shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_disabled,diffuse_burley,specular_schlick_ggx,unshaded;
+uniform vec4 albedo : source_color = vec4(1.0, 1.0, 1.0, 0.0);
+
+
+uniform float specular;
+
+
+varying flat vec3 norm;
+varying flat float norm_val;
+
+uniform float offset = 0.05;
+
+uniform float opacity = 0.9;
+
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture,filter_linear_mipmap;
+
+void vertex() {
+	norm = NORMAL;
+}
+
+
+
+
+
+
+
+
+
+
+void fragment() {
+	
+	
+	vec3 normx = NORMAL;
+	NORMAL = norm;
+	
+	
+	vec2 displacement = vec2(offset);
+	displacement.x *= -normx.x*2.0;
+	displacement.y *= -normx.y*2.0;
+	vec4 alpha = vec4(1.0);
+	alpha = texture(SCREEN_TEXTURE ,SCREEN_UV + displacement );
+	
+	
+	
+	
+	
+	
+	ALBEDO = mix(alpha.rgb,albedo.rgb,albedo.a);
+	SPECULAR = specular;
+	ALPHA = opacity;
+	
+	
+	
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28fqx"]
+render_priority = 0
+shader = SubResource("Shader_useow")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/specular = null
+shader_parameter/offset = 0.05
+shader_parameter/opacity = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_08fdr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_28fqx")
+mesh = SubResource("BoxMesh_08fdr")

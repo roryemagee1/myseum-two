@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgkwqmdqdafxc"]
+
+[ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_1ctji"]
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_e6820"]
+[ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="3_j34nk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
+albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
+
+[node name="OverWorld" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_1ctji")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_e6820")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.5, 48)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="RotationRoomInside" type="CSGCombiner3D" parent="Level"]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Level/RotationRoomInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585365, -0.0279102, 0.00689697)
+flip_faces = true
+radius = 16.0
+radial_segments = 64
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
+use_collision = true
+size = Vector3(24, 1, 24)
+
+[node name="LevelCombiner" type="CSGCombiner3D" parent="Level"]
+use_collision = true
+
+[node name="RotationRoom2" type="CSGCombiner3D" parent="Level/LevelCombiner"]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Level/LevelCombiner/RotationRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585365, -0.0279102, 0.00689697)
+radius = 16.0
+radial_segments = 64
+
+[node name="BasicStructure" type="CSGCombiner3D" parent="Level/LevelCombiner"]
+
+[node name="Floor" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Floor2" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Floor3" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Floor4" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 1, 64)
+
+[node name="Wall1" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, 32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="Wall2" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 32, -32)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="Wall3" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 32, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 32, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, 32.0237)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="Wall6" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0935516, -31.8218, -31.9763)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(1, 64, 64)
+
+[node name="Wall7" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9064, -31.8218, 0.0236969)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="Wall8" type="CSGBox3D" parent="Level/LevelCombiner/BasicStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0936, -31.8218, 0.0236969)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(64, 64, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/LevelCombiner"]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 12, 4.16007, 12)
+operation = 2
+flip_faces = true
+size = Vector3(6, 6, 8)
+
+[node name="AudasiteSphere" parent="." instance=ExtResource("3_j34nk")]
+transform = Transform3D(-0.707107, -1.60554e-24, -0.707107, 3.48787e-16, 1, -3.48787e-16, 0.707107, -4.93259e-16, -0.707107, 32, 10, 32)
+
+[editable path="Player"]

@@ -1,0 +1,254 @@
+[gd_scene load_steps=34 format=3 uid="uid://dk5i3fgonip2d"]
+
+[ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="1_21h1n"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/RotationEnvironment.gd" id="2_qspqd"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/RightZone.gd" id="3_lubsu"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/LeftZone.gd" id="4_5uilj"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/FrontZone.gd" id="5_0pa8i"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/BackZone.gd" id="6_i7ev8"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/TopZone.gd" id="7_ou1du"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/BottomZone.gd" id="8_jyatk"]
+[ext_resource type="PackedScene" uid="uid://db6l6nmjs2n1s" path="res://Levels/Experimental/RotationMechanism/cubit.tscn" id="9_hdrlp"]
+[ext_resource type="Script" path="res://Levels/Experimental/RotationMechanism/CubeArea.gd" id="10_pfb43"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_erjqt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fbrfu"]
+sky_material = SubResource("ProceduralSkyMaterial_erjqt")
+
+[sub_resource type="Environment" id="Environment_j8omk"]
+background_mode = 2
+sky = SubResource("Sky_fbrfu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n5jl"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u675x"]
+size = Vector3(8, 16, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nvxr8"]
+size = Vector3(8, 16, 16)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm2n3"]
+transparency = 1
+albedo_color = Color(1, 0, 1, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_py1gh"]
+size = Vector3(8, 16, 16)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbo45"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yqfjq"]
+size = Vector3(16, 16, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jima2"]
+size = Vector3(16, 16, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxbl1"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x543i"]
+size = Vector3(16, 16, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wh4wf"]
+size = Vector3(16, 16, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ww6x"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2i60b"]
+size = Vector3(16, 8, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlxgp"]
+size = Vector3(16, 8, 16)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73ym8"]
+albedo_color = Color(0, 0, 1, 0.498039)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyaon"]
+size = Vector3(16, -8, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rv43t"]
+size = Vector3(16, 8, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtt0x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2hqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3y1ds"]
+
+[node name="RotationMechanism" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j8omk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_21h1n")]
+
+[node name="RotationEnvironment" type="Node3D" parent="."]
+script = ExtResource("2_qspqd")
+
+[node name="RightZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 2.08165e-12)
+script = ExtResource("3_lubsu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/RightZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_0n5jl")
+mesh = SubResource("BoxMesh_u675x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/RightZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_nvxr8")
+
+[node name="LeftZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.08165e-12, 2.08165e-12)
+script = ExtResource("4_5uilj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/LeftZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_vm2n3")
+mesh = SubResource("BoxMesh_py1gh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/LeftZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_nvxr8")
+
+[node name="FrontZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -6)
+script = ExtResource("5_0pa8i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/FrontZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_pbo45")
+mesh = SubResource("BoxMesh_yqfjq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/FrontZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_jima2")
+
+[node name="BackZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 6)
+script = ExtResource("6_i7ev8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/BackZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_qxbl1")
+mesh = SubResource("BoxMesh_x543i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/BackZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_wh4wf")
+
+[node name="TopZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 2.08165e-12)
+script = ExtResource("7_ou1du")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/TopZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_0ww6x")
+mesh = SubResource("BoxMesh_2i60b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/TopZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_dlxgp")
+
+[node name="BottomZone" type="Area3D" parent="RotationEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -6, 2.08165e-12)
+script = ExtResource("8_jyatk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotationEnvironment/BottomZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16329e-12)
+material_override = SubResource("StandardMaterial3D_73ym8")
+mesh = SubResource("BoxMesh_cyaon")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotationEnvironment/BottomZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_rv43t")
+
+[node name="Cubit" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -4)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -4)
+script = ExtResource("10_pfb43")
+
+[node name="Cubit2" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit2/Cube" index="1"]
+script = ExtResource("10_pfb43")
+front_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit2/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_dtt0x")
+
+[node name="Cubit3" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit3/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, -4)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit3/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, -4)
+script = ExtResource("10_pfb43")
+top_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit3/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_u2hqo")
+
+[node name="Cubit4" parent="RotationEnvironment" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit4/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, 4)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit4/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, 4)
+script = ExtResource("10_pfb43")
+front_zone = false
+top_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit4/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_3y1ds")
+
+[node name="Cubit5" parent="RotationEnvironment/Cubit4" instance=ExtResource("9_hdrlp")]
+
+[node name="CubeBox" parent="RotationEnvironment/Cubit4/Cubit5/Cube" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01019, 4, -4.00069)
+
+[node name="CubeArea" parent="RotationEnvironment/Cubit4/Cubit5/Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -4)
+script = ExtResource("10_pfb43")
+right_zone = false
+
+[node name="CubeCollider" parent="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" index="0"]
+shape = SubResource("BoxShape3D_3y1ds")
+
+[connection signal="area_entered" from="RotationEnvironment/Cubit/Cube/CubeArea" to="RotationEnvironment/Cubit/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit2/Cube/CubeArea" to="RotationEnvironment/Cubit2/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit3/Cube/CubeArea" to="RotationEnvironment/Cubit3/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit4/Cube/CubeArea" to="RotationEnvironment/Cubit4/Cube/CubeArea" method="_on_area_entered"]
+[connection signal="area_entered" from="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" to="RotationEnvironment/Cubit4/Cubit5/Cube/CubeArea" method="_on_area_entered"]
+
+[editable path="RotationEnvironment/Cubit"]
+[editable path="RotationEnvironment/Cubit2"]
+[editable path="RotationEnvironment/Cubit3"]
+[editable path="RotationEnvironment/Cubit4"]
+[editable path="RotationEnvironment/Cubit4/Cubit5"]

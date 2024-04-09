@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dtyrky5i0f2oj"]
+
+[ext_resource type="Shader" path="res://Materials/Shaders/CelShader/cel_shade_complete.gdshader" id="2_jbxo7"]
+[ext_resource type="Texture2D" uid="uid://bi7ellsfrvgxk" path="res://Materials/Shaders/CelShader/color_gradient.tres" id="3_qd5no"]
+[ext_resource type="Texture2D" uid="uid://bd56d2s45jjvk" path="res://Materials/Shaders/CelShader/fresnel_gradient.tres" id="4_76n8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byxrq"]
+specular_mode = 1
+albedo_color = Color(0, 0, 0.32549, 1)
+roughness = 0.0
+grow_amount = 0.02
+distance_fade_max_distance = 1.0
+
+[resource]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_byxrq")
+shader = ExtResource("2_jbxo7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/color_gradient = ExtResource("3_qd5no")
+shader_parameter/fresnel_gradient = ExtResource("4_76n8r")
