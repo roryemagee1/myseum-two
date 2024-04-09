@@ -216,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -8.25, 2.08165e-12)
 size = Vector3(0.5, 0.5, 16.5)
 
 [node name="UpperBuilding" type="Node3D" parent="Level/Museum/Rooms"]
-transform = Transform3D(4.37114e-08, -3.47258e-15, -1, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
 
 [node name="Pillar" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
 use_collision = true
@@ -545,7 +545,7 @@ size = Vector3(47, 16, 47)
 material = SubResource("StandardMaterial3D_g4hw8")
 
 [node name="WideRoof" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom/Exterior"]
-transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, 12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -1.71041e-22, 0, -1.71041e-22, 1, 0, 12, 0)
 size = Vector3(42, 1, 42)
 material = ExtResource("3_5pt7p")
 
@@ -809,7 +809,7 @@ operation = 2
 size = Vector3(4, 2, 4)
 
 [node name="LowerBuilding" type="Node3D" parent="Level/Museum/Rooms"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(4.37114e-08, -3.47258e-15, -1, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Panorama" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -1004,6 +1004,40 @@ operation = 2
 size = Vector3(16, 1, 16)
 material = ExtResource("5_mrkfa")
 
+[node name="FunkyStructure" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 33, 0.5, 33)
+
+[node name="PointyThing" type="CSGPolygon3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+polygon = PackedVector2Array(0, 0, 4, 2.08165e-12, 2.08165e-12, 48, 1, 40, 2, 32, 3, 24, 4, 16, 5, 8, 8, 2.08165e-12, 5, 5, 12, 2.08165e-12)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 8
+material = ExtResource("3_5pt7p")
+
+[node name="OuterTorus" type="CSGTorus3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 16, 2.08165e-12)
+inner_radius = 8.0
+outer_radius = 16.0
+material = ExtResource("3_5pt7p")
+
+[node name="InnerTorus" type="CSGTorus3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 16, 2.08165e-12)
+operation = 2
+inner_radius = 9.0
+outer_radius = 15.0
+
+[node name="Tunnel" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 16, 2.08165e-12)
+size = Vector3(42, 6, 6)
+material = ExtResource("3_5pt7p")
+
+[node name="TunnelCutout" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 16, 2.08165e-12)
+operation = 2
+size = Vector3(42, 5, 5)
+material = ExtResource("3_5pt7p")
+
 [node name="BuildingCubit6" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
 
@@ -1146,6 +1180,40 @@ material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(24, 12, 1)
 material = ExtResource("3_5pt7p")
+
+[node name="SideBuilding" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 29.5, -20)
+
+[node name="BuildingExterior" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+size = Vector3(20, 32, 24)
+material = ExtResource("3_5pt7p")
+
+[node name="BuildingInterior" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, -1, 2.08165e-12)
+size = Vector3(19, 31, 23)
+
+[node name="SideBuildingDoor" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -9.5, -13, 2.08165e-12)
+operation = 2
+size = Vector3(1, 6, 4)
+
+[node name="SideBuilding2" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 29.5, -20)
+
+[node name="BuildingExterior" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+size = Vector3(20, 32, 24)
+material = ExtResource("3_5pt7p")
+
+[node name="BuildingInterior" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, -1, 2.08165e-12)
+size = Vector3(19, 31, 23)
+
+[node name="SideBuildingDoor" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 9.5, -13, 2.08165e-12)
+operation = 2
+size = Vector3(1, 6, 4)
 
 [node name="BuildingCubit7" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
