@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=37 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dt64fxmf3ldjk" path="res://Assets/painting_3.png" id="14_rogc5"]
 [ext_resource type="Texture2D" uid="uid://c4ga7mabhq7bd" path="res://Assets/canvas_easel.png" id="15_sjhga"]
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
+[ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
 albedo_color = Color(0.807843, 0.807843, 0.807843, 1)
@@ -1963,6 +1964,8 @@ omni_range = 20.0
 [node name="TestCube" type="MeshInstance3D" parent="TestShapes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 mesh = SubResource("BoxMesh_5wvos")
+
+[node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
 
 [editable path="Player"]
 [editable path="Level/Floors/Middle/External/Courtyard/AudasiteSphere"]

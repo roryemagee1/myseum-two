@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cj6b1r2tdsl12"]
+
+[ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="1_ayj61"]
+
+[resource]
+default_font = ExtResource("1_ayj61")
+default_font_size = 42

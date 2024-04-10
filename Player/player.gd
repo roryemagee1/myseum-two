@@ -9,9 +9,11 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_motion := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CameraPivot
+@onready var basic_ui: Control = $"../BasicUI"
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	basic_ui.toggle_ui(true)
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
 	handle_camera_rotation()
@@ -44,10 +46,12 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			mouse_motion = -event.relative * 0.001
 	if event.is_action_pressed("ui_cancel"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		basic_ui.toggle_ui(true)
+	#if event.is_action_pressed("ui_cancel"):
+		#if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		#else:
+			#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 func handle_camera_rotation() -> void:
 	rotate_y(mouse_motion.x)
