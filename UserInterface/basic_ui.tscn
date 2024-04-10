@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcw0p5iisguq0"]
+[gd_scene load_steps=12 format=3 uid="uid://bcw0p5iisguq0"]
 
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="1_g6bv7"]
 [ext_resource type="FontFile" uid="uid://dwa7wfbeeuyo8" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="2_mc0pq"]
 [ext_resource type="Script" path="res://UserInterface/basic_ui.gd" id="2_o23of"]
 [ext_resource type="Theme" uid="uid://cj6b1r2tdsl12" path="res://UserInterface/navigation_button.tres" id="3_fqxdh"]
+[ext_resource type="Script" path="res://UserInterface/MenuBackground.gd" id="5_x1ui8"]
 
 [sub_resource type="Theme" id="Theme_ds4ob"]
 default_font = ExtResource("1_g6bv7")
@@ -13,6 +14,7 @@ default_font_size = 64
 
 [sub_resource type="Theme" id="Theme_sinh8"]
 default_font = ExtResource("2_mc0pq")
+default_font_size = 48
 
 [sub_resource type="Theme" id="Theme_2w7kj"]
 default_font = ExtResource("1_g6bv7")
@@ -23,6 +25,8 @@ particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_66csr"]
 
 [node name="BasicUI" type="Control"]
 process_mode = 3
@@ -47,6 +51,7 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -105,9 +110,21 @@ alignment = 1
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("3_fqxdh")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 0.996078, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 text = "Enter Viewport"
+
+[node name="MenuBackground" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_66csr")
+script = ExtResource("5_x1ui8")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/InspirationButton" to="." method="_on_inspiration_button_pressed"]
