@@ -12,12 +12,12 @@ default_font_size = 64
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hv6pi"]
 
-[sub_resource type="Theme" id="Theme_sinh8"]
-default_font = ExtResource("2_mc0pq")
-default_font_size = 48
-
 [sub_resource type="Theme" id="Theme_2w7kj"]
 default_font = ExtResource("1_g6bv7")
+default_font_size = 48
+
+[sub_resource type="Theme" id="Theme_sinh8"]
+default_font = ExtResource("2_mc0pq")
 default_font_size = 48
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wohyu"]
@@ -48,17 +48,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_sinh8")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Myseum"
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
@@ -66,6 +55,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = SubResource("Theme_2w7kj")
 alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_sinh8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Myseum"
 
 [node name="AboutButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
 material = SubResource("CanvasItemMaterial_wohyu")
@@ -77,19 +78,19 @@ theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 0
 text = "   About   "
 
-[node name="InspirationButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_fqxdh")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
-text = "   Inspiration   "
-
 [node name="AuthorButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("3_fqxdh")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
 text = "   Author   "
+
+[node name="InspirationButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_fqxdh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
+text = "   Inspiration   "
 
 [node name="GalleryButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -127,7 +128,7 @@ texture = SubResource("ViewportTexture_66csr")
 script = ExtResource("5_x1ui8")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/AboutButton" to="." method="_on_about_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/InspirationButton" to="." method="_on_inspiration_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/AuthorButton" to="." method="_on_author_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/InspirationButton" to="." method="_on_inspiration_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/GalleryButton" to="." method="_on_gallery_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer4/EnterButton" to="." method="_on_enter_button_pressed"]

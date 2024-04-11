@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=49 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -24,10 +24,18 @@
 [ext_resource type="Texture2D" uid="uid://dt64fxmf3ldjk" path="res://Assets/painting_3.png" id="14_rogc5"]
 [ext_resource type="Texture2D" uid="uid://c4ga7mabhq7bd" path="res://Assets/canvas_easel.png" id="15_sjhga"]
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
+[ext_resource type="Texture2D" uid="uid://ca2d7xwy0pp5g" path="res://Assets/author.jpg" id="18_hlywq"]
+[ext_resource type="Texture2D" uid="uid://d0o1veo7x7qw7" path="res://Assets/camera_shot.png" id="19_uhur4"]
+[ext_resource type="Texture2D" uid="uid://dig2uoq2mpw3x" path="res://Assets/cherry_blossoms.png" id="20_eh66w"]
+[ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
 [ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
+[ext_resource type="Texture2D" uid="uid://dl2njcb6now13" path="res://Assets/Temp/salar_de_uyuni.jpeg" id="30_mxv8p"]
+[ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
+[ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
+[ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_khwac"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_gmoyw"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
@@ -112,15 +120,46 @@ fall_multiplier = 4.0
 
 [node name="MyseumOneViewport" type="SubViewport" parent="."]
 unique_name_in_owner = true
+size = Vector2i(1024, 600)
 
 [node name="MyseumOneCamera" type="Camera3D" parent="MyseumOneViewport"]
 unique_name_in_owner = true
 transform = Transform3D(1, -3.18388e-16, 3.4746e-16, 3.4746e-16, 0.996195, -0.0871557, -3.18388e-16, 0.0871557, 0.996195, 39, 2.2, 3.2)
 
+[node name="AuthorViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="AuthorCamera" type="Camera3D" parent="AuthorViewport"]
+unique_name_in_owner = true
+transform = Transform3D(-0.573576, 0.0713938, 0.816035, 3.4746e-16, 0.996195, -0.0871557, -0.819152, -0.0499905, -0.571394, -20, 14, -40)
+
+[node name="InspirationViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="InspirationCamera" type="Camera3D" parent="InspirationViewport"]
+unique_name_in_owner = true
+transform = Transform3D(0.99863, -0.00818715, 0.0516916, 3.44493e-16, 0.987688, 0.156434, -0.052336, -0.15622, 0.986335, -28, 16, -112)
+fov = 55.0
+
+[node name="GalleryViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="GalleryCamera" type="Camera3D" parent="GalleryViewport"]
+unique_name_in_owner = true
+transform = Transform3D(0.707107, 0.0616284, 0.704416, 3.4746e-16, 0.996195, -0.0871557, -0.707107, 0.0616284, 0.704416, 91, 2, 91)
+
 [node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
-default_background = SubResource("ViewportTexture_khwac")
+default_background = SubResource("ViewportTexture_gmoyw")
 
 [node name="Level" type="Node3D" parent="."]
+
+[node name="TempLight" type="OmniLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, -1.85577, 90)
+light_energy = 8.0
+omni_range = 64.0
 
 [node name="RotationRoom" type="Node3D" parent="Level"]
 
@@ -141,6 +180,92 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -3.5, 2.08165e-1
 material_override = ExtResource("4_q5hs6")
 use_collision = true
 size = Vector3(15, 7, 15)
+
+[node name="RotationModule" type="Node3D" parent="Level/RotationRoom"]
+
+[node name="RotateXMinus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_x_minus"]]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -4, 2, -0.5)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateXMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateXMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(1, 0, 0, 1)
+text = "Rotate X-"
+font = ExtResource("21_c8jvv")
+font_size = 64
+
+[node name="RotateXPlus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_x_plus"]]
+transform = Transform3D(4.37114e-08, -4.17016e-15, 1, -8.74228e-08, -1, -3.48787e-16, 1, -8.74228e-08, -4.37114e-08, -4, 2, -4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateXPlusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateXPlus"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 1.57853e-24, 0, -1.21125e-22, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(1, 0, 0, 1)
+text = "Rotate X+"
+font = ExtResource("21_c8jvv")
+font_size = 64
+
+[node name="RotateZMinus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_z_minus"]]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -4, 2, -4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateZMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateZMinus"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(0, 0.498039, 1, 1)
+text = "Rotate Z-"
+font = ExtResource("21_c8jvv")
+font_size = 64
+
+[node name="RotateZPlus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_z_plus"]]
+transform = Transform3D(-1, 8.74228e-08, 3.48787e-16, -8.74228e-08, -1, -3.48787e-16, 3.48787e-16, -3.48787e-16, 1, -0.5, 2, -4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateZPlus" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateZPlus"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(0, 0.498039, 1, 1)
+text = "Rotate Z+"
+font = ExtResource("21_c8jvv")
+font_size = 64
+
+[node name="RotateYMinus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_y_minus"]]
+transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, -4.5, 3, -2)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateYMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateYMinus"]
+transform = Transform3D(1, 4.41711e-23, -1.2688e-08, -2.7766e-23, 1, 2.48353e-23, -2.50326e-08, -4.41711e-23, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(0, 0.498039, 0, 1)
+text = "Rotate Y-"
+font = ExtResource("21_c8jvv")
+font_size = 64
+
+[node name="RotateYPlus" type="CSGPolygon3D" parent="Level/RotationRoom/RotationModule" groups=["rot_y_plus"]]
+transform = Transform3D(-0.707107, 6.18172e-08, 0.707107, -8.74228e-08, -1, -3.48787e-16, 0.707107, -6.18172e-08, 0.707107, -2, 3, -4.5)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
+depth = 0.2
+material = ExtResource("3_5pt7p")
+
+[node name="RotateYPlus" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateYPlus"]
+transform = Transform3D(-1, -8.74228e-08, 7.57478e-09, 8.74228e-08, -1, -8.78174e-17, -7.57478e-09, 3.04723e-16, 1, 0.8, 2.08165e-12, 0.01)
+modulate = Color(0, 0.498039, 0, 1)
+text = "Rotate Y+"
+font = ExtResource("21_c8jvv")
+font_size = 64
 
 [node name="Museum" type="Node3D" parent="Level"]
 script = ExtResource("3_qmxit")
@@ -613,7 +738,7 @@ transform = Transform3D(3, -1.04636e-15, 1.04636e-15, 1.04636e-15, 3, -1.04636e-
 texture = ExtResource("14_rogc5")
 
 [node name="CanvasEasel" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
-transform = Transform3D(0.13, -4.53423e-17, 4.53423e-17, 4.53423e-17, 0.13, -4.53423e-17, -4.53423e-17, 4.53423e-17, 0.13, 2.08165e-12, -6.3, 40)
+transform = Transform3D(0.2, -4.53423e-17, 4.53423e-17, 6.97574e-17, 0.13, -4.53423e-17, -6.97574e-17, 4.53423e-17, 0.13, 2.08165e-12, -6.3, 40)
 texture = ExtResource("15_sjhga")
 
 [node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
@@ -703,6 +828,41 @@ operation = 2
 flip_faces = true
 size = Vector3(31, 32, 31)
 material = ExtResource("3_5pt7p")
+
+[node name="Author1" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
+transform = Transform3D(-0.939693, 4.47045e-16, 0.34202, 3.48787e-16, 1, -3.48787e-16, -0.34202, -2.0846e-16, -0.939693, -3, 2.08165e-12, 10)
+texture = ExtResource("18_hlywq")
+
+[node name="Author2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
+transform = Transform3D(-0.4, 1.39514e-16, 6.03983e-08, 1.39514e-16, 0.4, -1.39514e-16, -6.03983e-08, -1.39514e-16, -0.4, 7.3241, -7.14967, 15)
+texture = ExtResource("19_uhur4")
+
+[node name="Author3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
+transform = Transform3D(-0.375877, 1.78818e-16, 0.136808, 1.39515e-16, 0.4, -1.39515e-16, -0.136808, -8.33841e-17, -0.375877, 4.705, 7.031, 13)
+texture = ExtResource("20_eh66w")
+
+[node name="AboutAuthor" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 12, -1)
+modulate = Color(0, 0, 0.0352941, 1)
+text = "About the Author"
+font = ExtResource("13_gvajt")
+font_size = 512
+
+[node name="AboutText" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, -2, -1)
+modulate = Color(0, 0, 0.0352941, 1)
+text = "Rory Magee is a web developer 
+who combines art and 
+technology in nove and innovative ways.
+
+He created Myseum as an online
+space to showcase both his 
+developer projects and art pieces
+through a medium that 
+uniquely combines them together.
+"
+font = ExtResource("21_c8jvv")
+font_size = 300
 
 [node name="WRDoor" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, -13, 2.08165e-12)
@@ -1651,6 +1811,13 @@ use_collision = true
 size = Vector3(64, 1, 64)
 material = SubResource("StandardMaterial3D_uef4v")
 
+[node name="Ramp" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
+transform = Transform3D(0.707107, 0.353553, 0.612372, 3.02058e-16, 0.866025, -0.5, -0.707107, 0.353553, 0.612372, -26.8221, 3.7, -26.7951)
+material_override = SubResource("StandardMaterial3D_yppem")
+use_collision = true
+size = Vector3(16, 1, 16)
+material = SubResource("StandardMaterial3D_uef4v")
+
 [node name="Fountain" type="CSGPolygon3D" parent="Level/Floors/Middle/External/Courtyard"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16, 1, -16)
 polygon = PackedVector2Array(0, 0, 8, 8, 3, 2.08165e-12, 8, 3, 9, 2.08165e-12)
@@ -1667,6 +1834,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.72, -8, 32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(26.56, 1, 64)
+material = SubResource("StandardMaterial3D_uef4v")
 
 [node name="Floor7" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.28, 2.08165e-12, -32)
@@ -1721,6 +1889,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -8, 114.72)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 26.56)
+material = SubResource("StandardMaterial3D_uef4v")
 
 [node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/Middle"]
 operation = 2
@@ -1992,8 +2161,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0582657, 0, -0.029232)
 
 [node name="TempStorage" type="CSGCombiner3D" parent="Level"]
 
+[node name="Inspiration" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -154)
+
+[node name="InspirationTitle" type="Label3D" parent="Level/Inspiration"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.08165e-12, 18, 2.08165e-12)
+modulate = Color(0, 0, 0, 1)
+text = "Inspiration
+"
+font = ExtResource("13_gvajt")
+font_size = 300
+
+[node name="Inspo1" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16, 12, 2.08165e-12)
+texture = ExtResource("30_mxv8p")
+
+[node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 1)
+modulate = Color(0, 0, 0, 1)
+text = "Salar de Uyuni"
+font = ExtResource("21_c8jvv")
+font_size = 256
+
+[node name="Inspo2" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1, 7, 2.08165e-12)
+texture = ExtResource("31_fsx1c")
+
+[node name="Label3D2" type="Label3D" parent="Level/Inspiration/Inspo2"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.669, -5, 1)
+modulate = Color(0, 0, 0, 1)
+text = "African American Smithsonian"
+font = ExtResource("21_c8jvv")
+font_size = 256
+
+[node name="Inspo3" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 13, 2.08165e-12)
+texture = ExtResource("32_4lqn7")
+
+[node name="Label3D3" type="Label3D" parent="Level/Inspiration/Inspo3"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1, -4, 1)
+modulate = Color(0, 0, 0, 1)
+text = "Art of 
+M.C. Escher
+"
+font = ExtResource("21_c8jvv")
+font_size = 256
+
+[node name="Inspo4" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 6, 2.08165e-12)
+texture = ExtResource("33_p63cc")
+
+[node name="Platform" type="CSGBox3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+use_collision = true
+size = Vector3(32, 1, 8)
+material = ExtResource("3_5pt7p")
+
+[node name="Platform2" type="CSGBox3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+use_collision = true
+size = Vector3(8, 1, 8)
+material = ExtResource("3_5pt7p")
+
+[node name="Platform3" type="CSGBox3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -12)
+use_collision = true
+size = Vector3(16, 64, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="Platform4" type="CSGBox3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, -24)
+use_collision = true
+size = Vector3(64, 24, 1)
+material = ExtResource("3_5pt7p")
+
 [node name="TestShapes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 1, 112)
+visible = false
 
 [node name="Sphere" type="MeshInstance3D" parent="TestShapes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37693, 0.20489, -0.0879288)

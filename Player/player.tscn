@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cags6veimbg0e"]
+[gd_scene load_steps=7 format=3 uid="uid://cags6veimbg0e"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_6nos0"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_7rpah"]
+[ext_resource type="Script" path="res://Player/CameraRaycast.gd" id="3_pdrfi"]
 [ext_resource type="Script" path="res://Player/Crosshair.gd" id="3_wbsfg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_74acp"]
@@ -23,6 +24,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12
 top_level = true
 script = ExtResource("2_7rpah")
 
+[node name="CameraRaycast" type="RayCast3D" parent="CameraPivot/SmoothCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -0.6)
+target_position = Vector3(2.08165e-12, 2.08165e-12, -5)
+script = ExtResource("3_pdrfi")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,5 +40,5 @@ grow_vertical = 2
 layout_mode = 2
 script = ExtResource("3_wbsfg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="PlayerCollisionBox" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gbebr")

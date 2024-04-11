@@ -9,6 +9,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_motion := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CameraPivot
+#@onready var basic_ui: Control = %BasicUI
 @onready var basic_ui: Control = $"../BasicUI"
 
 func _ready() -> void:
