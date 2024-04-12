@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=50 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://dfmk7nfgok0fb" path="res://Materials/Shaders/CelShader/see_through_glass.tres" id="5_uusyq"]
 [ext_resource type="Material" uid="uid://kvihpn6pjqbt" path="res://Materials/Shaders/invisible_wall.tres" id="6_h1c7g"]
 [ext_resource type="PackedScene" uid="uid://bheus50p1i1md" path="res://Components/audasite_sphere.tscn" id="6_k54p3"]
+[ext_resource type="Script" path="res://Levels/Active/Simple/RotationButton.gd" id="6_u302p"]
 [ext_resource type="Shader" path="res://Materials/Shaders/CelShader/cel_shade_complete.gdshader" id="9_3okf5"]
 [ext_resource type="Texture2D" uid="uid://bi7ellsfrvgxk" path="res://Materials/Shaders/CelShader/color_gradient.tres" id="10_rlyau"]
 [ext_resource type="Material" uid="uid://b0pl8yh43bqwi" path="res://Materials/Shaders/CelShader/cel_shade_with_outline.tres" id="11_3q7fd"]
@@ -118,21 +119,8 @@ speed = 10.0
 jump_height = 4.0
 fall_multiplier = 4.0
 
-[node name="MyseumOneViewport" type="SubViewport" parent="."]
-unique_name_in_owner = true
-size = Vector2i(1024, 600)
-
-[node name="MyseumOneCamera" type="Camera3D" parent="MyseumOneViewport"]
-unique_name_in_owner = true
-transform = Transform3D(1, -3.18388e-16, 3.4746e-16, 3.4746e-16, 0.996195, -0.0871557, -3.18388e-16, 0.0871557, 0.996195, 39, 2.2, 3.2)
-
-[node name="AuthorViewport" type="SubViewport" parent="."]
-unique_name_in_owner = true
-size = Vector2i(1024, 600)
-
-[node name="AuthorCamera" type="Camera3D" parent="AuthorViewport"]
-unique_name_in_owner = true
-transform = Transform3D(-0.573576, 0.0713938, 0.816035, 3.4746e-16, 0.996195, -0.0871557, -0.819152, -0.0499905, -0.571394, -20, 14, -40)
+[node name="CameraRaycast" parent="Player/CameraPivot/SmoothCamera" index="0"]
+script = null
 
 [node name="InspirationViewport" type="SubViewport" parent="."]
 unique_name_in_owner = true
@@ -189,6 +177,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_x_minus"
 
 [node name="RotateXMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateXMinus"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 0.8, 2.08165e-12, 0.01)
@@ -203,6 +193,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_x_plus"
 
 [node name="RotateXPlusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateXPlus"]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 1.57853e-24, 0, -1.21125e-22, 1, 0.8, 2.08165e-12, 0.01)
@@ -217,6 +209,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_z_minus"
 
 [node name="RotateZMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateZMinus"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0.8, 2.08165e-12, 0.01)
@@ -231,6 +225,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_z_plus"
 
 [node name="RotateZPlus" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateZPlus"]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0.8, 2.08165e-12, 0.01)
@@ -245,6 +241,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_y_minus"
 
 [node name="RotateYMinusLabel" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateYMinus"]
 transform = Transform3D(1, 4.41711e-23, -1.2688e-08, -2.7766e-23, 1, 2.48353e-23, -2.50326e-08, -4.41711e-23, 1, 0.8, 2.08165e-12, 0.01)
@@ -259,6 +257,8 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0.5, 0.5, 0.5, 0.2, 1.5, 0.2, 1.5, 2.08165e-12, 1.5, -0.2, 0.5, -0.2, 0.5, -0.5)
 depth = 0.2
 material = ExtResource("3_5pt7p")
+script = ExtResource("6_u302p")
+group_name = "rot_y_plus"
 
 [node name="RotateYPlus" type="Label3D" parent="Level/RotationRoom/RotationModule/RotateYPlus"]
 transform = Transform3D(-1, -8.74228e-08, 7.57478e-09, 8.74228e-08, -1, -8.78174e-17, -7.57478e-09, 3.04723e-16, 1, 0.8, 2.08165e-12, 0.01)
@@ -1521,6 +1521,24 @@ material = ExtResource("5_mrkfa")
 transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.5246e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 30, 44.5, 64)
 polygon = PackedVector2Array(0, 0, 24, 24, 24, 2.08165e-12, 24, 24, 48, 2.08165e-12)
 material = ExtResource("5_mrkfa")
+
+[node name="Cameras" type="Node3D" parent="Level/Museum/Rooms"]
+
+[node name="MyseumOneViewport" type="SubViewport" parent="Level/Museum/Rooms/Cameras"]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="MyseumOneCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/MyseumOneViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, -3.18388e-16, 3.4746e-16, 3.4746e-16, 0.996195, -0.0871557, -3.18388e-16, 0.0871557, 0.996195, 39, 2.2, 3.2)
+
+[node name="AuthorViewport" type="SubViewport" parent="Level/Museum/Rooms/Cameras"]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="AuthorCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/AuthorViewport"]
+unique_name_in_owner = true
+transform = Transform3D(-0.573576, 0.0713938, 0.816035, 3.4746e-16, 0.996195, -0.0871557, -0.819152, -0.0499905, -0.571394, -20, 14, -40)
 
 [node name="Outside" type="Node3D" parent="Level"]
 script = ExtResource("5_d3i2t")
