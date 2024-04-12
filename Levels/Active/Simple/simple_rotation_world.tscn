@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=55 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -27,17 +27,21 @@
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
 [ext_resource type="Texture2D" uid="uid://ca2d7xwy0pp5g" path="res://Assets/author.jpg" id="18_hlywq"]
 [ext_resource type="Texture2D" uid="uid://d0o1veo7x7qw7" path="res://Assets/camera_shot.png" id="19_uhur4"]
-[ext_resource type="Texture2D" uid="uid://dig2uoq2mpw3x" path="res://Assets/cherry_blossoms.png" id="20_eh66w"]
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
+[ext_resource type="Texture2D" uid="uid://c6y8v5db5vx5t" path="res://Assets/Harpers_Ferry_cropped.png" id="22_3egnr"]
 [ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
+[ext_resource type="Texture2D" uid="uid://caj3xfe3ljol" path="res://Assets/video_countdown.png" id="27_bsj4t"]
+[ext_resource type="Texture2D" uid="uid://niyd1klqm2y6" path="res://Assets/fireplace_cropped.png" id="28_odd10"]
 [ext_resource type="Script" path="res://Levels/Active/Simple/LevelCameraMovement.gd" id="28_s4qiu"]
+[ext_resource type="Texture2D" uid="uid://dr3cn3i6pp5gb" path="res://Assets/persian_rug.jpeg" id="29_2uwl1"]
+[ext_resource type="Texture2D" uid="uid://bpdf47wbs0bt0" path="res://Assets/forest_view_cropped.png" id="29_uex88"]
 [ext_resource type="Texture2D" uid="uid://dl2njcb6now13" path="res://Assets/Temp/salar_de_uyuni.jpeg" id="30_mxv8p"]
 [ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
 [ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
 [ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gmoyw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p4td5"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
@@ -138,10 +142,10 @@ size = Vector2i(1024, 600)
 
 [node name="GalleryCamera" type="Camera3D" parent="GalleryViewport"]
 unique_name_in_owner = true
-transform = Transform3D(0.707107, 0.0616284, 0.704416, 3.4746e-16, 0.996195, -0.0871557, -0.707107, 0.0616284, 0.704416, 91, 2, 91)
+transform = Transform3D(0.978148, 0.0343153, 0.20506, 3.44003e-16, 0.986286, -0.165048, -0.207912, 0.161441, 0.964733, 82, 2.08165e-12, 102.5)
 
 [node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
-default_background = SubResource("ViewportTexture_gmoyw")
+default_background = SubResource("ViewportTexture_p4td5")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -433,6 +437,13 @@ use_collision = true
 size = Vector3(20.2, 28, 1)
 material = ExtResource("5_uusyq")
 
+[node name="Welcome" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit/Lobby"]
+transform = Transform3D(0.707107, -2.93695e-31, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, 1, 24, 1)
+modulate = Color(0, 0.00392157, 0, 1)
+text = "Welcome"
+font = ExtResource("21_c8jvv")
+font_size = 1024
+
 [node name="Entrance" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit"]
 
 [node name="BuildingFace" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit/Entrance"]
@@ -472,7 +483,7 @@ size = Vector3(21, 7, 1)
 material = ExtResource("3_5pt7p")
 
 [node name="MyseumLabel" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit/BuildingFaceOutcropping"]
-transform = Transform3D(1, 3.72469e-23, -2.50325e-08, -4.63818e-22, 1, 4.63818e-22, -2.50325e-08, 1.56927e-23, 1, 0.118537, 0, 1.307)
+transform = Transform3D(1, 3.72469e-23, -2.50325e-08, -4.63818e-22, 1, 4.63818e-22, -2.50325e-08, 1.56927e-23, 1, -0.3, 2.08165e-12, 1.2)
 modulate = Color(0, 0.00392157, 0, 1)
 text = "Myseum"
 font = ExtResource("13_gvajt")
@@ -839,8 +850,9 @@ transform = Transform3D(-0.4, 1.39514e-16, 6.03983e-08, 1.39514e-16, 0.4, -1.395
 texture = ExtResource("19_uhur4")
 
 [node name="Author3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
-transform = Transform3D(-0.375877, 1.78818e-16, 0.136808, 1.39515e-16, 0.4, -1.39515e-16, -0.136808, -8.33841e-17, -0.375877, 4.705, 7.031, 13)
-texture = ExtResource("20_eh66w")
+transform = Transform3D(-0.5, 1.74393e-16, -7.54979e-08, 1.74393e-16, 0.5, -1.74393e-16, 7.54979e-08, -1.74393e-16, -0.5, 9.39508, 5.53966, 14.7224)
+offset = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("22_3egnr")
 
 [node name="AboutAuthor" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 12, -1)
@@ -1056,7 +1068,7 @@ size = Vector3(1, 9, 16)
 material = ExtResource("3_5pt7p")
 
 [node name="Wall2" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, -1.71041e-22, 0, -1.71041e-22, 1, -7.5, 0, 2.09172e-12)
 use_collision = true
 size = Vector3(1, 9, 16)
 material = ExtResource("3_5pt7p")
@@ -1067,10 +1079,33 @@ use_collision = true
 size = Vector3(16, 1, 16)
 material = ExtResource("6_h1c7g")
 
+[node name="LivingRoom" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
+transform = Transform3D(0, -0.5, -2.18557e-08, 0.5, 0, -4.00645e-17, 4.00669e-17, -2.18557e-08, 0.5, -3.75, 0, -6.9)
+texture = ExtResource("28_odd10")
+
+[node name="CeilingWindow" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
+transform = Transform3D(-6.55671e-08, 7.43094e-08, 1.5, -6.55671e-08, -1.7, 6.55671e-08, 1.5, -7.43094e-08, 6.55671e-08, -6.95, 9.53674e-07, -7.43032e-08)
+texture = ExtResource("29_uex88")
+
+[node name="Rug" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
+transform = Transform3D(-4.37114e-08, 2.18557e-08, -0.5, -0.5, 2.18557e-08, 4.37114e-08, 2.18557e-08, 0.5, 2.18557e-08, -0.6, -1, 2.08165e-12)
+texture = ExtResource("29_2uwl1")
+
+[node name="AboutLabel" type="Label3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 0, 1, -5.5, -0.8, -5)
+modulate = Color(0, 0, 0, 1)
+text = "About"
+font = ExtResource("13_gvajt")
+font_size = 128
+
 [node name="Screen" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 29, 2.08165e-12)
 size = Vector3(64, 1, 64)
 material = SubResource("StandardMaterial3D_tur78")
+
+[node name="VideoScreen" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom/Screen"]
+transform = Transform3D(-1.74846e-07, -4, 1.74846e-07, 0, -1.74846e-07, -4, 4, -1.74846e-07, 7.64274e-15, -10, -1, 2.08165e-12)
+texture = ExtResource("27_bsj4t")
 
 [node name="MidWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 0, -20)
@@ -1545,6 +1580,15 @@ transform = Transform3D(-0.573576, 0.0713938, 0.816035, 3.4746e-16, 0.996195, -0
 top_level = true
 script = ExtResource("28_s4qiu")
 
+[node name="AboutViewport" type="SubViewport" parent="Level/Museum/Rooms/Cameras"]
+unique_name_in_owner = true
+size = Vector2i(1024, 600)
+
+[node name="AboutCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/AboutViewport"]
+transform = Transform3D(-0.866025, -8.15666e-08, -0.5, -0.5, -2.18557e-08, 0.866025, -8.15666e-08, 1, -2.18557e-08, -2, -9, 2)
+top_level = true
+script = ExtResource("28_s4qiu")
+
 [node name="Outside" type="Node3D" parent="Level"]
 script = ExtResource("5_d3i2t")
 
@@ -1821,7 +1865,7 @@ size = Vector3(64, 1, 64)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -8, 96)
 
 [node name="ByLabel" type="Label3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707107, 3.48787e-16, 1, -3.48787e-16, -0.707107, 4.93259e-16, 0.707107, -13.1257, 12.3725, -13.722)
+transform = Transform3D(0.965926, -2.4663e-16, 0.258819, 3.48787e-16, 1, -3.48787e-16, -0.258819, 4.27175e-16, 0.965926, -14.264, 11.6006, -7.53344)
 modulate = Color(0, 0, 0, 1)
 text = "by..."
 font = ExtResource("13_gvajt")
@@ -1842,7 +1886,7 @@ size = Vector3(16, 1, 16)
 material = SubResource("StandardMaterial3D_uef4v")
 
 [node name="Fountain" type="CSGPolygon3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16, 1, -16)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12, 1, -12)
 polygon = PackedVector2Array(0, 0, 8, 8, 3, 2.08165e-12, 8, 3, 9, 2.08165e-12)
 mode = 1
 spin_degrees = 360.0
@@ -1850,7 +1894,7 @@ spin_sides = 8
 material = SubResource("StandardMaterial3D_es22e")
 
 [node name="AudasiteSphere" parent="Level/Floors/Middle/External/Courtyard" instance=ExtResource("6_k54p3")]
-transform = Transform3D(-0.565685, 4.98385e-23, -0.565685, 2.7903e-16, 0.8, -2.79029e-16, 0.565685, -3.94607e-16, -0.565685, -16, 10, -16)
+transform = Transform3D(-0.799999, 2.7903e-16, 6.99382e-08, 2.79029e-16, 0.8, -2.79029e-16, -6.99382e-08, -2.79029e-16, -0.799999, -12, 10, -12)
 
 [node name="Floor6" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.72, -8, 32)
@@ -2207,7 +2251,7 @@ font = ExtResource("21_c8jvv")
 font_size = 256
 
 [node name="Inspo2" type="Sprite3D" parent="Level/Inspiration"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1, 7, 2.08165e-12)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1, 8, 2.08165e-12)
 texture = ExtResource("31_fsx1c")
 
 [node name="Label3D2" type="Label3D" parent="Level/Inspiration/Inspo2"]
@@ -2222,7 +2266,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 13, 2.08165e-12)
 texture = ExtResource("32_4lqn7")
 
 [node name="Label3D3" type="Label3D" parent="Level/Inspiration/Inspo3"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1, -4, 1)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5, -4, 1)
 modulate = Color(0, 0, 0, 1)
 text = "Art of 
 M.C. Escher

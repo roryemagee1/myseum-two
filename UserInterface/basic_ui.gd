@@ -47,8 +47,12 @@ func _on_gallery_button_pressed() -> void:
 	menu_background.set_background(gallery_viewport.get_texture())
 	current_camera_position = gallery_camera.position
 
+func _on_myseum_button_pressed() -> void:
+	pass
 
 func _on_enter_button_pressed() -> void:
 	toggle_ui(false)
 	player.position = current_camera_position
 	
+
+
