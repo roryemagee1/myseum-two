@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="1_ayj61"]
 
 [resource]
+default_base_scale = 1.0
 default_font = ExtResource("1_ayj61")
 default_font_size = 42

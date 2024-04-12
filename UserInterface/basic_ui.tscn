@@ -85,6 +85,20 @@ theme = SubResource("Theme_sinh8")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Myseum"
 
+[node name="GalleryButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_fqxdh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
+text = "   Gallery   "
+
+[node name="InspirationButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_fqxdh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
+text = "   Inspiration   "
+
 [node name="AboutButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
 material = SubResource("CanvasItemMaterial_wohyu")
 layout_mode = 2
@@ -101,20 +115,6 @@ theme = ExtResource("3_fqxdh")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
 text = "   Author   "
-
-[node name="InspirationButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_fqxdh")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
-text = "   Inspiration   "
-
-[node name="GalleryButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_fqxdh")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.996078, 1, 0, 1)
-text = "   Gallery   "
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -145,8 +145,8 @@ texture = SubResource("ViewportTexture_66csr")
 script = ExtResource("5_x1ui8")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/PanelContainer/MyseumButton" to="." method="_on_myseum_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/GalleryButton" to="." method="_on_gallery_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/InspirationButton" to="." method="_on_inspiration_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/AuthorButton" to="." method="_on_author_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/InspirationButton" to="." method="_on_inspiration_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/GalleryButton" to="." method="_on_gallery_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer4/EnterButton" to="." method="_on_enter_button_pressed"]

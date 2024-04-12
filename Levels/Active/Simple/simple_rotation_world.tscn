@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=57 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -40,8 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
 [ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
 [ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
+[ext_resource type="Texture2D" uid="uid://bhrsq1q248vvy" path="res://Assets/obsidian_transparent.png" id="40_11rma"]
+[ext_resource type="Texture2D" uid="uid://dlr85koo3th5x" path="res://Assets/rubiks_cube.png" id="41_i1xk5"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p4td5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sojrf"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
@@ -133,19 +135,19 @@ size = Vector2i(1024, 600)
 
 [node name="InspirationCamera" type="Camera3D" parent="InspirationViewport"]
 unique_name_in_owner = true
-transform = Transform3D(0.99863, -0.00818715, 0.0516916, 3.44493e-16, 0.987688, 0.156434, -0.052336, -0.15622, 0.986335, -28, 16, -112)
+transform = Transform3D(0.99863, -0.00818715, 0.0516916, 3.44493e-16, 0.987688, 0.156434, -0.052336, -0.15622, 0.986335, -28.5, 16, -112)
 fov = 55.0
 
-[node name="GalleryViewport" type="SubViewport" parent="."]
+[node name="MyseumViewport" type="SubViewport" parent="."]
 unique_name_in_owner = true
 size = Vector2i(1024, 600)
 
-[node name="GalleryCamera" type="Camera3D" parent="GalleryViewport"]
+[node name="MyseumCamera" type="Camera3D" parent="MyseumViewport"]
 unique_name_in_owner = true
 transform = Transform3D(0.978148, 0.0343153, 0.20506, 3.44003e-16, 0.986286, -0.165048, -0.207912, 0.161441, 0.964733, 82, 2.08165e-12, 102.5)
 
 [node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
-default_background = SubResource("ViewportTexture_p4td5")
+default_background = SubResource("ViewportTexture_sojrf")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -855,14 +857,14 @@ offset = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("22_3egnr")
 
 [node name="AboutAuthor" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 12, -1)
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 9, -1)
 modulate = Color(0, 0, 0.0352941, 1)
 text = "About the Author"
 font = ExtResource("13_gvajt")
 font_size = 512
 
 [node name="AboutText" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, -2, -1)
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, -4, -1)
 modulate = Color(0, 0, 0.0352941, 1)
 text = "Rory Magee is a web developer 
 who combines art and 
@@ -1092,11 +1094,17 @@ transform = Transform3D(-4.37114e-08, 2.18557e-08, -0.5, -0.5, 2.18557e-08, 4.37
 texture = ExtResource("29_2uwl1")
 
 [node name="AboutLabel" type="Label3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 0, 1, -5.5, -0.8, -5)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 0, 1, -5.3, 1.5, -5)
 modulate = Color(0, 0, 0, 1)
 text = "About"
 font = ExtResource("13_gvajt")
-font_size = 128
+font_size = 160
+
+[node name="VideoPlayerNote" type="Label3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -1.32955, 3.375, 1.02637)
+text = "Videoplayer coming soon  "
+font = ExtResource("21_c8jvv")
+font_size = 160
 
 [node name="Screen" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 29, 2.08165e-12)
@@ -1560,11 +1568,11 @@ material = ExtResource("5_mrkfa")
 
 [node name="Cameras" type="Node3D" parent="Level/Museum/Rooms"]
 
-[node name="MyseumOneViewport" type="SubViewport" parent="Level/Museum/Rooms/Cameras"]
+[node name="GalleryViewport" type="SubViewport" parent="Level/Museum/Rooms/Cameras"]
 unique_name_in_owner = true
 size = Vector2i(1024, 600)
 
-[node name="MyseumOneCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/MyseumOneViewport"]
+[node name="GalleryCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/GalleryViewport"]
 unique_name_in_owner = true
 transform = Transform3D(1, -3.18388e-16, 3.4746e-16, 3.4746e-16, 0.996195, -0.0871557, -3.18388e-16, 0.0871557, 0.996195, 39, 2.2, 3.2)
 top_level = true
@@ -1585,6 +1593,7 @@ unique_name_in_owner = true
 size = Vector2i(1024, 600)
 
 [node name="AboutCamera" type="Camera3D" parent="Level/Museum/Rooms/Cameras/AboutViewport"]
+unique_name_in_owner = true
 transform = Transform3D(-0.866025, -8.15666e-08, -0.5, -0.5, -2.18557e-08, 0.866025, -8.15666e-08, 1, -2.18557e-08, -2, -9, 2)
 top_level = true
 script = ExtResource("28_s4qiu")
@@ -2232,7 +2241,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0582657, 0, -0.029232)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -154)
 
 [node name="InspirationTitle" type="Label3D" parent="Level/Inspiration"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.08165e-12, 18, 2.08165e-12)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.08165e-12, 24, 2.08165e-12)
 modulate = Color(0, 0, 0, 1)
 text = "Inspiration
 "
@@ -2240,7 +2249,7 @@ font = ExtResource("13_gvajt")
 font_size = 300
 
 [node name="Inspo1" type="Sprite3D" parent="Level/Inspiration"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16, 12, 2.08165e-12)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 14, 2.08165e-12)
 texture = ExtResource("30_mxv8p")
 
 [node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo1"]
@@ -2251,22 +2260,22 @@ font = ExtResource("21_c8jvv")
 font_size = 256
 
 [node name="Inspo2" type="Sprite3D" parent="Level/Inspiration"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1, 8, 2.08165e-12)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 8, 2.08165e-12)
 texture = ExtResource("31_fsx1c")
 
 [node name="Label3D2" type="Label3D" parent="Level/Inspiration/Inspo2"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.669, -5, 1)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -3, 3)
 modulate = Color(0, 0, 0, 1)
 text = "African American Smithsonian"
 font = ExtResource("21_c8jvv")
-font_size = 256
+font_size = 192
 
 [node name="Inspo3" type="Sprite3D" parent="Level/Inspiration"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 13, 2.08165e-12)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20, 17, 2.08165e-12)
 texture = ExtResource("32_4lqn7")
 
 [node name="Label3D3" type="Label3D" parent="Level/Inspiration/Inspo3"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5, -4, 1)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -3.5, 1)
 modulate = Color(0, 0, 0, 1)
 text = "Art of 
 M.C. Escher
@@ -2275,8 +2284,30 @@ font = ExtResource("21_c8jvv")
 font_size = 256
 
 [node name="Inspo4" type="Sprite3D" parent="Level/Inspiration"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 6, 2.08165e-12)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 25, 6, 4)
 texture = ExtResource("33_p63cc")
+
+[node name="Inspo5" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, -4, 2.08165e-12)
+texture = ExtResource("40_11rma")
+
+[node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3.5, 1)
+modulate = Color(0, 0, 0, 1)
+text = "Obsidian"
+font = ExtResource("21_c8jvv")
+font_size = 256
+
+[node name="Inspo6" type="Sprite3D" parent="Level/Inspiration"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 21, -7, 4)
+texture = ExtResource("41_i1xk5")
+
+[node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.08165e-12, 1)
+modulate = Color(0, 0, 0, 1)
+text = "Rubik's Cube"
+font = ExtResource("21_c8jvv")
+font_size = 256
 
 [node name="Platform" type="CSGBox3D" parent="Level/Inspiration"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
@@ -2300,6 +2331,12 @@ material = ExtResource("3_5pt7p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, -24)
 use_collision = true
 size = Vector3(64, 24, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="Platform5" type="CSGBox3D" parent="Level/Inspiration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 24.5, -4)
+use_collision = true
+size = Vector3(14, 4, 1)
 material = ExtResource("3_5pt7p")
 
 [node name="TestShapes" type="Node3D" parent="."]
