@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=58 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -16,33 +16,35 @@
 [ext_resource type="Texture2D" uid="uid://bi7ellsfrvgxk" path="res://Materials/Shaders/CelShader/color_gradient.tres" id="10_rlyau"]
 [ext_resource type="Material" uid="uid://b0pl8yh43bqwi" path="res://Materials/Shaders/CelShader/cel_shade_with_outline.tres" id="11_3q7fd"]
 [ext_resource type="Texture2D" uid="uid://bd56d2s45jjvk" path="res://Materials/Shaders/CelShader/fresnel_gradient.tres" id="11_foyqx"]
-[ext_resource type="Texture2D" uid="uid://ba2p4p5cium6b" path="res://Assets/Visual/painting_1.png" id="12_l0bk0"]
-[ext_resource type="Texture2D" uid="uid://cmvpi6ijq5qoq" path="res://Assets/Visual/eclipse_1.jpg" id="12_tp8v2"]
-[ext_resource type="Texture2D" uid="uid://p7nsgvv1k4u5" path="res://Assets/Visual/painting_2.png" id="13_6mpc8"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/painting_1.png" id="12_l0bk0"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_1.jpg" id="12_tp8v2"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/painting_2.png" id="13_6mpc8"]
 [ext_resource type="FontFile" uid="uid://dwa7wfbeeuyo8" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="13_gvajt"]
-[ext_resource type="Texture2D" uid="uid://b2w4fxsgr1api" path="res://Assets/Visual/eclipse_2.jpg" id="13_y1au4"]
-[ext_resource type="Texture2D" uid="uid://chslpu626jipo" path="res://Assets/Visual/eclipse_3.jpg" id="14_3xgeo"]
-[ext_resource type="Texture2D" uid="uid://dt64fxmf3ldjk" path="res://Assets/Visual/painting_3.png" id="14_rogc5"]
-[ext_resource type="Texture2D" uid="uid://c4ga7mabhq7bd" path="res://Assets/Visual/canvas_easel.png" id="15_sjhga"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_2.jpg" id="13_y1au4"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_3.jpg" id="14_3xgeo"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/painting_3.png" id="14_rogc5"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/canvas_easel.png" id="15_sjhga"]
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
-[ext_resource type="Texture2D" uid="uid://ca2d7xwy0pp5g" path="res://Assets/Visual/author.jpg" id="18_hlywq"]
-[ext_resource type="Texture2D" uid="uid://d0o1veo7x7qw7" path="res://Assets/Visual/camera_shot.png" id="19_uhur4"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/author.jpg" id="18_hlywq"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/camera_shot.png" id="19_uhur4"]
+[ext_resource type="Texture2D" uid="uid://cnh5ps01cj530" path="res://Assets/Visual/paintings/butterfly.png" id="20_d5j0p"]
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
-[ext_resource type="Texture2D" uid="uid://c6y8v5db5vx5t" path="res://Assets/Visual/Harpers_Ferry_cropped.png" id="22_3egnr"]
+[ext_resource type="Texture2D" uid="uid://dt4t5bc0bc1gf" path="res://Assets/Visual/paintings/vapor_ride.png" id="21_nw616"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/Harpers_Ferry_cropped.png" id="22_3egnr"]
 [ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
-[ext_resource type="Texture2D" uid="uid://caj3xfe3ljol" path="res://Assets/Visual/video_countdown.png" id="27_bsj4t"]
-[ext_resource type="Texture2D" uid="uid://niyd1klqm2y6" path="res://Assets/Visual/fireplace_cropped.png" id="28_odd10"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/video_countdown.png" id="27_bsj4t"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/fireplace_cropped.png" id="28_odd10"]
 [ext_resource type="Script" path="res://Levels/Active/Simple/LevelCameraMovement.gd" id="28_s4qiu"]
-[ext_resource type="Texture2D" uid="uid://dr3cn3i6pp5gb" path="res://Assets/Visual/persian_rug.jpeg" id="29_2uwl1"]
-[ext_resource type="Texture2D" uid="uid://bpdf47wbs0bt0" path="res://Assets/Visual/forest_view_cropped.png" id="29_uex88"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/persian_rug.jpeg" id="29_2uwl1"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/forest_view_cropped.png" id="29_uex88"]
 [ext_resource type="Texture2D" uid="uid://dl2njcb6now13" path="res://Assets/Temp/salar_de_uyuni.jpeg" id="30_mxv8p"]
 [ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
 [ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
 [ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
-[ext_resource type="Texture2D" uid="uid://bhrsq1q248vvy" path="res://Assets/Visual/obsidian_transparent.png" id="40_11rma"]
-[ext_resource type="Texture2D" uid="uid://dlr85koo3th5x" path="res://Assets/Visual/rubiks_cube.png" id="41_i1xk5"]
-[ext_resource type="Texture2D" uid="uid://ceeduo677rlj3" path="res://Assets/Visual/super_mario_64.jpeg" id="42_ti27u"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/obsidian_transparent.png" id="40_11rma"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/rubiks_cube.png" id="41_i1xk5"]
+[ext_resource type="Texture2D" path="res://Assets/Visual/super_mario_64.jpeg" id="42_ti27u"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_b8ba3"]
 viewport_path = NodePath("SubViewport")
@@ -816,6 +818,14 @@ material = ExtResource("3_5pt7p")
 operation = 2
 size = Vector3(31, 31, 31)
 material = SubResource("StandardMaterial3D_g4hw8")
+
+[node name="Butterfly" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Exterior"]
+transform = Transform3D(0.9, -3.13908e-16, 3.13908e-16, 3.13908e-16, 0.9, -3.13908e-16, -3.13908e-16, 3.13908e-16, 0.9, 2.08165e-12, 2.08165e-12, 16.1)
+texture = ExtResource("20_d5j0p")
+
+[node name="VaporRide" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Exterior"]
+transform = Transform3D(-3.62805e-08, 2.89493e-16, 0.83, 2.89493e-16, 0.83, -2.89493e-16, -0.83, 2.89493e-16, -3.62805e-08, 16.1, 3.5, 2.08165e-12)
+texture = ExtResource("21_nw616")
 
 [node name="Interior" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom"]
 
