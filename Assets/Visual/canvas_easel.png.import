@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwqlp5ytjt5r4"
-path.s3tc="res://.godot/imported/AudasiteJustWriting.png-4c405dcf1dcd7d62cf95ee765763fb36.s3tc.ctex"
+uid="uid://c4ga7mabhq7bd"
+path.s3tc="res://.godot/imported/canvas_easel.png-698823f56e6b50d0c70ded5e65b2e993.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/AudasiteJustWriting.png"
-dest_files=["res://.godot/imported/AudasiteJustWriting.png-4c405dcf1dcd7d62cf95ee765763fb36.s3tc.ctex"]
+source_file="res://Assets/Visual/canvas_easel.png"
+dest_files=["res://.godot/imported/canvas_easel.png-698823f56e6b50d0c70ded5e65b2e993.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p7nsgvv1k4u5"
-path.s3tc="res://.godot/imported/painting_2.png-97140c149576a00b06af6bd88d0bff47.s3tc.ctex"
+uid="uid://s6nd7jlwtiyp"
+path.s3tc="res://.godot/imported/AudasiteJustCompany.png-d769117cbc120805e561d17a7b731859.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/painting_2.png"
-dest_files=["res://.godot/imported/painting_2.png-97140c149576a00b06af6bd88d0bff47.s3tc.ctex"]
+source_file="res://Assets/Visual/AudasiteJustCompany.png"
+dest_files=["res://.godot/imported/AudasiteJustCompany.png-d769117cbc120805e561d17a7b731859.s3tc.ctex"]
 
 [params]
 

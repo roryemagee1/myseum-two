@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr3cn3i6pp5gb"
-path.s3tc="res://.godot/imported/persian_rug.jpeg-8b649af4bd63ce038a3bd3a9470f4b86.s3tc.ctex"
+uid="uid://ba2p4p5cium6b"
+path.s3tc="res://.godot/imported/painting_1.png-0b8e01e3a798111cc486e5c44f127dde.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/persian_rug.jpeg"
-dest_files=["res://.godot/imported/persian_rug.jpeg-8b649af4bd63ce038a3bd3a9470f4b86.s3tc.ctex"]
+source_file="res://Assets/Visual/painting_1.png"
+dest_files=["res://.godot/imported/painting_1.png-0b8e01e3a798111cc486e5c44f127dde.s3tc.ctex"]
 
 [params]
 

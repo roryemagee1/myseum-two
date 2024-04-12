@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlr85koo3th5x"
-path.s3tc="res://.godot/imported/rubiks_cube.png-69d7d51e74072bc7fc74091491477a07.s3tc.ctex"
+uid="uid://cmvpi6ijq5qoq"
+path.s3tc="res://.godot/imported/eclipse_1.jpg-919af5b107cec10b48d53edc2ed2b4c4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/rubiks_cube.png"
-dest_files=["res://.godot/imported/rubiks_cube.png-69d7d51e74072bc7fc74091491477a07.s3tc.ctex"]
+source_file="res://Assets/Visual/eclipse_1.jpg"
+dest_files=["res://.godot/imported/eclipse_1.jpg-919af5b107cec10b48d53edc2ed2b4c4.s3tc.ctex"]
 
 [params]
 

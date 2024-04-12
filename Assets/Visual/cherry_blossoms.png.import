@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bptime2ygjuee"
-path.s3tc="res://.godot/imported/AudasiteJustMacron.png-4c7569befa888b12579ced16d4532619.s3tc.ctex"
+uid="uid://dig2uoq2mpw3x"
+path.s3tc="res://.godot/imported/cherry_blossoms.png-65c9083ec4c1c5afd81d08fb967d0061.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/AudasiteJustMacron.png"
-dest_files=["res://.godot/imported/AudasiteJustMacron.png-4c7569befa888b12579ced16d4532619.s3tc.ctex"]
+source_file="res://Assets/Visual/cherry_blossoms.png"
+dest_files=["res://.godot/imported/cherry_blossoms.png-65c9083ec4c1c5afd81d08fb967d0061.s3tc.ctex"]
 
 [params]
 

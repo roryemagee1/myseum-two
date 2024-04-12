@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caj3xfe3ljol"
-path.s3tc="res://.godot/imported/video_countdown.png-ef6acfbe3755e0da3bf7cf0fa98543a8.s3tc.ctex"
+uid="uid://c6y8v5db5vx5t"
+path.s3tc="res://.godot/imported/Harpers_Ferry_cropped.png-a5821064aca4ba5bf89c1de477245c19.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/video_countdown.png"
-dest_files=["res://.godot/imported/video_countdown.png-ef6acfbe3755e0da3bf7cf0fa98543a8.s3tc.ctex"]
+source_file="res://Assets/Visual/Harpers_Ferry_cropped.png"
+dest_files=["res://.godot/imported/Harpers_Ferry_cropped.png-a5821064aca4ba5bf89c1de477245c19.s3tc.ctex"]
 
 [params]
 

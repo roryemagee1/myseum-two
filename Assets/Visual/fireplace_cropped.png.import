@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6nd7jlwtiyp"
-path.s3tc="res://.godot/imported/AudasiteJustCompany.png-1fbd547ac1c17cfcb6c1a78d21608405.s3tc.ctex"
+uid="uid://niyd1klqm2y6"
+path.s3tc="res://.godot/imported/fireplace_cropped.png-e40876c02cc9f5d6679938c577fce4ed.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/AudasiteJustCompany.png"
-dest_files=["res://.godot/imported/AudasiteJustCompany.png-1fbd547ac1c17cfcb6c1a78d21608405.s3tc.ctex"]
+source_file="res://Assets/Visual/fireplace_cropped.png"
+dest_files=["res://.godot/imported/fireplace_cropped.png-e40876c02cc9f5d6679938c577fce4ed.s3tc.ctex"]
 
 [params]
 

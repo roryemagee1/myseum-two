@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca2d7xwy0pp5g"
-path.s3tc="res://.godot/imported/author.jpg-efcb741631aec950ea3a589c4d01804c.s3tc.ctex"
+uid="uid://b5tulmtp6r22n"
+path.s3tc="res://.godot/imported/Harpers_Ferry.png-8cef15e3715002476ef187dad2837397.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/author.jpg"
-dest_files=["res://.godot/imported/author.jpg-efcb741631aec950ea3a589c4d01804c.s3tc.ctex"]
+source_file="res://Assets/Visual/Harpers_Ferry.png"
+dest_files=["res://.godot/imported/Harpers_Ferry.png-8cef15e3715002476ef187dad2837397.s3tc.ctex"]
 
 [params]
 

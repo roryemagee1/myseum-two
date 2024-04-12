@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmvpi6ijq5qoq"
-path.s3tc="res://.godot/imported/eclipse_1.jpg-ece35f8ac983bb5105cd7d5275294227.s3tc.ctex"
+uid="uid://bpdf47wbs0bt0"
+path.s3tc="res://.godot/imported/forest_view_cropped.png-e72b7a3aaec402a2cca1158566b77bd1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/eclipse_1.jpg"
-dest_files=["res://.godot/imported/eclipse_1.jpg-ece35f8ac983bb5105cd7d5275294227.s3tc.ctex"]
+source_file="res://Assets/Visual/forest_view_cropped.png"
+dest_files=["res://.godot/imported/forest_view_cropped.png-e72b7a3aaec402a2cca1158566b77bd1.s3tc.ctex"]
 
 [params]
 

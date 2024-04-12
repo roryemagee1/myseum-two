@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpdf47wbs0bt0"
-path.s3tc="res://.godot/imported/forest_view_cropped.png-50e645157d6613995b8678fc1ed9e73b.s3tc.ctex"
+uid="uid://elqsavl78364"
+path.s3tc="res://.godot/imported/AudasiteJustBackground.png-814c2f78e7026980fea34e1ab6ea3734.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/forest_view_cropped.png"
-dest_files=["res://.godot/imported/forest_view_cropped.png-50e645157d6613995b8678fc1ed9e73b.s3tc.ctex"]
+source_file="res://Assets/Visual/AudasiteJustBackground.png"
+dest_files=["res://.godot/imported/AudasiteJustBackground.png-814c2f78e7026980fea34e1ab6ea3734.s3tc.ctex"]
 
 [params]
 

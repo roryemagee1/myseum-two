@@ -21,6 +21,7 @@ default_font_size = 48
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4t8h"]
 
 [sub_resource type="Theme" id="Theme_sinh8"]
+default_base_scale = 1.0
 default_font = ExtResource("2_mc0pq")
 default_font_size = 48
 
@@ -72,7 +73,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_wgno3")
 
 [node name="MyseumButton" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer/PanelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p4t8h")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_p4t8h")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_p4t8h")
@@ -83,7 +83,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_p4t8h")
 layout_mode = 2
 theme = SubResource("Theme_sinh8")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Myseum"
+text = " Myseum"
+horizontal_alignment = 1
 
 [node name="GalleryButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2

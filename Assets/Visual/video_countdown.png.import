@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://elqsavl78364"
-path.s3tc="res://.godot/imported/AudasiteJustBackground.png-6d985e29cd3dd08b06c6ec2daece3ca3.s3tc.ctex"
+uid="uid://caj3xfe3ljol"
+path.s3tc="res://.godot/imported/video_countdown.png-9b662611f8e89f6aaef0b26e6733eb6b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/AudasiteJustBackground.png"
-dest_files=["res://.godot/imported/AudasiteJustBackground.png-6d985e29cd3dd08b06c6ec2daece3ca3.s3tc.ctex"]
+source_file="res://Assets/Visual/video_countdown.png"
+dest_files=["res://.godot/imported/video_countdown.png-9b662611f8e89f6aaef0b26e6733eb6b.s3tc.ctex"]
 
 [params]
 

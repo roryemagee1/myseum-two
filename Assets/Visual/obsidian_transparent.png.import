@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dig2uoq2mpw3x"
-path.s3tc="res://.godot/imported/cherry_blossoms.png-85778f9be51f29c2950c9bea2dd6d9cf.s3tc.ctex"
+uid="uid://bhrsq1q248vvy"
+path.s3tc="res://.godot/imported/obsidian_transparent.png-b712fe654eb557502554161385c40cfa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/cherry_blossoms.png"
-dest_files=["res://.godot/imported/cherry_blossoms.png-85778f9be51f29c2950c9bea2dd6d9cf.s3tc.ctex"]
+source_file="res://Assets/Visual/obsidian_transparent.png"
+dest_files=["res://.godot/imported/obsidian_transparent.png-b712fe654eb557502554161385c40cfa.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6y8v5db5vx5t"
-path.s3tc="res://.godot/imported/Harpers_Ferry_cropped.png-8a205e5dd214dbab36ae60ce0952547d.s3tc.ctex"
+uid="uid://cm4rg5x7q2b5x"
+path.s3tc="res://.godot/imported/fireplace.jpeg-3c4918a552c75e18aa2f5387aaba3f17.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Harpers_Ferry_cropped.png"
-dest_files=["res://.godot/imported/Harpers_Ferry_cropped.png-8a205e5dd214dbab36ae60ce0952547d.s3tc.ctex"]
+source_file="res://Assets/Visual/fireplace.jpeg"
+dest_files=["res://.godot/imported/fireplace.jpeg-3c4918a552c75e18aa2f5387aaba3f17.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhrsq1q248vvy"
-path.s3tc="res://.godot/imported/obsidian_transparent.png-8bc871c30467f1846d87f26ab302fce0.s3tc.ctex"
+uid="uid://dr3cn3i6pp5gb"
+path.s3tc="res://.godot/imported/persian_rug.jpeg-3d94c8cebd085179598622b215a62d65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/obsidian_transparent.png"
-dest_files=["res://.godot/imported/obsidian_transparent.png-8bc871c30467f1846d87f26ab302fce0.s3tc.ctex"]
+source_file="res://Assets/Visual/persian_rug.jpeg"
+dest_files=["res://.godot/imported/persian_rug.jpeg-3d94c8cebd085179598622b215a62d65.s3tc.ctex"]
 
 [params]
 

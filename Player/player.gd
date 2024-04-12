@@ -13,8 +13,9 @@ var mouse_motion := Vector2.ZERO
 @onready var basic_ui: Control = $"../BasicUI"
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	basic_ui.toggle_ui(true)
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 
 func _physics_process(delta: float) -> void:
 	handle_camera_rotation()
