@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=56 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -14,39 +14,37 @@
 [ext_resource type="Script" path="res://Levels/Active/Simple/RotationButton.gd" id="6_u302p"]
 [ext_resource type="Shader" path="res://Materials/Shaders/CelShader/cel_shade_complete.gdshader" id="9_3okf5"]
 [ext_resource type="Texture2D" uid="uid://bi7ellsfrvgxk" path="res://Materials/Shaders/CelShader/color_gradient.tres" id="10_rlyau"]
+[ext_resource type="Texture2D" uid="uid://dfg0yjkb34khk" path="res://Assets/Visual/paintings/shangri_la.png" id="11_0ibwe"]
 [ext_resource type="Material" uid="uid://b0pl8yh43bqwi" path="res://Materials/Shaders/CelShader/cel_shade_with_outline.tres" id="11_3q7fd"]
 [ext_resource type="Texture2D" uid="uid://bd56d2s45jjvk" path="res://Materials/Shaders/CelShader/fresnel_gradient.tres" id="11_foyqx"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/painting_1.png" id="12_l0bk0"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_1.jpg" id="12_tp8v2"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/painting_2.png" id="13_6mpc8"]
 [ext_resource type="FontFile" uid="uid://dwa7wfbeeuyo8" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="13_gvajt"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_2.jpg" id="13_y1au4"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/eclipse_3.jpg" id="14_3xgeo"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/painting_3.png" id="14_rogc5"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/canvas_easel.png" id="15_sjhga"]
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/author.jpg" id="18_hlywq"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/camera_shot.png" id="19_uhur4"]
 [ext_resource type="Texture2D" uid="uid://cnh5ps01cj530" path="res://Assets/Visual/paintings/butterfly.png" id="20_d5j0p"]
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
 [ext_resource type="Texture2D" uid="uid://dt4t5bc0bc1gf" path="res://Assets/Visual/paintings/vapor_ride.png" id="21_nw616"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/Harpers_Ferry_cropped.png" id="22_3egnr"]
 [ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/video_countdown.png" id="27_bsj4t"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/fireplace_cropped.png" id="28_odd10"]
+[ext_resource type="Texture2D" uid="uid://b1afyjxv4qkfr" path="res://Assets/Visual/photos/washington_monument.png" id="25_ntd13"]
+[ext_resource type="Texture2D" uid="uid://dso8g5fjd80n8" path="res://Assets/Visual/photos/heart_of_the_forest.png" id="26_8s5no"]
+[ext_resource type="Texture2D" uid="uid://bry3qn52pkkua" path="res://Assets/Visual/photos/washington_zen.png" id="26_raab5"]
+[ext_resource type="Texture2D" uid="uid://bwg3rojcsry5q" path="res://Assets/Visual/photos/cherry_blossoms.png" id="26_wyp6b"]
+[ext_resource type="Texture2D" uid="uid://b16un5e6krkfi" path="res://Assets/Visual/photos/jefferson_memorial_lake.png" id="27_oum4h"]
+[ext_resource type="Texture2D" uid="uid://8gldv6pkw1qy" path="res://Assets/Visual/photos/morning_blossoms.png" id="28_jbviw"]
 [ext_resource type="Script" path="res://Levels/Active/Simple/LevelCameraMovement.gd" id="28_s4qiu"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/persian_rug.jpeg" id="29_2uwl1"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/forest_view_cropped.png" id="29_uex88"]
+[ext_resource type="Texture2D" uid="uid://cv2r5tcu3jq4w" path="res://Assets/Visual/photos/morning_in_washington.png" id="29_n0lkg"]
 [ext_resource type="Texture2D" uid="uid://dl2njcb6now13" path="res://Assets/Temp/salar_de_uyuni.jpeg" id="30_mxv8p"]
 [ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
 [ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
 [ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/obsidian_transparent.png" id="40_11rma"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/rubiks_cube.png" id="41_i1xk5"]
-[ext_resource type="Texture2D" path="res://Assets/Visual/super_mario_64.jpeg" id="42_ti27u"]
+[ext_resource type="Texture2D" uid="uid://dl657hf1bx51d" path="res://Assets/Visual/photos/trippy_trees.png" id="39_2763k"]
+[ext_resource type="Texture2D" uid="uid://dg2xkdgk5u7qq" path="res://Assets/Visual/paintings/nature_vs_industry.png" id="40_frvi4"]
+[ext_resource type="Texture2D" uid="uid://bhrsq1q248vvy" path="res://Assets/Visual/NonArt/obsidian_transparent.png" id="40_jvvyc"]
+[ext_resource type="Texture2D" uid="uid://dlr85koo3th5x" path="res://Assets/Visual/NonArt/rubiks_cube.png" id="41_eou27"]
+[ext_resource type="Texture2D" uid="uid://ceeduo677rlj3" path="res://Assets/Visual/NonArt/super_mario_64.jpeg" id="42_5fqkk"]
+[ext_resource type="Texture2D" uid="uid://vsc5ej3qh20o" path="res://Assets/Visual/photos/venice.png" id="42_tjslw"]
+[ext_resource type="Texture2D" uid="uid://bkc57jrel3kh1" path="res://Assets/Visual/photos/tower_perspective.png" id="43_01ck4"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_b8ba3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8qk8c"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yppem"]
@@ -136,7 +134,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.978148, 0.0343153, 0.20506, 3.44003e-16, 0.986286, -0.165048, -0.207912, 0.161441, 0.964733, 82, 2.08165e-12, 102.5)
 
 [node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
-default_background = SubResource("ViewportTexture_b8ba3")
+default_background = SubResource("ViewportTexture_8qk8c")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -435,6 +433,10 @@ text = "Welcome"
 font = ExtResource("21_c8jvv")
 font_size = 1024
 
+[node name="ShangriLa" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit/Lobby"]
+transform = Transform3D(-1.3, 4.53423e-16, -1.1365e-07, 4.53423e-16, 1.3, -4.53423e-16, 1.1365e-07, -4.53423e-16, -1.3, -16, 22, 34.961)
+texture = ExtResource("11_0ibwe")
+
 [node name="Entrance" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit"]
 
 [node name="BuildingFace" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit/Entrance"]
@@ -730,19 +732,15 @@ size = Vector3(12, 16, 1)
 
 [node name="Painting1" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(3, -1.04636e-15, 1.04636e-15, 1.04636e-15, 3, -1.04636e-15, -1.04636e-15, 1.04636e-15, 3, -15, -0.3, 24.1)
-texture = ExtResource("12_l0bk0")
 
 [node name="Painting2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(5, -1.74393e-15, 1.74393e-15, 1.74393e-15, 5, -1.74393e-15, -1.74393e-15, 1.74393e-15, 5, 0, -0.5, 6.5)
-texture = ExtResource("13_6mpc8")
 
 [node name="Painting3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(3, -1.04636e-15, 1.04636e-15, 1.04636e-15, 3, -1.04636e-15, -1.04636e-15, 1.04636e-15, 3, 15, -0.3, 24.1)
-texture = ExtResource("14_rogc5")
 
 [node name="CanvasEasel" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(0.2, -4.53423e-17, 4.53423e-17, 6.97574e-17, 0.13, -4.53423e-17, -6.97574e-17, 4.53423e-17, 0.13, 2.08165e-12, -6.3, 40)
-texture = ExtResource("15_sjhga")
 
 [node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
 use_collision = true
@@ -842,16 +840,13 @@ material = ExtResource("3_5pt7p")
 
 [node name="Author1" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-0.939693, 4.47045e-16, 0.34202, 3.48787e-16, 1, -3.48787e-16, -0.34202, -2.0846e-16, -0.939693, -3, 2.08165e-12, 10)
-texture = ExtResource("18_hlywq")
 
 [node name="Author2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-0.4, 1.39514e-16, 6.03983e-08, 1.39514e-16, 0.4, -1.39514e-16, -6.03983e-08, -1.39514e-16, -0.4, 7.3241, -7.14967, 15)
-texture = ExtResource("19_uhur4")
 
 [node name="Author3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-0.5, 1.74393e-16, -7.54979e-08, 1.74393e-16, 0.5, -1.74393e-16, 7.54979e-08, -1.74393e-16, -0.5, 9.39508, 5.53966, 14.7224)
 offset = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("22_3egnr")
 
 [node name="AboutAuthor" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 9, -1)
@@ -880,6 +875,15 @@ font_size = 300
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, -13, 2.08165e-12)
 operation = 2
 size = Vector3(1, 6, 4)
+
+[node name="ArtWall" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -2, 17, -62.9)
+size = Vector3(28, 28, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="HeartOfTheForest" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/ArtWall"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -0.0553207, -3.8147e-06, 0.8769)
+texture = ExtResource("26_8s5no")
 
 [node name="BuildingCubit4" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
 use_collision = true
@@ -958,6 +962,32 @@ transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, -11,
 operation = 2
 size = Vector3(1, 4, 6)
 
+[node name="StackImages" type="Node3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack"]
+
+[node name="WashingonMonument" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(-5.68248e-08, 4.53423e-16, 1.3, 4.53423e-16, 1.3, -4.53423e-16, -1.3, 4.53423e-16, -5.68248e-08, 0.610832, -11.0561, -14.0007)
+texture = ExtResource("25_ntd13")
+
+[node name="WashingtonZen" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(-1.3, 4.53423e-16, -1.1365e-07, 4.53423e-16, 1.3, -4.53423e-16, 1.1365e-07, -4.53423e-16, -1.3, 17.5, -11, -0.6)
+texture = ExtResource("26_raab5")
+
+[node name="WashingtonSunset" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(1.3, -4.53423e-16, 4.53423e-16, 4.53423e-16, 1.3, -4.53423e-16, -4.53423e-16, 4.53423e-16, 1.3, 17.5, -11, 0.6)
+texture = ExtResource("27_oum4h")
+
+[node name="CherryBlossoms" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(-1.3, 1.1365e-07, -4.96778e-15, -3.3314e-24, -5.68248e-08, -1.3, -1.1365e-07, -1.3, 5.68248e-08, 15, -0.6, -15)
+texture = ExtResource("26_wyp6b")
+
+[node name="WashingtonSunrise" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(1.3, 1.66315e-23, 1.98198e-23, -3.63081e-23, -5.68248e-08, -1.3, 0, 1.3, -5.68248e-08, 15.0033, -0.63854, 14.9615)
+texture = ExtResource("29_n0lkg")
+
+[node name="MorningZen" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+transform = Transform3D(-5.68248e-08, 4.53423e-16, 1.3, 4.53423e-16, 1.3, -4.53423e-16, -1.3, 4.53423e-16, -5.68248e-08, 0.611, -11.056, 17)
+texture = ExtResource("28_jbviw")
+
 [node name="Floor4" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 32)
 material_override = SubResource("StandardMaterial3D_yppem")
@@ -1028,15 +1058,12 @@ material = ExtResource("3_5pt7p")
 
 [node name="Eclipse1" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, -42.5, 2.08165e-12, 2)
-texture = ExtResource("12_tp8v2")
 
 [node name="Eclipse2" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2)
-texture = ExtResource("13_y1au4")
 
 [node name="Eclipse3" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, 42.5, 2.08165e-12, 2)
-texture = ExtResource("14_3xgeo")
 
 [node name="VideoRoom" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 13, 2.08165e-12)
@@ -1080,15 +1107,12 @@ material = ExtResource("6_h1c7g")
 
 [node name="LivingRoom" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(0, -0.5, -2.18557e-08, 0.5, 0, -4.00645e-17, 4.00669e-17, -2.18557e-08, 0.5, -3.75, 0, -6.9)
-texture = ExtResource("28_odd10")
 
 [node name="CeilingWindow" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-6.55671e-08, 7.43094e-08, 1.5, -6.55671e-08, -1.7, 6.55671e-08, 1.5, -7.43094e-08, 6.55671e-08, -6.95, 9.53674e-07, -7.43032e-08)
-texture = ExtResource("29_uex88")
 
 [node name="Rug" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-4.37114e-08, 2.18557e-08, -0.5, -0.5, 2.18557e-08, 4.37114e-08, 2.18557e-08, 0.5, 2.18557e-08, -0.6, -1, 2.08165e-12)
-texture = ExtResource("29_2uwl1")
 
 [node name="AboutLabel" type="Label3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 0, 1, -5.3, 1.5, -5)
@@ -1110,7 +1134,6 @@ material = SubResource("StandardMaterial3D_tur78")
 
 [node name="VideoScreen" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom/Screen"]
 transform = Transform3D(-1.74846e-07, -4, 1.74846e-07, 0, -1.74846e-07, -4, 4, -1.74846e-07, 7.64274e-15, -10, -1, 2.08165e-12)
-texture = ExtResource("27_bsj4t")
 
 [node name="MidWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 0, -20)
@@ -1267,6 +1290,10 @@ outer_radius = 15.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 16, 2.08165e-12)
 size = Vector3(42, 6, 6)
 material = ExtResource("3_5pt7p")
+
+[node name="TrippyTrees" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure/Tunnel"]
+transform = Transform3D(-0.2, 6.97574e-17, -1.74846e-08, 6.97574e-17, 0.2, -6.97574e-17, 1.74846e-08, -6.97574e-17, -0.2, 2.08165e-12, 2.08165e-12, -3.1)
+texture = ExtResource("39_2763k")
 
 [node name="TunnelCutout" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/FunkyStructure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 16, 2.08165e-12)
@@ -1434,6 +1461,14 @@ transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -9.5, -
 operation = 2
 size = Vector3(1, 6, 4)
 
+[node name="NatureVsIndustry" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(-2.79753e-08, 2.23224e-16, 0.64, 2.23224e-16, 0.64, -2.23224e-16, -0.64, 2.23224e-16, -2.79753e-08, -10.1, 3, 2.08165e-12)
+texture = ExtResource("40_frvi4")
+
+[node name="Venice" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(0.5, -1.74393e-16, 1.74393e-16, 1.74393e-16, 0.5, -1.74393e-16, -1.74393e-16, 1.74393e-16, 0.5, 2.08165e-12, -0.5, 12.1)
+texture = ExtResource("42_tjslw")
+
 [node name="SideBuilding2" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 29.5, -20)
 
@@ -1450,6 +1485,14 @@ size = Vector3(19, 31, 23)
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 9.5, -13, 2.08165e-12)
 operation = 2
 size = Vector3(1, 6, 4)
+
+[node name="NatureVsIndustry2" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(2.79753e-08, -2.6689e-15, 0.64, -5.59506e-08, -0.64, -2.23224e-16, 0.64, -5.59506e-08, -2.79753e-08, 10.1, 3, 0)
+texture = ExtResource("40_frvi4")
+
+[node name="Venice2" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(0.8, -2.7903e-16, 2.7903e-16, 2.7903e-16, 0.8, -2.7903e-16, -2.7903e-16, 2.7903e-16, 0.8, 2.08165e-12, -0.5, 12.1)
+texture = ExtResource("43_01ck4")
 
 [node name="BuildingCubit7" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
@@ -2282,7 +2325,7 @@ texture = ExtResource("33_p63cc")
 
 [node name="Inspo5" type="Sprite3D" parent="Level/Inspiration"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28, -4, 2.08165e-12)
-texture = ExtResource("40_11rma")
+texture = ExtResource("40_jvvyc")
 
 [node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3.5, 1)
@@ -2293,7 +2336,7 @@ font_size = 256
 
 [node name="Inspo6" type="Sprite3D" parent="Level/Inspiration"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 21, -7, 4)
-texture = ExtResource("41_i1xk5")
+texture = ExtResource("41_eou27")
 
 [node name="Label3D" type="Label3D" parent="Level/Inspiration/Inspo6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.08165e-12, 1)
@@ -2304,7 +2347,7 @@ font_size = 256
 
 [node name="Inspo7" type="Sprite3D" parent="Level/Inspiration"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19, 23.5, 1)
-texture = ExtResource("42_ti27u")
+texture = ExtResource("42_5fqkk")
 
 [node name="Platform" type="CSGBox3D" parent="Level/Inspiration"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
