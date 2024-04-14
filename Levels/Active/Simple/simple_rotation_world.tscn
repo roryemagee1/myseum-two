@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=67 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -19,12 +19,19 @@
 [ext_resource type="Texture2D" uid="uid://bd56d2s45jjvk" path="res://Materials/Shaders/CelShader/fresnel_gradient.tres" id="11_foyqx"]
 [ext_resource type="FontFile" uid="uid://dwa7wfbeeuyo8" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="13_gvajt"]
 [ext_resource type="PackedScene" uid="uid://c1v5v3g5nqj4l" path="res://Other/impossible_cube.tscn" id="16_rub1n"]
+[ext_resource type="Texture2D" uid="uid://ba2p4p5cium6b" path="res://Assets/Visual/NonArt/painting_1.png" id="17_fms0r"]
+[ext_resource type="Texture2D" uid="uid://p7nsgvv1k4u5" path="res://Assets/Visual/NonArt/painting_2.png" id="18_mekye"]
+[ext_resource type="Texture2D" uid="uid://dt64fxmf3ldjk" path="res://Assets/Visual/NonArt/painting_3.png" id="19_a2yqx"]
 [ext_resource type="Texture2D" uid="uid://cnh5ps01cj530" path="res://Assets/Visual/paintings/butterfly.png" id="20_d5j0p"]
+[ext_resource type="Texture2D" uid="uid://c4ga7mabhq7bd" path="res://Assets/Visual/NonArt/canvas_easel.png" id="20_i042a"]
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
 [ext_resource type="Texture2D" uid="uid://dt4t5bc0bc1gf" path="res://Assets/Visual/paintings/vapor_ride.png" id="21_nw616"]
 [ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
+[ext_resource type="Texture2D" uid="uid://ca2d7xwy0pp5g" path="res://Assets/Visual/NonArt/author.jpg" id="23_ppsj7"]
+[ext_resource type="Texture2D" uid="uid://d0o1veo7x7qw7" path="res://Assets/Visual/NonArt/camera_shot.png" id="24_gydb0"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
 [ext_resource type="Texture2D" uid="uid://b1afyjxv4qkfr" path="res://Assets/Visual/photos/washington_monument.png" id="25_ntd13"]
+[ext_resource type="Texture2D" uid="uid://c6y8v5db5vx5t" path="res://Assets/Visual/NonArt/Harpers_Ferry_cropped.png" id="25_p55w3"]
 [ext_resource type="Texture2D" uid="uid://dso8g5fjd80n8" path="res://Assets/Visual/photos/heart_of_the_forest.png" id="26_8s5no"]
 [ext_resource type="Texture2D" uid="uid://bry3qn52pkkua" path="res://Assets/Visual/photos/washington_zen.png" id="26_raab5"]
 [ext_resource type="Texture2D" uid="uid://bwg3rojcsry5q" path="res://Assets/Visual/photos/cherry_blossoms.png" id="26_wyp6b"]
@@ -36,6 +43,10 @@
 [ext_resource type="Texture2D" uid="uid://dlsjsu3m541lo" path="res://Assets/Temp/african_american_smithsonian.jpeg" id="31_fsx1c"]
 [ext_resource type="Texture2D" uid="uid://bhicoellvtnnt" path="res://Assets/Temp/mc_escher_world.png" id="32_4lqn7"]
 [ext_resource type="Texture2D" uid="uid://cgm30cpymowsp" path="res://Assets/Temp/mc_escher_self.png" id="33_p63cc"]
+[ext_resource type="Texture2D" uid="uid://niyd1klqm2y6" path="res://Assets/Visual/NonArt/fireplace_cropped.png" id="34_0aow3"]
+[ext_resource type="Texture2D" uid="uid://bpdf47wbs0bt0" path="res://Assets/Visual/NonArt/forest_view_cropped.png" id="35_khhe7"]
+[ext_resource type="Texture2D" uid="uid://dr3cn3i6pp5gb" path="res://Assets/Visual/NonArt/persian_rug.jpeg" id="36_bvh7j"]
+[ext_resource type="Texture2D" uid="uid://caj3xfe3ljol" path="res://Assets/Visual/NonArt/video_countdown.png" id="37_s2iua"]
 [ext_resource type="Texture2D" uid="uid://dl657hf1bx51d" path="res://Assets/Visual/photos/trippy_trees.png" id="39_2763k"]
 [ext_resource type="Texture2D" uid="uid://dg2xkdgk5u7qq" path="res://Assets/Visual/paintings/nature_vs_industry.png" id="40_frvi4"]
 [ext_resource type="Texture2D" uid="uid://bhrsq1q248vvy" path="res://Assets/Visual/NonArt/obsidian_transparent.png" id="40_jvvyc"]
@@ -732,15 +743,19 @@ size = Vector3(12, 16, 1)
 
 [node name="Painting1" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(3, -1.04636e-15, 1.04636e-15, 1.04636e-15, 3, -1.04636e-15, -1.04636e-15, 1.04636e-15, 3, -15, -0.3, 24.1)
+texture = ExtResource("17_fms0r")
 
 [node name="Painting2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(5, -1.74393e-15, 1.74393e-15, 1.74393e-15, 5, -1.74393e-15, -1.74393e-15, 1.74393e-15, 5, 0, -0.5, 6.5)
+texture = ExtResource("18_mekye")
 
 [node name="Painting3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(3, -1.04636e-15, 1.04636e-15, 1.04636e-15, 3, -1.04636e-15, -1.04636e-15, 1.04636e-15, 3, 15, -0.3, 24.1)
+texture = ExtResource("19_a2yqx")
 
 [node name="CanvasEasel" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(0.2, -4.53423e-17, 4.53423e-17, 6.97574e-17, 0.13, -4.53423e-17, -6.97574e-17, 4.53423e-17, 0.13, 2.08165e-12, -6.3, 40)
+texture = ExtResource("20_i042a")
 
 [node name="BuildingCubit3" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
 use_collision = true
@@ -840,13 +855,16 @@ material = ExtResource("3_5pt7p")
 
 [node name="Author1" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-0.939693, 4.47045e-16, 0.34202, 3.48787e-16, 1, -3.48787e-16, -0.34202, -2.0846e-16, -0.939693, -3, 2.08165e-12, 10)
+texture = ExtResource("23_ppsj7")
 
 [node name="Author2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-0.4, 1.39514e-16, 6.03983e-08, 1.39514e-16, 0.4, -1.39514e-16, -6.03983e-08, -1.39514e-16, -0.4, 7.3241, -7.14967, 15)
+texture = ExtResource("24_gydb0")
 
 [node name="Author3" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
-transform = Transform3D(-0.5, 1.74393e-16, -7.54979e-08, 1.74393e-16, 0.5, -1.74393e-16, 7.54979e-08, -1.74393e-16, -0.5, 9.39508, 5.53966, 14.7224)
+transform = Transform3D(-0.5, 1.74393e-16, -7.54979e-08, 1.74393e-16, 0.5, -1.74393e-16, 7.54979e-08, -1.74393e-16, -0.5, 8.5, 5.54, 14.5)
 offset = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("25_p55w3")
 
 [node name="AboutAuthor" type="Label3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Interior"]
 transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -15, 9, -1)
@@ -1107,12 +1125,15 @@ material = ExtResource("6_h1c7g")
 
 [node name="LivingRoom" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(0, -0.5, -2.18557e-08, 0.5, 0, -4.00645e-17, 4.00669e-17, -2.18557e-08, 0.5, -3.75, 0, -6.9)
+texture = ExtResource("34_0aow3")
 
 [node name="CeilingWindow" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-6.55671e-08, 7.43094e-08, 1.5, -6.55671e-08, -1.7, 6.55671e-08, 1.5, -7.43094e-08, 6.55671e-08, -6.95, 9.53674e-07, -7.43032e-08)
+texture = ExtResource("35_khhe7")
 
 [node name="Rug" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-4.37114e-08, 2.18557e-08, -0.5, -0.5, 2.18557e-08, 4.37114e-08, 2.18557e-08, 0.5, 2.18557e-08, -0.6, -1, 2.08165e-12)
+texture = ExtResource("36_bvh7j")
 
 [node name="AboutLabel" type="Label3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 0, 1, -5.3, 1.5, -5)
@@ -1134,6 +1155,7 @@ material = SubResource("StandardMaterial3D_tur78")
 
 [node name="VideoScreen" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom/Screen"]
 transform = Transform3D(-1.74846e-07, -4, 1.74846e-07, 0, -1.74846e-07, -4, 4, -1.74846e-07, 7.64274e-15, -10, -1, 2.08165e-12)
+texture = ExtResource("37_s2iua")
 
 [node name="MidWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/VideoRoom"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 0, -20)
