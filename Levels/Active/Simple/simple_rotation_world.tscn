@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=86 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -67,6 +67,12 @@
 [ext_resource type="Texture2D" uid="uid://bkc57jrel3kh1" path="res://Assets/Visual/photos/tower_perspective.png" id="43_01ck4"]
 [ext_resource type="Texture2D" uid="uid://cn66o5jt0m8ui" path="res://Assets/Visual/photos/autumn.png" id="43_a0cgg"]
 [ext_resource type="Texture2D" uid="uid://w4mk7hgm6e3h" path="res://Assets/Visual/photos/autumn_2.png" id="44_6k16s"]
+[ext_resource type="Texture2D" uid="uid://cmvpi6ijq5qoq" path="res://Assets/Visual/photos/eclipse_1.jpg" id="46_s54cx"]
+[ext_resource type="Texture2D" uid="uid://b2w4fxsgr1api" path="res://Assets/Visual/photos/eclipse_2.jpg" id="47_egk04"]
+[ext_resource type="Texture2D" uid="uid://chslpu626jipo" path="res://Assets/Visual/photos/eclipse_3.jpg" id="48_iqckb"]
+[ext_resource type="Texture2D" uid="uid://dtsl2on44yajx" path="res://Assets/Visual/paintings/jellyfish_island.png" id="52_gnxwm"]
+[ext_resource type="Texture2D" uid="uid://d4g6u51t5deso" path="res://Assets/Visual/paintings/alien_world.png" id="52_ljovt"]
+[ext_resource type="Texture2D" uid="uid://bxfpr25ngyxjx" path="res://Assets/Visual/paintings/halcyon.png" id="57_n7qrx"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8qk8c"]
 viewport_path = NodePath("SubViewport")
@@ -380,7 +386,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -8.25, 2.08165e-12)
 size = Vector3(0.5, 0.5, 16.5)
 
 [node name="UpperBuilding" type="Node3D" parent="Level/Museum/Rooms"]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
+transform = Transform3D(4.37114e-08, 4.17016e-15, -1, 8.74228e-08, -1, -3.48787e-16, -1, -8.74228e-08, -4.37114e-08, 0, 0, 0)
 
 [node name="Pillar" type="CSGCombiner3D" parent="Level/Museum/Rooms/UpperBuilding"]
 use_collision = true
@@ -1059,7 +1065,7 @@ texture = ExtResource("41_80wf3")
 transform = Transform3D(-3.0598e-08, -2.44151e-16, -0.7, 2.44151e-16, 0.7, -2.44151e-16, 0.7, -2.44151e-16, -3.0598e-08, -0.6, 8, 14.5)
 texture = ExtResource("42_pcemp")
 
-[node name="HarpersRiver2" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
+[node name="METWindow" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit4/Stack/StackImages"]
 transform = Transform3D(0.6, -2.09272e-16, -2.09272e-16, 2.09272e-16, 0.6, -2.09272e-16, 2.09272e-16, 2.09272e-16, 0.6, -17, 8, 0.6)
 texture = ExtResource("43_0rrlv")
 
@@ -1129,7 +1135,7 @@ operation = 2
 size = Vector3(4, 2, 4)
 
 [node name="LowerBuilding" type="Node3D" parent="Level/Museum/Rooms"]
-transform = Transform3D(4.37114e-08, -3.47258e-15, -1, -8.74228e-08, -1, -3.48787e-16, -1, 8.74228e-08, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Panorama" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -1140,13 +1146,16 @@ size = Vector3(125, 25, 1)
 material = ExtResource("3_5pt7p")
 
 [node name="Eclipse1" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, -42.5, 2.08165e-12, 2)
+transform = Transform3D(1, -2.43305e-31, 0, -1.21652e-31, 1, -3.48787e-16, 0, 3.48787e-16, 1, -42.5, 0, 2)
+texture = ExtResource("46_s54cx")
 
 [node name="Eclipse2" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2)
+texture = ExtResource("47_egk04")
 
 [node name="Eclipse3" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Panorama/Backdrop"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.48787e-16, 0, 3.48787e-16, 1, 42.5, 2.08165e-12, 2)
+transform = Transform3D(1, -2.43305e-31, 0, -1.21652e-31, 1, -3.48787e-16, 0, 3.48787e-16, 1, 42.5, 0, 2)
+texture = ExtResource("48_iqckb")
 
 [node name="VideoRoom" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 13, 2.08165e-12)
@@ -1388,6 +1397,15 @@ operation = 2
 size = Vector3(42, 5, 5)
 material = ExtResource("3_5pt7p")
 
+[node name="ArtWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 5, 20, 62.9)
+size = Vector3(48, 38, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="SpaceScene" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit5/ArtWall"]
+transform = Transform3D(-1.2, 4.18544e-16, -1.04907e-07, 4.18544e-16, 1.2, -4.18544e-16, 1.04907e-07, -4.18544e-16, -1.2, 2.08165e-12, 2.08165e-12, -0.9)
+texture = ExtResource("52_ljovt")
+
 [node name="BuildingCubit6" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
 
@@ -1581,6 +1599,15 @@ texture = ExtResource("40_frvi4")
 transform = Transform3D(0.8, -2.7903e-16, 2.7903e-16, 2.7903e-16, 0.8, -2.7903e-16, -2.7903e-16, 2.7903e-16, 0.8, 2.08165e-12, -0.5, 12.1)
 texture = ExtResource("43_01ck4")
 
+[node name="ArtWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 62.9, 22, 12)
+size = Vector3(36, 40, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="JellyfishIsland" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/ArtWall"]
+transform = Transform3D(-1, 3.48787e-16, -1.50996e-07, 3.48787e-16, 1, -3.48787e-16, 1.50996e-07, -3.48787e-16, -1, 2.08165e-12, 2.08165e-12, -0.877)
+texture = ExtResource("57_n7qrx")
+
 [node name="BuildingCubit7" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
 
@@ -1692,6 +1719,15 @@ material = ExtResource("5_mrkfa")
 transform = Transform3D(0.707107, 0.707107, -3.09086e-08, -1.5246e-23, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 30, 44.5, 64)
 polygon = PackedVector2Array(0, 0, 24, 24, 24, 2.08165e-12, 24, 24, 48, 2.08165e-12)
 material = ExtResource("5_mrkfa")
+
+[node name="ArtWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit8"]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -62.9, 17, 6.5)
+size = Vector3(28, 28, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="JellyfishIsland" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit8/ArtWall"]
+transform = Transform3D(-0.7, 2.44151e-16, -6.11959e-08, 2.44151e-16, 0.7, -2.44151e-16, 6.11959e-08, -2.44151e-16, -0.7, 2.08165e-12, 2.08165e-12, -0.877)
+texture = ExtResource("52_gnxwm")
 
 [node name="Cameras" type="Node3D" parent="Level/Museum/Rooms"]
 
