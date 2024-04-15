@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=96 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -73,6 +73,16 @@
 [ext_resource type="Texture2D" uid="uid://dtsl2on44yajx" path="res://Assets/Visual/paintings/jellyfish_island.png" id="52_gnxwm"]
 [ext_resource type="Texture2D" uid="uid://d4g6u51t5deso" path="res://Assets/Visual/paintings/alien_world.png" id="52_ljovt"]
 [ext_resource type="Texture2D" uid="uid://bxfpr25ngyxjx" path="res://Assets/Visual/paintings/halcyon.png" id="57_n7qrx"]
+[ext_resource type="Texture2D" uid="uid://did53mfr28ogl" path="res://Assets/Visual/paintings/seraph.png" id="58_w0g3l"]
+[ext_resource type="Texture2D" uid="uid://qkqcu8hlo6u5" path="res://Assets/Visual/paintings/phoenix.png" id="60_vwmx4"]
+[ext_resource type="Texture2D" uid="uid://cxb2uxcl28rgg" path="res://Assets/Visual/paintings/borderline.png" id="61_xggad"]
+[ext_resource type="Texture2D" uid="uid://b2ecp6i24xjsb" path="res://Assets/Visual/paintings/abstract.png" id="62_1x5db"]
+[ext_resource type="Texture2D" uid="uid://dbpgdm5y3wmls" path="res://Assets/Visual/photos/hawaiian_sunset.png" id="66_8nh8c"]
+[ext_resource type="Texture2D" uid="uid://dc27qorsl4kp8" path="res://Assets/Visual/photos/snapple_contrast.png" id="67_82787"]
+[ext_resource type="Texture2D" uid="uid://c4dmqt2fpuksu" path="res://Assets/Visual/photos/glasses_sunset.png" id="67_tihvs"]
+[ext_resource type="Texture2D" uid="uid://ddqh2uiwwnfdy" path="res://Assets/Visual/photos/rainy_jfk.png" id="68_o83e5"]
+[ext_resource type="Texture2D" uid="uid://cc2n6gsr8000j" path="res://Assets/Visual/photos/san_diego.png" id="69_1dyho"]
+[ext_resource type="Texture2D" uid="uid://chm1ypuusad88" path="res://Assets/Visual/photos/colorad_morning.png" id="69_6r5vf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8qk8c"]
 viewport_path = NodePath("SubViewport")
@@ -1503,7 +1513,7 @@ size = Vector3(14, 1, 14)
 material = ExtResource("3_5pt7p")
 
 [node name="ImpossibleCube2" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/Stack" instance=ExtResource("16_rub1n")]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(-0.642788, -0.185323, 0.74329, 3.38426e-16, 0.970296, 0.241922, -0.766044, 0.155504, -0.623694, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Separator" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
 
@@ -1570,6 +1580,10 @@ size = Vector3(1, 6, 4)
 transform = Transform3D(-2.79753e-08, 2.23224e-16, 0.64, 2.23224e-16, 0.64, -2.23224e-16, -0.64, 2.23224e-16, -2.79753e-08, -10.1, 3, 2.08165e-12)
 texture = ExtResource("40_frvi4")
 
+[node name="Seraph" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
+transform = Transform3D(-0.6, 4.18545e-16, -9.05975e-08, 4.18545e-16, 0.6, -3.2894e-25, 9.05975e-08, -6.35275e-23, -0.6, -0.5, 2.08165e-12, -12.1)
+texture = ExtResource("58_w0g3l")
+
 [node name="Venice" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding"]
 transform = Transform3D(0.5, -1.74393e-16, 1.74393e-16, 1.74393e-16, 0.5, -1.74393e-16, -1.74393e-16, 1.74393e-16, 0.5, 2.08165e-12, -0.5, 12.1)
 texture = ExtResource("42_tjslw")
@@ -1595,8 +1609,12 @@ size = Vector3(1, 6, 4)
 transform = Transform3D(2.79753e-08, -2.6689e-15, 0.64, -5.59506e-08, -0.64, -2.23224e-16, 0.64, -5.59506e-08, -2.79753e-08, 10.1, 3, 0)
 texture = ExtResource("40_frvi4")
 
-[node name="Venice2" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
-transform = Transform3D(0.8, -2.7903e-16, 2.7903e-16, 2.7903e-16, 0.8, -2.7903e-16, -2.7903e-16, 2.7903e-16, 0.8, 2.08165e-12, -0.5, 12.1)
+[node name="Phoenix" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(-0.6, 2.09272e-16, -9.05975e-08, 2.09272e-16, 0.6, 2.09272e-16, 9.05975e-08, 2.09272e-16, -0.6, -0.000679016, 0.0303421, -12.0992)
+texture = ExtResource("60_vwmx4")
+
+[node name="TowerSlit" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/SideBuilding2"]
+transform = Transform3D(0.8, -2.7903e-16, 2.7903e-16, 2.7903e-16, 0.8, -2.7903e-16, -2.7903e-16, 2.7903e-16, 0.8, 0, -0.5, 12.1)
 texture = ExtResource("43_01ck4")
 
 [node name="ArtWall" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
@@ -1604,9 +1622,23 @@ transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-
 size = Vector3(36, 40, 1)
 material = ExtResource("3_5pt7p")
 
-[node name="JellyfishIsland" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/ArtWall"]
-transform = Transform3D(-1, 3.48787e-16, -1.50996e-07, 3.48787e-16, 1, -3.48787e-16, 1.50996e-07, -3.48787e-16, -1, 2.08165e-12, 2.08165e-12, -0.877)
+[node name="Halcyon" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/ArtWall"]
+transform = Transform3D(-1, 3.48787e-16, -1.50996e-07, 3.48787e-16, 1, -3.48787e-16, 1.50996e-07, -3.48787e-16, -1, 0, 0, -0.876999)
 texture = ExtResource("57_n7qrx")
+
+[node name="ArtWall2" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 62.9, 22, -46)
+size = Vector3(30, 36, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="Borderline" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6/ArtWall2"]
+transform = Transform3D(-0.9, 3.13908e-16, -1.35896e-07, 3.13908e-16, 0.9, -3.13908e-16, 1.35896e-07, -3.13908e-16, -0.9, 0.5, 2.08165e-12, -0.9)
+texture = ExtResource("61_xggad")
+
+[node name="Ramp" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit6"]
+transform = Transform3D(0.707107, 0.707107, 3.48787e-16, -0.707107, 0.707107, -3.48787e-16, -4.93259e-16, 1.60554e-24, 1, -15.3, 6.1, 23)
+size = Vector3(17, 1, 4)
+material = ExtResource("4_q5hs6")
 
 [node name="BuildingCubit7" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
@@ -1663,6 +1695,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.82284e-22, 0, 1.82284e-22, 1, 0, 0, 0)
 operation = 2
 size = Vector3(16, 1, 16)
 material = ExtResource("5_mrkfa")
+
+[node name="ArtWall2" type="CSGBox3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit7"]
+transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, -62.9, 22, -46)
+size = Vector3(30, 36, 1)
+material = ExtResource("3_5pt7p")
+
+[node name="Abstract" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit7/ArtWall2"]
+transform = Transform3D(-0.9, 3.13908e-16, -1.35896e-07, 3.13908e-16, 0.9, -3.13908e-16, 1.35896e-07, -3.13908e-16, -0.9, -0.5, 0, -0.876999)
+texture = ExtResource("62_1x5db")
 
 [node name="BuildingCubit8" type="CSGCombiner3D" parent="Level/Museum/Rooms/LowerBuilding"]
 use_collision = true
@@ -1728,6 +1769,32 @@ material = ExtResource("3_5pt7p")
 [node name="JellyfishIsland" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/BuildingCubit8/ArtWall"]
 transform = Transform3D(-0.7, 2.44151e-16, -6.11959e-08, 2.44151e-16, 0.7, -2.44151e-16, 6.11959e-08, -2.44151e-16, -0.7, 2.08165e-12, 2.08165e-12, -0.877)
 texture = ExtResource("52_gnxwm")
+
+[node name="Photos" type="Node3D" parent="Level/Museum/Rooms/LowerBuilding"]
+
+[node name="HawaiianSunset" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(0.7, -8.51566e-32, -9.07703e-24, -9.07703e-24, 0.7, 9.07703e-24, 0, 0, 0.7, 17, 6.5, 0.6)
+texture = ExtResource("66_8nh8c")
+
+[node name="SunglassesSunset" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(-0.45, 1.56954e-16, -3.93403e-08, 1.56954e-16, 0.45, -1.56954e-16, 3.93403e-08, -1.56954e-16, -0.45, 17, 6.5, -0.6)
+texture = ExtResource("67_tihvs")
+
+[node name="ForestDrink" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(-0.45, 1.56954e-16, -3.93403e-08, 1.56954e-16, 0.45, -1.56954e-16, 3.93403e-08, -1.56954e-16, -0.45, 51, 6.5, -20.6)
+texture = ExtResource("67_82787")
+
+[node name="OfficeSunrise" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(-0.35, 1.22075e-16, -5.28485e-08, 1.22075e-16, 0.35, -1.22075e-16, 5.28485e-08, -1.22075e-16, -0.35, -51, 6.5, -20.6)
+texture = ExtResource("69_6r5vf")
+
+[node name="JFKMural" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(0.35, -4.25783e-32, -4.53851e-24, -4.53851e-24, 0.35, 4.53851e-24, 0, 0, 0.35, -17, 6.5, 0.6)
+texture = ExtResource("68_o83e5")
+
+[node name="SanDiego" type="Sprite3D" parent="Level/Museum/Rooms/LowerBuilding/Photos"]
+transform = Transform3D(-0.35, 1.22075e-16, -3.0598e-08, 1.22075e-16, 0.35, -1.22075e-16, 3.0598e-08, -1.22075e-16, -0.35, -17, 6.5, -0.6)
+texture = ExtResource("69_1dyho")
 
 [node name="Cameras" type="Node3D" parent="Level/Museum/Rooms"]
 
