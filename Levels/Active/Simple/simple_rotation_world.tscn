@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=102 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -23,7 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://cwvymgaabltbn" path="res://Assets/Visual/photos/embassy_exhibit.png" id="17_odgc0"]
 [ext_resource type="Texture2D" uid="uid://p7nsgvv1k4u5" path="res://Assets/Visual/NonArt/painting_2.png" id="18_mekye"]
 [ext_resource type="Texture2D" uid="uid://tssj4ou3wb4d" path="res://Assets/Visual/photos/colorado_national_monument.png" id="18_uup63"]
+[ext_resource type="Texture2D" uid="uid://cbomq0fv5xj3t" path="res://Assets/Visual/photos/blue_butterfly.png" id="19_4lsfr"]
 [ext_resource type="Texture2D" uid="uid://dt64fxmf3ldjk" path="res://Assets/Visual/NonArt/painting_3.png" id="19_a2yqx"]
+[ext_resource type="Texture2D" uid="uid://d04u6hfh0x256" path="res://Assets/Visual/photos/black_butterfly.png" id="20_5tsuq"]
 [ext_resource type="Texture2D" uid="uid://cnh5ps01cj530" path="res://Assets/Visual/paintings/butterfly.png" id="20_d5j0p"]
 [ext_resource type="Texture2D" uid="uid://c4ga7mabhq7bd" path="res://Assets/Visual/NonArt/canvas_easel.png" id="20_i042a"]
 [ext_resource type="Texture2D" uid="uid://bu32shmxaoqka" path="res://Assets/Visual/photos/catfish.png" id="21_bunj1"]
@@ -767,7 +769,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.71041e-22, 0, -1.71041e-22, 1, 0, 12, 
 size = Vector3(42, 1, 42)
 material = ExtResource("3_5pt7p")
 
-[node name="Sprite3D" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom/Exterior"]
+[node name="ColoradoNationalMonument" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom/Exterior"]
 transform = Transform3D(5.96244e-09, -1.74393e-16, -0.5, 1.74393e-16, 0.5, -1.74393e-16, 0.5, -1.74393e-16, 5.96244e-09, -24.1, 2.08165e-12, 2.08165e-12)
 texture = ExtResource("18_uup63")
 
@@ -781,6 +783,14 @@ material = ExtResource("3_5pt7p")
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, -2, -1)
 operation = 2
 size = Vector3(12, 12, 8)
+
+[node name="BlueButterfly" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom/Interior"]
+transform = Transform3D(-2.18557e-08, 1.74393e-16, 0.5, 1.74393e-16, 0.5, -1.74393e-16, -0.5, 1.74393e-16, -2.18557e-08, -23.4, 2.08165e-12, 2.08165e-12)
+texture = ExtResource("19_4lsfr")
+
+[node name="BlackButterfly" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom/Interior"]
+transform = Transform3D(-2.18557e-08, 1.74393e-16, 0.5, 1.74393e-16, 0.5, -1.74393e-16, -0.5, 1.74393e-16, -2.18557e-08, 23.4, 2.08165e-12, 2.08165e-12)
+texture = ExtResource("20_5tsuq")
 
 [node name="WideDoor" type="CSGBox3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit2/WideRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.5)
@@ -882,8 +892,8 @@ operation = 2
 size = Vector3(31, 31, 31)
 material = SubResource("StandardMaterial3D_g4hw8")
 
-[node name="Butterfly" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Exterior"]
-transform = Transform3D(0.9, -3.13908e-16, 3.13908e-16, 3.13908e-16, 0.9, -3.13908e-16, -3.13908e-16, 3.13908e-16, 0.9, 2.08165e-12, 2.08165e-12, 16.1)
+[node name="ArtButterfly" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Exterior"]
+transform = Transform3D(0.9, -3.13908e-16, 3.13908e-16, 3.13908e-16, 0.9, -3.13908e-16, -3.13908e-16, 3.13908e-16, 0.9, 0, 0, 16.1)
 texture = ExtResource("20_d5j0p")
 
 [node name="VaporRide" type="Sprite3D" parent="Level/Museum/Rooms/UpperBuilding/BuildingCubit3/WhiteRoom/Exterior"]
