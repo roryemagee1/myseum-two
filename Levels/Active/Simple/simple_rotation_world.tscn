@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://c8xrcwmw3tqml"]
+[gd_scene load_steps=101 format=3 uid="uid://c8xrcwmw3tqml"]
 
 [ext_resource type="PackedScene" uid="uid://bcwy663fwa8gj" path="res://Skybox/skybox.tscn" id="1_nrk1v"]
 [ext_resource type="PackedScene" uid="uid://cags6veimbg0e" path="res://Player/player.tscn" id="2_1css2"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bu32shmxaoqka" path="res://Assets/Visual/photos/catfish.png" id="21_bunj1"]
 [ext_resource type="FontFile" uid="uid://dt7l7u13s5sg4" path="res://Assets/Fonts/Staatliches/Staatliches-Regular.ttf" id="21_c8jvv"]
 [ext_resource type="Texture2D" uid="uid://dt4t5bc0bc1gf" path="res://Assets/Visual/paintings/vapor_ride.png" id="21_nw616"]
-[ext_resource type="Texture2D" uid="uid://435ci28vx4l6" path="res://Assets/Temp/temp_grass.jpg" id="23_e8s63"]
 [ext_resource type="Texture2D" uid="uid://ca2d7xwy0pp5g" path="res://Assets/Visual/NonArt/author.jpg" id="23_ppsj7"]
 [ext_resource type="Texture2D" uid="uid://d0o1veo7x7qw7" path="res://Assets/Visual/NonArt/camera_shot.png" id="24_gydb0"]
 [ext_resource type="PackedScene" uid="uid://bcw0p5iisguq0" path="res://UserInterface/basic_ui.tscn" id="24_ybr0a"]
@@ -89,6 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://cc2n6gsr8000j" path="res://Assets/Visual/photos/san_diego.png" id="69_1dyho"]
 [ext_resource type="Texture2D" uid="uid://chm1ypuusad88" path="res://Assets/Visual/photos/colorad_morning.png" id="69_6r5vf"]
 [ext_resource type="Texture2D" uid="uid://c7ufppwguuxsv" path="res://Assets/Visual/photos/rocky_mountain_national_park.png" id="70_du81c"]
+[ext_resource type="Material" uid="uid://cv16uvd4bunbu" path="res://Materials/Temp/grass.tres" id="80_uqj2v"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8qk8c"]
 viewport_path = NodePath("SubViewport")
@@ -138,10 +138,6 @@ emission_energy_multiplier = 0.2
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uef4v"]
-albedo_texture = ExtResource("23_e8s63")
-uv1_scale = Vector3(10, 10, 10)
-
 [sub_resource type="SphereMesh" id="SphereMesh_6otf8"]
 material = ExtResource("11_3q7fd")
 
@@ -162,25 +158,28 @@ fall_multiplier = 4.0
 [node name="CameraRaycast" parent="Player/CameraPivot/SmoothCamera" index="0"]
 script = null
 
-[node name="InspirationViewport" type="SubViewport" parent="."]
+[node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
+default_background = SubResource("ViewportTexture_8qk8c")
+
+[node name="NonMovingCameras" type="Node3D" parent="."]
+
+[node name="InspirationViewport" type="SubViewport" parent="NonMovingCameras"]
 unique_name_in_owner = true
 size = Vector2i(1024, 600)
 
-[node name="InspirationCamera" type="Camera3D" parent="InspirationViewport"]
+[node name="InspirationCamera" type="Camera3D" parent="NonMovingCameras/InspirationViewport"]
 unique_name_in_owner = true
 transform = Transform3D(0.99863, -0.00818715, 0.0516916, 3.44493e-16, 0.987688, 0.156434, -0.052336, -0.15622, 0.986335, 3.5, 16.5, -112)
 fov = 55.0
 
-[node name="MyseumViewport" type="SubViewport" parent="."]
+[node name="MyseumViewport" type="SubViewport" parent="NonMovingCameras"]
 unique_name_in_owner = true
 size = Vector2i(1024, 600)
 
-[node name="MyseumCamera" type="Camera3D" parent="MyseumViewport"]
+[node name="MyseumCamera" type="Camera3D" parent="NonMovingCameras/MyseumViewport"]
 unique_name_in_owner = true
-transform = Transform3D(0.978148, 0.0343153, 0.20506, 3.44003e-16, 0.986286, -0.165048, -0.207912, 0.161441, 0.964733, 82, 2.08165e-12, 102.5)
-
-[node name="BasicUI" parent="." instance=ExtResource("24_ybr0a")]
-default_background = SubResource("ViewportTexture_8qk8c")
+transform = Transform3D(0.978148, 0.0343154, 0.205061, 3.44003e-16, 0.986286, -0.165048, -0.207912, 0.161441, 0.964733, 82, 2.08165e-12, 102.5)
+fov = 55.0
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -2142,32 +2141,32 @@ size = Vector3(64, 1, 64)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -8, 96)
 
 [node name="ByLabel" type="Label3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(0.965926, -2.4663e-16, 0.258819, 3.48787e-16, 1, -3.48787e-16, -0.258819, 4.27175e-16, 0.965926, -14.264, 11.6006, -7.53344)
+transform = Transform3D(0.965926, -2.4663e-16, 0.258819, 3.48787e-16, 1, -3.48787e-16, -0.258819, 4.27175e-16, 0.965926, -14.264, 12.4045, -7.53344)
 modulate = Color(0, 0, 0, 1)
 text = "by..."
 font = ExtResource("13_gvajt")
-font_size = 128
+font_size = 256
 
 [node name="Floor5" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
-material = SubResource("StandardMaterial3D_uef4v")
+material = ExtResource("80_uqj2v")
 
 [node name="Ramp" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(0.707107, 0.353553, 0.612372, 3.02058e-16, 0.866025, -0.5, -0.707107, 0.353553, 0.612372, -26.8221, 3.7, -26.7951)
+transform = Transform3D(0.707107, 0.353553, 0.612372, 3.02058e-16, 0.866025, -0.5, -0.707107, 0.353553, 0.612372, -26.8221, 3.98107, -26.7951)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(16, 1, 16)
-material = SubResource("StandardMaterial3D_uef4v")
+material = ExtResource("80_uqj2v")
 
 [node name="Platform" type="CSGBox3D" parent="Level/Floors/Middle/External/Courtyard"]
-transform = Transform3D(0.707107, 1.60554e-24, 0.707106, 3.48787e-16, 0.999999, -3.48787e-16, -0.707107, 4.93259e-16, 0.707106, -34.819, 7.61251, -34.8)
+transform = Transform3D(0.707107, 1.60554e-24, 0.707106, 3.48787e-16, 0.999999, -3.48787e-16, -0.707107, 4.93259e-16, 0.707106, -34.819, 7.9, -34.8)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(16, 1, 9.2)
-material = SubResource("StandardMaterial3D_uef4v")
+material = ExtResource("80_uqj2v")
 
 [node name="Fountain" type="CSGPolygon3D" parent="Level/Floors/Middle/External/Courtyard"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12, 0.5, -12)
@@ -2185,62 +2184,70 @@ transform = Transform3D(1, -3.03261e-16, 3.45803e-16, 3.45803e-16, 0.991445, -0.
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(26.56, 1, 64.5)
-material = SubResource("StandardMaterial3D_uef4v")
+material = ExtResource("80_uqj2v")
 
 [node name="Floor7" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.28, 2.08165e-12, -32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(37.44, 1, 64)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor8" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 2.08165e-12, -96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor9" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2.08165e-12, -109.28)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 37.44)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor10" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, -109.28)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 37.44)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor12" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.28, 2.08165e-12, -32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(37.44, 1, 64)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor13" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.28, 2.08165e-12, 32)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(37.44, 1, 64)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor14" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 2.08165e-12, 96)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 64)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor15" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.08165e-12, 109.28)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64, 1, 37.44)
+material = ExtResource("80_uqj2v")
 
 [node name="Floor16" type="CSGBox3D" parent="Level/Floors/Middle/External"]
 transform = Transform3D(0.991445, 0.130526, 3.48787e-16, -0.130526, 0.991445, -3.48787e-16, -3.91329e-16, 3.00277e-16, 1, 32, -3.84884, 114.72)
 material_override = SubResource("StandardMaterial3D_yppem")
 use_collision = true
 size = Vector3(64.5, 1, 26.56)
-material = SubResource("StandardMaterial3D_uef4v")
+material = ExtResource("80_uqj2v")
 
 [node name="ControllerBoxCutOut" type="CSGBox3D" parent="Level/Floors/Middle"]
 operation = 2
